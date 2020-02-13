@@ -103,12 +103,14 @@ namespace KitchenPC.Context.Fluent
    {
       readonly IKPCContext context;
       readonly IList<Recipe> recipes;
+      readonly IList<Guid> recipesIds;
       string title;
 
       public MenuCreator(IKPCContext context)
       {
          this.context = context;
-         this.recipes = new List<Recipe>();
+         recipes = new List<Recipe>();
+         recipesIds = new List<Guid>();
          title = "New Menu";
       }
 
@@ -123,11 +125,17 @@ namespace KitchenPC.Context.Fluent
          this.recipes.Add(recipe);
          return this;
       }
+  
+      public MenuCreator AddRecipe(Guid recipe)
+      {
+         this.recipesIds.Add(recipe);
+         return this;
+      }
 
       public MenuResult Commit()
       {
          var newMenu = new Menu(null, title);
-         return context.CreateMenu(newMenu, recipes.Select(r => r.Id).ToArray());
+         return context.CreateMenu(newMenu, recipes.Select(r => r.Id).Union(recipesIds).ToArray());
       }
    }
 

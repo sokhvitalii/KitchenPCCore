@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using FluentNHibernate.Cfg;
@@ -857,6 +858,7 @@ namespace KitchenPC.DB
             return ret.Select(m =>
                new ShoppingList(
                   m.Id,
+                  m.PlanId,
                   m.Title,
                   (m.Id.HasValue
                      ? dbItems.Where(f => f.ShoppingList != null && f.ShoppingList.ShoppingListId == m.Id)
@@ -1049,6 +1051,7 @@ namespace KitchenPC.DB
                {
                   List = new ShoppingList(
                      dbList != null ? (Guid?) dbList.ShoppingListId : null,
+                     dbList != null ? dbList.PlanId : 0,
                      dbList != null ? dbList.Title : null,
                      dbItems.Select(i => i.AsShoppingListItem()))
                };

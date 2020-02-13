@@ -1,0 +1,3 @@
+C:\TestSolutions\KitchenPCCore\UnitTests\obj\Debug\netstandard2.0\UnitTests.AssemblyInfoInputs.cache
+C:\TestSolutions\KitchenPCCore\UnitTests\obj\Debug\netstandard2.0\UnitTests.AssemblyInfo.cs
+C:\TestSolutions\KitchenPCCore\UnitTests\obj\Debug\netstandard2.0\UnitTests.csprojAssemblyReference.cache

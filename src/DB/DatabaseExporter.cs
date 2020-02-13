@@ -271,7 +271,7 @@ namespace KitchenPC.DB.Provisioning
          var list = ImportTableData<Models.Favorites, Favorites>(r => new Favorites
          {
             FavoriteId = (Guid) r["FavoriteId"],
-            UserId = (Guid) r["UserId"],
+            UserId = (string) r["UserId"],
             RecipeId = (Guid) r["RecipeId"],
             MenuId = r["MenuId"] as Guid?
          }).ToList();
@@ -285,7 +285,7 @@ namespace KitchenPC.DB.Provisioning
          var list = ImportTableData<Models.Menus, Data.DTO.Menus>(r => new Data.DTO.Menus
          {
             MenuId = (Guid) r["MenuId"],
-            UserId = (Guid) r["UserId"],
+            UserId = (string) r["UserId"],
             Title = r["Title"] as String,
             CreatedDate = (DateTime) r["CreatedDate"]
          }).ToList();
@@ -299,7 +299,7 @@ namespace KitchenPC.DB.Provisioning
          var list = ImportTableData<Models.QueuedRecipes, QueuedRecipes>(r => new QueuedRecipes
          {
             QueueId = (Guid) r["QueueId"],
-            UserId = (Guid) r["UserId"],
+            UserId = (string) r["UserId"],
             RecipeId = (Guid) r["RecipeId"],
             QueuedDate = (DateTime) r["QueuedDate"]
          }).ToList();
@@ -313,7 +313,7 @@ namespace KitchenPC.DB.Provisioning
          var list = ImportTableData<Models.RecipeRatings, RecipeRatings>(r => new RecipeRatings
          {
             RatingId = (Guid) r["RatingId"],
-            UserId = (Guid) r["UserId"],
+            UserId = (string) r["UserId"],
             RecipeId = (Guid) r["RecipeId"],
             Rating = (Int16) r["Rating"]
          }).ToList();
@@ -327,7 +327,7 @@ namespace KitchenPC.DB.Provisioning
          var list = ImportTableData<Models.ShoppingLists, Data.DTO.ShoppingLists>(r => new Data.DTO.ShoppingLists
          {
             ShoppingListId = (Guid) r["ShoppingListId"],
-            UserId = (Guid) r["UserId"],
+            UserId = (string) r["UserId"],
             Title = r["Title"] as String
          }).ToList();
 
@@ -343,7 +343,7 @@ namespace KitchenPC.DB.Provisioning
             Raw = r["Raw"] as String,
             Qty = r["Qty"] as Single?,
             Unit = Unit.ParseNullable<Units>(r["Unit"]),
-            UserId = (Guid) r["UserId"],
+            UserId = (string) r["UserId"],
             IngredientId = r["IngredientId"] as Guid?,
             RecipeId = r["RecipeId"] as Guid?,
             ShoppingListId = r["ShoppingListId"] as Guid?,

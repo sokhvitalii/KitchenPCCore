@@ -1,4 +1,5 @@
 ﻿using System;
+using KitchenPC.Recipes;
 using KitchenPC.ShoppingLists;
 
 namespace KitchenPC.Ingredients
@@ -7,6 +8,7 @@ namespace KitchenPC.Ingredients
    {
       public Ingredient Ingredient;
       public Amount Amount;
+      public RecipeBrief Recipe { get; set; }
 
       public IngredientAggregation(Ingredient ingredient)
       {
@@ -23,6 +25,13 @@ namespace KitchenPC.Ingredients
       {
          this.Ingredient = ingredient;
          this.Amount = baseAmount;
+      }
+      
+      public IngredientAggregation(Ingredient ingredient, Amount baseAmount, RecipeBrief recipe)
+      {
+         this.Ingredient = ingredient;
+         this.Amount = baseAmount;
+         this.Recipe = recipe;
       }
 
       public override string ToString()
@@ -59,7 +68,7 @@ namespace KitchenPC.Ingredients
       {
          return new ShoppingListItem(Ingredient)
          {
-            Amount = Amount
+            Amount = Amount, Recipe = this.Recipe
          };
       }
    }

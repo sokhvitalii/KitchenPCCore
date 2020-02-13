@@ -1,0 +1,13 @@
+/home/vitaliisokh/project/work/kitchenpc/test2/KitchenPCCore/Parser/bin/Release/netcoreapp3.1/Parser.deps.json
+/home/vitaliisokh/project/work/kitchenpc/test2/KitchenPCCore/Parser/bin/Release/netcoreapp3.1/Parser.dll
+/home/vitaliisokh/project/work/kitchenpc/test2/KitchenPCCore/Parser/bin/Release/netcoreapp3.1/Parser.pdb
+/home/vitaliisokh/project/work/kitchenpc/test2/KitchenPCCore/Parser/bin/Release/netcoreapp3.1/Core.dll
+/home/vitaliisokh/project/work/kitchenpc/test2/KitchenPCCore/Parser/bin/Release/netcoreapp3.1/DB.dll
+/home/vitaliisokh/project/work/kitchenpc/test2/KitchenPCCore/Parser/bin/Release/netcoreapp3.1/Core.pdb
+/home/vitaliisokh/project/work/kitchenpc/test2/KitchenPCCore/Parser/bin/Release/netcoreapp3.1/DB.pdb
+/home/vitaliisokh/project/work/kitchenpc/test2/KitchenPCCore/Parser/obj/Release/netcoreapp3.1/Parser.csprojAssemblyReference.cache
+/home/vitaliisokh/project/work/kitchenpc/test2/KitchenPCCore/Parser/obj/Release/netcoreapp3.1/Parser.AssemblyInfoInputs.cache
+/home/vitaliisokh/project/work/kitchenpc/test2/KitchenPCCore/Parser/obj/Release/netcoreapp3.1/Parser.AssemblyInfo.cs
+/home/vitaliisokh/project/work/kitchenpc/test2/KitchenPCCore/Parser/obj/Release/netcoreapp3.1/Parser.csproj.CopyComplete
+/home/vitaliisokh/project/work/kitchenpc/test2/KitchenPCCore/Parser/obj/Release/netcoreapp3.1/Parser.dll
+/home/vitaliisokh/project/work/kitchenpc/test2/KitchenPCCore/Parser/obj/Release/netcoreapp3.1/Parser.pdb

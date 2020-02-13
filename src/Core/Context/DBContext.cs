@@ -427,6 +427,57 @@ namespace KitchenPC.Context
             return ings.Values.ToList();
          }
       }
+      
+        /// <summary>
+      /// Aggregates one or more recipes into a set of aggregated ingredients.  This is normally used to create a list of items needed to buy for multiple recipes without having to create a shopping list.
+      /// </summary>
+      /// <param name="recipeIds">A list of recipe IDs to aggregate.</param>
+      /// <returns>A list of IngredientAggregation objects, one per unique ingredient in the set of recipes</returns>
+      public virtual IList<IngredientAggregation> AggregateRecipes(params Recipe[] recipes)
+      {
+         using (InitLock.ReadLock())
+         {
+            var ings = new Dictionary<Guid, IngredientAggregation>(); //List of all ingredients and total usage
+
+            foreach (var recipe in recipes)
+            {
+               //Lookup ingredient through modeler cache
+               var rNode = modeler.FindRecipe(recipe.Id);
+               var ttt = modeler;
+               if (rNode == null) //Our cache is out of date, skip this result
+                  continue;
+
+               foreach (var usage in rNode.Ingredients)
+               {
+                  var ingId = usage.Ingredient.IngredientId;
+                  var ingName = ingParser.GetIngredientById(ingId);
+                  var ing = new Ingredient(ingId, ingName);
+                  ing.ConversionType = usage.Ingredient.ConvType;
+
+                  IngredientAggregation agg;
+                  if (!ings.TryGetValue(ingId, out agg))
+                  {
+                     ings.Add(ingId, agg = new IngredientAggregation(ing)
+                     {
+                        Amount = new Amount(0, usage.Unit),
+                        Recipe = new RecipeBrief(recipe)
+                     });
+                  }
+
+                  //TODO: If usage.Unit is different than agg.Amount.Unit then we have a problem, throw an exception if that happens?
+                  if (agg.Amount == null) //This aggregation contains an empty amount, so we can't aggregate
+                     continue;
+                  else if (!usage.Amt.HasValue) //This amount is null, cancel aggregation
+                     agg.Amount = null;
+                  else
+                     agg.Amount += usage.Amt.Value;
+               }
+            }
+
+            return ings.Values.ToList();
+         }
+      }
+
 
       /// <summary>
       /// Returns the specified set of menus owned by the current user.
@@ -483,11 +534,11 @@ namespace KitchenPC.Context
       /// <param name="usages">Zero or more ingredient usages to add to this list.</param>
       /// <param name="items">Zero or more raw usages.  Raw usages will be parsed using NLP, and unsuccessful matches will be added to the list as raw items.</param>
       /// <returns>A fully aggregated shopping list, with like items combined and forms normalized.</returns>
-      public virtual ShoppingListResult CreateShoppingList(string name, Recipe[] recipes, Ingredient[] ingredients, IngredientUsage[] usages, String[] items)
+      public virtual ShoppingListResult CreateShoppingList(int planId, string name, Recipe[] recipes, Ingredient[] ingredients, IngredientUsage[] usages, String[] items)
       {
          var parsedIng = Parser.ParseAll(items).ToList();
 
-         var recipeAgg = AggregateRecipes(recipes.Select(r => r.Id).ToArray());
+         var recipeAgg = AggregateRecipes(recipes);
          var ingAgg = ingredients.Select(i => new IngredientAggregation(i, null));
          var ingUsages = AggregateIngredients(usages);
          var parsedUsages = AggregateIngredients(parsedIng.Where(u => u is Match).Select(u => u.Usage).ToArray());
@@ -499,7 +550,7 @@ namespace KitchenPC.Context
             .Concat(parsedUsages)
             .Concat(rawInputs);
 
-         var list = new ShoppingList(null, name, allItems);
+         var list = new ShoppingList(null, planId, name, allItems);
          return CreateShoppingList(list);
       }
 

@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/.Rider2019.3/system/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2019.3/system/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_KitchenPCCore.89684150.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="ConsoleAppData" t="IncludeRecursive">
+        <e p="ConsoleAppData.csproj" t="IncludeRecursive" />
+        <e p="Helper" t="Include">
+          <e p="DataBaseHelper.cs" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Save" t="Include">
+          <e p="Code.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="ConsoleAppData.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Core" t="IncludeRecursive">
+        <e p="Amount.cs" t="Include" />
+        <e p="AuthIdentity.cs" t="Include" />
+        <e p="Categorization" t="Include">
+          <e p="Analyzer.cs" t="Include" />
+          <e p="AnalyzerResult.cs" t="Include" />
+          <e p="CategorizationEngine.cs" t="Include" />
+          <e p="CategorizationResult.cs" t="Include" />
+          <e p="Enums.cs" t="Include" />
+          <e p="IDBLoader.cs" t="Include" />
+          <e p="IIngredientCommonality.cs" t="Include" />
+          <e p="IRecipeClassification.cs" t="Include" />
+          <e p="IToken.cs" t="Include" />
+          <e p="IngredientToken.cs" t="Include" />
+          <e p="Ranking.cs" t="Include" />
+          <e p="RecipeIndex.cs" t="Include" />
+          <e p="TextToken.cs" t="Include" />
+          <e p="TimeToken.cs" t="Include" />
+          <e p="Tokenizer.cs" t="Include" />
+        </e>
+        <e p="Context" t="Include">
+          <e p="AlphaTree.cs" t="Include" />
+          <e p="Configuration.cs" t="Include" />
+          <e p="ConfigurationBuilder.cs" t="Include" />
+          <e p="ConnectorVertex.cs" t="Include" />
+          <e p="DBContext.cs" t="Include" />
+          <e p="DBContextBuilder.cs" t="Include" />
+          <e p="DBModelerLoader.cs" t="Include" />
+          <e p="IConfiguration.cs" t="Include" />
+          <e p="IConfigurationBuilder.cs" t="Include" />
+          <e p="IDBAdapter.cs" t="Include" />
+          <e p="IKPCContext.cs" t="Include" />
+          <e p="ISearchProvider.cs" t="Include" />
+          <e p="IngredientNode.cs" t="Include" />
+          <e p="IngredientParser.cs" t="Include" />
+          <e p="IngredientSource.cs" t="Include" />
+          <e p="KPCContext.cs" t="Include" />
+          <e p="StaticAnomalyLoader.cs" t="Include" />
+          <e p="StaticContext.cs" t="Include" />
+          <e p="StaticContextBuilder.cs" t="Include" />
+          <e p="StaticFormLoader.cs" t="Include" />
+          <e p="StaticIngredientLoader.cs" t="Include" />
+          <e p="StaticModelerLoader.cs" t="Include" />
+          <e p="StaticPrepLoader.cs" t="Include" />
+          <e p="StaticSearch.cs" t="Include" />
+          <e p="StaticUnitLoader.cs" t="Include" />
+        </e>
+        <e p="Core.csproj" t="IncludeRecursive" />
+        <e p="Enums.cs" t="Include" />
+        <e p="Exceptions.cs" t="Include" />
+        <e p="Extensions.cs" t="Include" />
+        <e p="Fluent" t="Include">
+          <e p="Menus.cs" t="Include" />
+          <e p="Modeler.cs" t="Include" />
+          <e p="Queue.cs" t="Include" />
+          <e p="Recipes.cs" t="Include" />
+          <e p="ShoppingLists.cs" t="Include" />
+        </e>
+        <e p="FormConversion.cs" t="Include" />
+        <e p="Fractions.cs" t="Include" />
+        <e p="Ingredients" t="Include">
+          <e p="Ingredient.cs" t="Include" />
+          <e p="IngredientAggregation.cs" t="Include" />
+          <e p="IngredientForm.cs" t="Include" />
+          <e p="IngredientFormsCollection.cs" t="Include" />
+          <e p="IngredientMetadata.cs" t="Include" />
+          <e p="IngredientSection.cs" t="Include" />
+          <e p="IngredientUsage.cs" t="Include" />
+          <e p="IngredientUsageCollection.cs" t="Include" />
+        </e>
+        <e p="Linq" t="Include">
+          <e p="Enumerable.cs" t="Include" />
+        </e>
+        <e p="Menus" t="Include">
+          <e p="GetMenuOptions.cs" t="Include" />
+          <e p="Menu.cs" t="Include" />
+          <e p="MenuMove.cs" t="Include" />
+          <e p="MenuResult.cs" t="Include" />
+        </e>
+        <e p="Modeler" t="Include">
+          <e p="CompiledModel.cs" t="Include" />
+          <e p="DBSnapshot.cs" t="Include" />
+          <e p="IModelerLoader.cs" t="Include" />
+          <e p="IUserProfile.cs" t="Include" />
+          <e p="IngredientBinding.cs" t="Include" />
+          <e p="IngredientNode.cs" t="Include" />
+          <e p="IngredientUsage.cs" t="Include" />
+          <e p="Model.cs" t="Include" />
+          <e p="ModelerProxy.cs" t="Include" />
+          <e p="ModelerQuery.cs" t="Include" />
+          <e p="ModelingSession.cs" t="Include" />
+          <e p="PantryItem.cs" t="Include" />
+          <e p="RatingBinding.cs" t="Include" />
+          <e p="RatingGraph.cs" t="Include" />
+          <e p="RecipeBinding.cs" t="Include" />
+          <e p="RecipeNode.cs" t="Include" />
+          <e p="RecipeRating.cs" t="Include" />
+          <e p="SuggestedRecipe.cs" t="Include" />
+          <e p="UserProfile.cs" t="Include" />
+        </e>
+        <e p="NLP" t="Include">
+          <e p="AlphaTree.cs" t="Include" />
+          <e p="Anomalies.cs" t="Include" />
+          <e p="AnomalousIngredientNode.cs" t="Include" />
+          <e p="AnomalousMatch.cs" t="Include" />
+          <e p="AnomalousNode.cs" t="Include" />
+          <e p="ConnectorVertex.cs" t="Include" />
+          <e p="CustomUnitNode.cs" t="Include" />
+          <e p="DefaultPairings.cs" t="Include" />
+          <e p="DefaultTracer.cs" t="Include" />
+          <e p="Enums.cs" t="Include" />
+          <e p="FormNode.cs" t="Include" />
+          <e p="FormSynonyms.cs" t="Include" />
+          <e p="IGrammar.cs" t="Include" />
+          <e p="ISynonymLoader.cs" t="Include" />
+          <e p="ITracer.cs" t="Include" />
+          <e p="IngredientNode.cs" t="Include" />
+          <e p="IngredientSynonyms.cs" t="Include" />
+          <e p="Match.cs" t="Include" />
+          <e p="MatchData.cs" t="Include" />
+          <e p="NameIngredientPair.cs" t="Include" />
+          <e p="NlpTracer.cs" t="Include" />
+          <e p="NoMatch.cs" t="Include" />
+          <e p="NumericNode.cs" t="Include" />
+          <e p="NumericVocab.cs" t="Include" />
+          <e p="Pairings.cs" t="Include" />
+          <e p="Parser.cs" t="Include" />
+          <e p="PartialMatch.cs" t="Include" />
+          <e p="PrepNode.cs" t="Include" />
+          <e p="PrepNotes.cs" t="Include" />
+          <e p="Preps.cs" t="Include" />
+          <e p="Result.cs" t="Include" />
+          <e p="SynonymTree.cs" t="Include" />
+          <e p="Template.cs" t="Include" />
+          <e p="TemplateStatistics.cs" t="Include" />
+          <e p="Tokens" t="Include">
+            <e p="AmtToken.cs" t="Include" />
+            <e p="AnomToken.cs" t="Include" />
+            <e p="FormToken.cs" t="Include" />
+            <e p="IngToken.cs" t="Include" />
+            <e p="NumericToken.cs" t="Include" />
+            <e p="PrepToken.cs" t="Include" />
+            <e p="StaticToken.cs" t="Include" />
+            <e p="UnitToken.cs" t="Include" />
+          </e>
+          <e p="UnitNode.cs" t="Include" />
+          <e p="UnitSynonyms.cs" t="Include" />
+        </e>
+        <e p="Properties" t="Include" />
+        <e p="Provisioning" t="Include">
+          <e p="DTO" t="Include">
+            <e p="Favorites.cs" t="Include" />
+            <e p="IngredientForms.cs" t="Include" />
+            <e p="IngredientMetadata.cs" t="Include" />
+            <e p="Ingredients.cs" t="Include" />
+            <e p="Menus.cs" t="Include" />
+            <e p="NlpAnomalousIngredients.cs" t="Include" />
+            <e p="NlpDefaultPairings.cs" t="Include" />
+            <e p="NlpFormSynonyms.cs" t="Include" />
+            <e p="NlpIngredientSynonyms.cs" t="Include" />
+            <e p="NlpPrepNotes.cs" t="Include" />
+            <e p="NlpUnitSynonyms.cs" t="Include" />
+            <e p="QueuedRecipes.cs" t="Include" />
+            <e p="RecipeData.cs" t="Include" />
+            <e p="RecipeIngredients.cs" t="Include" />
+            <e p="RecipeMetadata.cs" t="Include" />
+            <e p="RecipeRatings.cs" t="Include" />
+            <e p="Recipes.cs" t="Include" />
+            <e p="ShoppingListItems.cs" t="Include" />
+            <e p="ShoppingLists.cs" t="Include" />
+          </e>
+          <e p="DataStore.cs" t="Include" />
+          <e p="IProvisionSource.cs" t="Include" />
+          <e p="IProvisionTarget.cs" t="Include" />
+          <e p="IProvisioner.cs" t="Include" />
+        </e>
+        <e p="Recipes" t="Include">
+          <e p="Enums.cs" t="Include" />
+          <e p="ReadRecipeOptions.cs" t="Include" />
+          <e p="Recipe.cs" t="Include" />
+          <e p="RecipeBrief.cs" t="Include" />
+          <e p="RecipeQuery.cs" t="Include" />
+          <e p="RecipeResult.cs" t="Include" />
+          <e p="RecipeTag.cs" t="Include" />
+          <e p="RecipeTags.cs" t="Include" />
+          <e p="SearchResults.cs" t="Include" />
+        </e>
+        <e p="ShoppingLists" t="Include">
+          <e p="Enums.cs" t="Include" />
+          <e p="GetShoppingListOptions.cs" t="Include" />
+          <e p="IShoppingListSource.cs" t="Include" />
+          <e p="ShoppingList.cs" t="Include" />
+          <e p="ShoppingListItem.cs" t="Include" />
+          <e p="ShoppingListModification.cs" t="Include" />
+          <e p="ShoppingListResult.cs" t="Include" />
+          <e p="ShoppingListUpdateCommand.cs" t="Include" />
+        </e>
+        <e p="Unit.cs" t="Include" />
+        <e p="UnitConverter.cs" t="Include" />
+        <e p="Weight.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="Core.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="DB" t="IncludeRecursive">
+        <e p="DB.csproj" t="IncludeRecursive" />
+        <e p="DatabaseAdapter.cs" t="Include" />
+        <e p="DatabaseAdapterBuilder.cs" t="Include" />
+        <e p="DatabaseExporter.cs" t="Include" />
+        <e p="DatabaseImporter.cs" t="Include" />
+        <e p="EnumMapper.cs" t="Include" />
+        <e p="Models" t="Include">
+          <e p="Favorites.cs" t="Include" />
+          <e p="IngredientForms.cs" t="Include" />
+          <e p="IngredientMetadata.cs" t="Include" />
+          <e p="Ingredients.cs" t="Include" />
+          <e p="Menus.cs" t="Include" />
+          <e p="NlpAnomalousIngredients.cs" t="Include" />
+          <e p="NlpDefaultPairings.cs" t="Include" />
+          <e p="NlpFormSynonyms.cs" t="Include" />
+          <e p="NlpIngredientSynonyms.cs" t="Include" />
+          <e p="NlpPrepNotes.cs" t="Include" />
+          <e p="NlpUnitSynonyms.cs" t="Include" />
+          <e p="QueuedRecipes.cs" t="Include" />
+          <e p="RecipeIngredients.cs" t="Include" />
+          <e p="RecipeMetadata.cs" t="Include" />
+          <e p="RecipeRatings.cs" t="Include" />
+          <e p="Recipes.cs" t="Include" />
+          <e p="ShoppingListItems.cs" t="Include" />
+          <e p="ShoppingLists.cs" t="Include" />
+        </e>
+        <e p="NHSearch.cs" t="Include" />
+        <e p="NLP" t="Include">
+          <e p="AnomalyLoader.cs" t="Include" />
+          <e p="FormLoader.cs" t="Include" />
+          <e p="IngredientGraphTransformer.cs" t="Include" />
+          <e p="IngredientLoader.cs" t="Include" />
+          <e p="PrepLoader.cs" t="Include" />
+          <e p="UnitLoader.cs" t="Include" />
+        </e>
+        <e p="Properties" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Release" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="DB.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="KitchenPCCore.sln" t="IncludeFlat" />
+      <e p="Parser" t="IncludeRecursive">
+        <e p="Model" t="Include">
+          <e p="RecipesFromJson.cs" t="Include" />
+        </e>
+        <e p="Parser" t="Include">
+          <e p="ParseJson.cs" t="Include" />
+        </e>
+        <e p="Parser.csproj" t="IncludeRecursive" />
+        <e p="Resources" t="Include">
+          <e p="Edamam_recipes.json" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Parser.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="UnitTests" t="IncludeRecursive">
+        <e p="Categorization.cs" t="Include" />
+        <e p="Mock" t="Include">
+          <e p="Forms.cs" t="Include" />
+          <e p="Ingredients.cs" t="Include" />
+          <e p="MockContext.cs" t="Include" />
+          <e p="MockImpossibleFilterUserProfile.cs" t="Include" />
+          <e p="MockImpossiblePantryUserProfile.cs" t="Include" />
+          <e p="MockModelerDBLoader.cs" t="Include" />
+          <e p="MockNoRatingsUserProfile.cs" t="Include" />
+          <e p="MockNormalUserProfile.cs" t="Include" />
+          <e p="Recipes.cs" t="Include" />
+        </e>
+        <e p="Modeler.cs" t="Include" />
+        <e p="ModelerData.xml" t="Include" />
+        <e p="NLP.cs" t="Include" />
+        <e p="Properties" t="Include" />
+        <e p="Tags.cs" t="Include" />
+        <e p="TestFormLoader.cs" t="Include" />
+        <e p="TestIngredientLoader.cs" t="Include" />
+        <e p="TestPrepLoader.cs" t="Include" />
+        <e p="TestUnitLoader.cs" t="Include" />
+        <e p="UnitConverter.cs" t="Include" />
+        <e p="UnitTests.csproj" t="IncludeRecursive" />
+        <e p="Units.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Release" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="UnitTests.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="WebApplication2" t="IncludeRecursive">
+        <e p="Controllers" t="Include">
+          <e p="FooController.cs" t="Include" />
+          <e p="WeatherForecastController.cs" t="Include" />
+        </e>
+        <e p="Dockerfile" t="Include" />
+        <e p="Model" t="Include">
+          <e p="DataBaseConnection.cs" t="Include" />
+          <e p="ShoppingListEvent.cs" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Resources" t="Include">
+          <e p="KPCData.xml" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="WeatherForecast.cs" t="Include" />
+        <e p="WebApplication2.csproj" t="IncludeRecursive" />
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="WebApplication2.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

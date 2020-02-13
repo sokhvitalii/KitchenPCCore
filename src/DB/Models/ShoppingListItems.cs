@@ -10,7 +10,7 @@ namespace KitchenPC.DB.Models
       public virtual String Raw { get; set; }
       public virtual float? Qty { get; set; }
       public virtual Units? Unit { get; set; }
-      public virtual Guid UserId { get; set; }
+      public virtual string UserId { get; set; }
       public virtual Ingredients Ingredient { get; set; }
       public virtual Recipes Recipe { get; set; }
       public virtual ShoppingLists ShoppingList { get; set; }
@@ -42,14 +42,14 @@ namespace KitchenPC.DB.Models
       {
       }
 
-      public ShoppingListItems(Guid id, Guid userid, String raw)
+      public ShoppingListItems(Guid id, string userid, String raw)
       {
          ItemId = id;
          UserId = userid;
          Raw = raw;
       }
 
-      public ShoppingListItems(Guid id, Guid userid, Amount amt, Guid? ingredientId, Guid? recipeId)
+      public ShoppingListItems(Guid id, string userid, Amount amt, Guid? ingredientId, Guid? recipeId)
       {
          ItemId = id;
          UserId = userid;

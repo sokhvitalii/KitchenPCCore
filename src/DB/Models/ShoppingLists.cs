@@ -8,8 +8,9 @@ namespace KitchenPC.DB.Models
    public class ShoppingLists
    {
       public virtual Guid ShoppingListId { get; set; }
-      public virtual Guid UserId { get; set; }
+      public virtual string UserId { get; set; }
       public virtual String Title { get; set; }
+      public virtual int PlanId { get; set; }
 
       public virtual IList<ShoppingListItems> Items { get; set; }
 
@@ -41,6 +42,7 @@ namespace KitchenPC.DB.Models
 
          Map(x => x.UserId).Not.Nullable().Index("IDX_ShoppingLists_UserId").UniqueKey("UniqueTitle");
          Map(x => x.Title).Not.Nullable().UniqueKey("UniqueTitle");
+         Map(x => x.PlanId).Not.Nullable();
 
          HasMany(x => x.Items)
             .KeyColumn("ShoppingListId")

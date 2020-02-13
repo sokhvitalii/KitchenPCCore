@@ -9,14 +9,14 @@ namespace KitchenPC
    /// <summary>Represents a user identity within a KitchenPC context.  This identity can be stored locally or within the KitchenPC network.</summary>
    public class AuthIdentity : IIdentity
    {
-      public Guid UserId { get; private set; }
+      public string UserId { get; private set; }
       public string Name { get; private set; }
 
       public AuthIdentity()
       {
       }
 
-      public AuthIdentity(Guid id, string name)
+      public AuthIdentity(string id, string name)
       {
          UserId = id;
          Name = name;
@@ -34,7 +34,7 @@ namespace KitchenPC
       {
          get
          {
-            return UserId != Guid.Empty;
+            return UserId != "";
          }
       }
 
@@ -59,7 +59,7 @@ namespace KitchenPC
 
       public static Byte[] Serialize(AuthIdentity identity)
       {
-         var g = identity.UserId.ToByteArray();
+         var g = Encoding.UTF8.GetBytes(identity.UserId);
          var u = Encoding.UTF8.GetBytes(identity.Name);
 
          return g.Concat(u).ToArray();
@@ -77,7 +77,7 @@ namespace KitchenPC
          Buffer.BlockCopy(bytes, 16, u, 0, u.Length);
 
          return new AuthIdentity(
-            new Guid(g),
+            Encoding.UTF8.GetString(g),
             Encoding.UTF8.GetString(u));
       }
    }

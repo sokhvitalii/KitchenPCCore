@@ -17,7 +17,7 @@ namespace KitchenPC.Modeler
 
       class UserNode
       {
-         public Guid Key { get; set; }
+         public string Key { get; set; }
          public List<Rating> Ratings { get; set; }
       }
 
@@ -42,7 +42,7 @@ namespace KitchenPC.Modeler
          _userIndex = new Dictionary<object, UserNode>();
       }
 
-      public void AddRating(short r, Guid uid, Guid rid)
+      public void AddRating(short r, string uid, Guid rid)
       {
          RecipeNode rnode;
          UserNode unode;

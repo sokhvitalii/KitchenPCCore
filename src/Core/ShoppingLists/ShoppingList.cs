@@ -9,9 +9,10 @@ namespace KitchenPC.ShoppingLists
       public static Guid GUID_WATER = new Guid("cb44df2d-f27c-442a-bd6e-fd7bdd501f10");
       public Guid? Id { get; set; }
       public string Title { get; set; }
+      public int PlanId { get; set; }
       readonly List<ShoppingListItem> list;
 
-      static readonly ShoppingList defaultList = new ShoppingList(null, "");
+      static readonly ShoppingList defaultList = new ShoppingList(null, 0, "");
 
       public static ShoppingList Default
       {
@@ -23,7 +24,7 @@ namespace KitchenPC.ShoppingLists
 
       public static ShoppingList FromId(Guid menuId)
       {
-         return new ShoppingList(menuId, null);
+         return new ShoppingList(menuId, 0, null);
       }
 
       public ShoppingList()
@@ -31,13 +32,14 @@ namespace KitchenPC.ShoppingLists
          list = new List<ShoppingListItem>();
       }
 
-      public ShoppingList(Guid? id, String title) : this()
+      public ShoppingList(Guid? id, int planId, String title) : this()
       {
          this.Id = id;
+         this.PlanId = planId;
          this.Title = title;
       }
 
-      public ShoppingList(Guid? id, String title, IEnumerable<IShoppingListSource> items) : this(id, title)
+      public ShoppingList(Guid? id, int planId, String title, IEnumerable<IShoppingListSource> items) : this(id, planId, title)
       {
          AddItems(items);
       }

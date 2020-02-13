@@ -1,4 +1,6 @@
-﻿namespace KitchenPC.ShoppingLists
+﻿using KitchenPC.Recipes;
+
+namespace KitchenPC.ShoppingLists
 {
    public interface IShoppingListSource
    {

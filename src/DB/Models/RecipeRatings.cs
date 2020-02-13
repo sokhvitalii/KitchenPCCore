@@ -6,7 +6,7 @@ namespace KitchenPC.DB.Models
    public class RecipeRatings
    {
       public virtual Guid RatingId { get; set; }
-      public virtual Guid UserId { get; set; }
+      public virtual string UserId { get; set; }
       public virtual Recipes Recipe { get; set; }
       public virtual Int16 Rating { get; set; }
    }

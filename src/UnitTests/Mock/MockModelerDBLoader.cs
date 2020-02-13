@@ -38,7 +38,7 @@ namespace KPCServer.UnitTests
          _dsRatings = (from r in doc.Descendants("Rating")
             select new RatingBinding()
             {
-               UserId = new Guid(r.Attribute("UserId").Value),
+               UserId = r.Attribute("UserId").Value,
                RecipeId = new Guid(r.Attribute("RecipeId").Value),
                Rating = Convert.ToByte(r.Attribute("Rating").Value)
             }).ToArray();
