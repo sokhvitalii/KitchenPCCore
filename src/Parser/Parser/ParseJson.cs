@@ -43,7 +43,7 @@ namespace Parser.Parser
         public RecipesFromJson[] RecipesFromJson { get; set; }
         public RecipesFromJson[] GetRecipesFromJson()
         { 
-            var tmp = File.ReadAllText("/home/vitaliisokh/project/work/kitchenpc/test2/KitchenPCCore/Parser/Resources/Edamam_recipes.json"); 
+            var tmp = File.ReadAllText("../Parser/Resources/Edamam_recipes.json"); 
             return JsonSerializer.Deserialize<RecipesFromJson[]>(tmp, Options);
         }
         public ParseJson()

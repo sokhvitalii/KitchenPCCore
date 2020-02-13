@@ -1,1068 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="674ea0ac-cd0a-4896-a5e8-9055544a787e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.KitchenPCCore/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.KitchenPCCore/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.KitchenPCCore/.idea/contentModel.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.KitchenPCCore/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.KitchenPCCore/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.KitchenPCCore/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.KitchenPCCore/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.KitchenPCCore/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.KitchenPCCore/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.KitchenPCCore/riderModule.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/KitchenPCCore/DesignTimeBuild/.dtbcache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/KitchenPCCore/v16/.suo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/KitchenPCCore/v16/Server/sqlite3/db.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/KitchenPCCore/v16/Server/sqlite3/storage.ide" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/ConsoleAppData.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/Helper/DataBaseHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/Save/Code.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/Antlr3.Runtime.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/ConsoleAppData" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/ConsoleAppData.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/ConsoleAppData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/ConsoleAppData.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/ConsoleAppData.runtimeconfig.dev.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/ConsoleAppData.runtimeconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/Core.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/DB.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/DB.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/FluentNHibernate.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/Iesi.Collections.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/NHibernate.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/Npgsql.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/Parser.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/Parser.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/Remotion.Linq.EagerFetching.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/Remotion.Linq.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/System.Configuration.ConfigurationManager.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/System.Net.Http.WinHttpHandler.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/System.Security.Permissions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/System.ServiceModel.Primitives.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/log4net.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.10546.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.10556.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.10927.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.1229.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.13221.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.13464.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.13785.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.15296.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.15329.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.16271.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.16688.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.16714.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.1771.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.17976.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.18697.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.18989.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.19247.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.19816.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.19875.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.20159.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.20375.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.20756.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.20899.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.21019.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.21033.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.2224.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.22466.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.23133.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.2804.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.2920.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.31015.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.315.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.31639.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.3167.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.32447.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.32458.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.32746.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.3536.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.3675.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.3711.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.3901.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.4532.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.5069.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.522.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.5820.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.6188.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.6452.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.7103.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.7165.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.7429.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.7638.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.7896.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.8092.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.820.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.8452.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.8616.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.8731.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.8825.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.9191.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.9410.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/mono_crash.mem.9548.1.blob" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netstandard2.0/System.Private.ServiceModel.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Net.Http.WinHttpHandler.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Debug/netcoreapp3.1/runtimes/win7/lib/netstandard2.0/System.Private.ServiceModel.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/Antlr3.Runtime.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/ConsoleAppData" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/ConsoleAppData.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/ConsoleAppData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/ConsoleAppData.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/ConsoleAppData.runtimeconfig.dev.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/ConsoleAppData.runtimeconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/Core.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/DB.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/DB.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/FluentNHibernate.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/Iesi.Collections.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/NHibernate.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/Npgsql.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/Parser.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/Parser.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/Remotion.Linq.EagerFetching.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/Remotion.Linq.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/System.Configuration.ConfigurationManager.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/System.Net.Http.WinHttpHandler.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/System.Security.Permissions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/System.ServiceModel.Primitives.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/log4net.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/Antlr3.Runtime.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/ConsoleAppData" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/ConsoleAppData.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/ConsoleAppData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/ConsoleAppData.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/ConsoleAppData.runtimeconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/Core.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/DB.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/DB.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/FluentNHibernate.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/Iesi.Collections.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/NHibernate.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/Npgsql.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/Parser.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/Parser.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/Remotion.Linq.EagerFetching.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/Remotion.Linq.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/System.Configuration.ConfigurationManager.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/System.Net.Http.WinHttpHandler.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/System.Security.Permissions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/System.ServiceModel.Primitives.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/log4net.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/runtimes/unix/lib/netstandard2.0/System.Private.ServiceModel.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/runtimes/win/lib/netstandard2.0/System.Net.Http.WinHttpHandler.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/publish/runtimes/win7/lib/netstandard2.0/System.Private.ServiceModel.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/runtimes/unix/lib/netstandard2.0/System.Private.ServiceModel.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Net.Http.WinHttpHandler.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/bin/Release/netcoreapp3.1/runtimes/win7/lib/netstandard2.0/System.Private.ServiceModel.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/ConsoleAppData.csproj.nuget.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/ConsoleAppData.csproj.nuget.dgspec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/ConsoleAppData.csproj.nuget.g.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/ConsoleAppData.csproj.nuget.g.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/Debug/netcoreapp3.1/ConsoleAppData" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/Debug/netcoreapp3.1/ConsoleAppData.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/Debug/netcoreapp3.1/ConsoleAppData.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/Debug/netcoreapp3.1/ConsoleAppData.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/Debug/netcoreapp3.1/ConsoleAppData.csproj.CopyComplete" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/Debug/netcoreapp3.1/ConsoleAppData.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/Debug/netcoreapp3.1/ConsoleAppData.csprojAssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/Debug/netcoreapp3.1/ConsoleAppData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/Debug/netcoreapp3.1/ConsoleAppData.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/Release/netcoreapp3.1/ConsoleAppData" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/Release/netcoreapp3.1/ConsoleAppData.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/Release/netcoreapp3.1/ConsoleAppData.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/Release/netcoreapp3.1/ConsoleAppData.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/Release/netcoreapp3.1/ConsoleAppData.csproj.CopyComplete" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/Release/netcoreapp3.1/ConsoleAppData.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/Release/netcoreapp3.1/ConsoleAppData.csprojAssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/Release/netcoreapp3.1/ConsoleAppData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/Release/netcoreapp3.1/ConsoleAppData.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/project.assets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleAppData/obj/project.packagespec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Debug/netstandard2.0/Core.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Debug/netstandard2.0/Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Debug/netstandard2.0/Core.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/Core.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/Core.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/Antlr3.Runtime.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/Core.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/Core.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/FluentNHibernate.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/Iesi.Collections.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/NHibernate.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/Remotion.Linq.EagerFetching.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/Remotion.Linq.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.AppContext.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Buffers.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Collections.Concurrent.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Collections.Immutable.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Collections.NonGeneric.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Configuration.ConfigurationManager.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Diagnostics.DiagnosticSource.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Diagnostics.StackTrace.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.IO.FileSystem.Primitives.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Linq.Expressions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Linq.Queryable.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Linq.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Net.Http.WinHttpHandler.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Net.WebHeaderCollection.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.ObjectModel.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Reflection.DispatchProxy.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Reflection.Emit.ILGeneration.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Reflection.Emit.Lightweight.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Reflection.Emit.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Reflection.Metadata.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Reflection.TypeExtensions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Runtime.Numerics.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Runtime.Serialization.Formatters.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Runtime.Serialization.Primitives.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Security.AccessControl.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Security.Cryptography.OpenSsl.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Security.Cryptography.Primitives.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Security.Permissions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Security.Principal.Windows.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.ServiceModel.Primitives.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Text.RegularExpressions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Threading.Tasks.Extensions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Threading.Thread.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Threading.ThreadPool.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Threading.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Xml.ReaderWriter.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/System.Xml.XmlDocument.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/bin/Release/netstandard2.0/publish/log4net.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Core.csproj.nuget.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Core.csproj.nuget.dgspec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Core.csproj.nuget.g.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Core.csproj.nuget.g.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/DB.csproj.nuget.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/DB.csproj.nuget.dgspec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/DB.csproj.nuget.g.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/DB.csproj.nuget.g.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/DB.csproj.CopyComplete" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/DB.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/DB.csprojAssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/KitchenPC.DB.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/KitchenPC.DB.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/build.force" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/netstandard1.0/Core.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/netstandard1.0/Core.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/netstandard1.0/Core.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/netstandard1.0/Core.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/netstandard1.0/Core.csprojAssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/netstandard1.6/Core.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/netstandard1.6/Core.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/netstandard1.6/Core.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/netstandard1.6/Core.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/netstandard1.6/Core.csprojAssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/netstandard2.0/Core.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/netstandard2.0/Core.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/netstandard2.0/Core.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/netstandard2.0/Core.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/netstandard2.0/Core.csprojAssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/netstandard2.0/Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Debug/netstandard2.0/Core.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Release/netstandard2.0/Core.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Release/netstandard2.0/Core.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Release/netstandard2.0/Core.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Release/netstandard2.0/Core.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Release/netstandard2.0/Core.csprojAssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Release/netstandard2.0/Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/Release/netstandard2.0/Core.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/project.assets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/obj/project.packagespec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/DB.csproj.user" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/Core.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/DB.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/DB.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/DB.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/Antlr3.Runtime.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/Core.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/DB.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/DB.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/DB.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/FluentNHibernate.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/Iesi.Collections.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/Microsoft.Bcl.AsyncInterfaces.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/NHibernate.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/Npgsql.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/Remotion.Linq.EagerFetching.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/Remotion.Linq.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.AppContext.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Buffers.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Collections.Concurrent.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Collections.Immutable.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Collections.NonGeneric.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Configuration.ConfigurationManager.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Diagnostics.DiagnosticSource.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Diagnostics.StackTrace.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.IO.FileSystem.Primitives.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Linq.Expressions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Linq.Queryable.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Linq.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Memory.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Net.Http.WinHttpHandler.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Net.WebHeaderCollection.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Numerics.Vectors.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.ObjectModel.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Reflection.DispatchProxy.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Reflection.Emit.ILGeneration.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Reflection.Emit.Lightweight.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Reflection.Emit.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Reflection.Metadata.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Reflection.TypeExtensions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Runtime.CompilerServices.Unsafe.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Runtime.Numerics.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Runtime.Serialization.Formatters.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Runtime.Serialization.Primitives.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Security.AccessControl.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Security.Cryptography.OpenSsl.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Security.Cryptography.Primitives.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Security.Permissions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Security.Principal.Windows.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.ServiceModel.Primitives.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Text.Encodings.Web.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Text.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Text.RegularExpressions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Threading.Tasks.Extensions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Threading.Thread.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Threading.ThreadPool.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Threading.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Xml.ReaderWriter.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/System.Xml.XmlDocument.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/bin/Release/netstandard2.0/publish/log4net.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/obj/DB.csproj.nuget.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/obj/DB.csproj.nuget.dgspec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/obj/DB.csproj.nuget.g.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/obj/DB.csproj.nuget.g.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/obj/Release/netstandard1.2/DB.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/obj/Release/netstandard1.2/DB.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/obj/Release/netstandard1.2/DB.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/obj/Release/netstandard1.2/DB.csprojAssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/obj/Release/netstandard2.0/DB.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/obj/Release/netstandard2.0/DB.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/obj/Release/netstandard2.0/DB.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/obj/Release/netstandard2.0/DB.csproj.CopyComplete" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/obj/Release/netstandard2.0/DB.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/obj/Release/netstandard2.0/DB.csprojAssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/obj/Release/netstandard2.0/DB.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/obj/Release/netstandard2.0/DB.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/obj/project.assets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/obj/project.packagespec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/KitchenPCCore.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/Model/RecipesFromJson.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/Parser.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/Parser/ParseJson.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/Resources/Edamam_recipes.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Debug/netcoreapp3.1/Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Debug/netcoreapp3.1/Core.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Debug/netcoreapp3.1/DB.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Debug/netcoreapp3.1/DB.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Debug/netcoreapp3.1/Parser.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Debug/netcoreapp3.1/Parser.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Debug/netcoreapp3.1/Parser.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/Core.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/DB.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/DB.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/Parser.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/Parser.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/Parser.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/Antlr3.Runtime.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/Core.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/DB.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/DB.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/FluentNHibernate.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/Iesi.Collections.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/NHibernate.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/Npgsql.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/Parser.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/Parser.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/Parser.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/Remotion.Linq.EagerFetching.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/Remotion.Linq.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/System.Configuration.ConfigurationManager.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/System.Net.Http.WinHttpHandler.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/System.Security.Permissions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/System.ServiceModel.Primitives.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/log4net.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/runtimes/unix/lib/netstandard2.0/System.Private.ServiceModel.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/runtimes/win/lib/netstandard2.0/System.Net.Http.WinHttpHandler.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/bin/Release/netcoreapp3.1/publish/runtimes/win7/lib/netstandard2.0/System.Private.ServiceModel.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/obj/Debug/netcoreapp3.1/Parser.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/obj/Debug/netcoreapp3.1/Parser.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/obj/Debug/netcoreapp3.1/Parser.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/obj/Debug/netcoreapp3.1/Parser.csproj.CopyComplete" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/obj/Debug/netcoreapp3.1/Parser.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/obj/Debug/netcoreapp3.1/Parser.csprojAssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/obj/Debug/netcoreapp3.1/Parser.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/obj/Debug/netcoreapp3.1/Parser.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/obj/Parser.csproj.nuget.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/obj/Parser.csproj.nuget.dgspec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/obj/Parser.csproj.nuget.g.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/obj/Parser.csproj.nuget.g.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/obj/Release/netcoreapp3.1/Parser.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/obj/Release/netcoreapp3.1/Parser.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/obj/Release/netcoreapp3.1/Parser.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/obj/Release/netcoreapp3.1/Parser.csproj.CopyComplete" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/obj/Release/netcoreapp3.1/Parser.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/obj/Release/netcoreapp3.1/Parser.csprojAssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/obj/Release/netcoreapp3.1/Parser.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/obj/Release/netcoreapp3.1/Parser.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/obj/project.assets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parser/obj/project.packagespec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/Core.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/DB.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/DB.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/UnitTests.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/UnitTests.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/UnitTests.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/Antlr3.Runtime.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/Core.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/DB.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/DB.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/FluentNHibernate.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/Iesi.Collections.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/Microsoft.Bcl.AsyncInterfaces.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/NHibernate.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/Npgsql.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/Remotion.Linq.EagerFetching.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/Remotion.Linq.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.AppContext.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Buffers.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Collections.Concurrent.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Collections.Immutable.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Collections.NonGeneric.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Configuration.ConfigurationManager.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Diagnostics.DiagnosticSource.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Diagnostics.StackTrace.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.IO.FileSystem.Primitives.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Linq.Expressions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Linq.Queryable.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Linq.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Memory.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Net.Http.WinHttpHandler.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Net.WebHeaderCollection.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Numerics.Vectors.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.ObjectModel.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Reflection.DispatchProxy.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Reflection.Emit.ILGeneration.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Reflection.Emit.Lightweight.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Reflection.Emit.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Reflection.Metadata.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Reflection.TypeExtensions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Runtime.CompilerServices.Unsafe.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Runtime.Numerics.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Runtime.Serialization.Formatters.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Runtime.Serialization.Primitives.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Security.AccessControl.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Security.Cryptography.OpenSsl.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Security.Cryptography.Primitives.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Security.Permissions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Security.Principal.Windows.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.ServiceModel.Primitives.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Text.Encodings.Web.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Text.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Text.RegularExpressions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Threading.Tasks.Extensions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Threading.Thread.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Threading.ThreadPool.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Threading.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Xml.ReaderWriter.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/System.Xml.XmlDocument.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/UnitTests.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/UnitTests.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/UnitTests.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/log4net.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/obj/Debug/netstandard2.0/UnitTests.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/obj/Debug/netstandard2.0/UnitTests.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/obj/Debug/netstandard2.0/UnitTests.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/obj/Debug/netstandard2.0/UnitTests.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/obj/Debug/netstandard2.0/UnitTests.csprojAssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/obj/Release/netstandard2.0/UnitTests.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/obj/Release/netstandard2.0/UnitTests.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/obj/Release/netstandard2.0/UnitTests.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/obj/Release/netstandard2.0/UnitTests.csproj.CopyComplete" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/obj/Release/netstandard2.0/UnitTests.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/obj/Release/netstandard2.0/UnitTests.csprojAssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/obj/Release/netstandard2.0/UnitTests.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/obj/Release/netstandard2.0/UnitTests.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/obj/UnitTests.csproj.nuget.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/obj/UnitTests.csproj.nuget.dgspec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/obj/UnitTests.csproj.nuget.g.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/obj/UnitTests.csproj.nuget.g.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/obj/project.assets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitTests/obj/project.packagespec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/App_Start/BundleConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/App_Start/FilterConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/App_Start/RouteConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Content/Site.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Content/bootstrap-theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Content/bootstrap-theme.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Content/bootstrap-theme.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Content/bootstrap-theme.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Content/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Content/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Content/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Content/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Controllers/HomeController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Global.asax" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Global.asax.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Scripts/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Scripts/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Scripts/jquery-3.3.1.intellisense.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Scripts/jquery-3.3.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Scripts/jquery-3.3.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Scripts/jquery-3.3.1.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Scripts/jquery-3.3.1.slim.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Scripts/jquery-3.3.1.slim.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Scripts/jquery-3.3.1.slim.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Scripts/jquery.validate-vsdoc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Scripts/jquery.validate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Scripts/jquery.validate.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Scripts/jquery.validate.unobtrusive.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Scripts/jquery.validate.unobtrusive.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Scripts/modernizr-2.8.3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Views/Home/About.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Views/Home/Contact.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Views/Home/Index.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Views/Shared/Error.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Views/Web.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Views/_ViewStart.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Web.Debug.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Web.Release.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Web.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/WebApplication1.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/bin/Antlr3.Runtime.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/bin/Antlr3.Runtime.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/bin/Microsoft.Web.Infrastructure.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/bin/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/bin/Newtonsoft.Json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/bin/System.Web.Helpers.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/bin/System.Web.Helpers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/bin/System.Web.Mvc.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/bin/System.Web.Mvc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/bin/System.Web.Optimization.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/bin/System.Web.Razor.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/bin/System.Web.Razor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/bin/System.Web.WebPages.Deployment.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/bin/System.Web.WebPages.Deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/bin/System.Web.WebPages.Razor.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/bin/System.Web.WebPages.Razor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/bin/System.Web.WebPages.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/bin/System.Web.WebPages.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/bin/WebApplication1.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/bin/WebApplication1.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/bin/WebGrease.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/obj/Debug/WebApplication1.csproj.CopyComplete" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/obj/Debug/WebApplication1.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/obj/Debug/WebApplication1.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/obj/Debug/WebApplication1.csprojAssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/obj/Debug/WebApplication1.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/obj/Debug/WebApplication1.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/packages.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/Controllers/FooController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/Controllers/WeatherForecastController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/Model/DataBaseConnection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/Model/ShoppingListEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/Startup.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/WeatherForecast.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/WebApplication2.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/Antlr3.Runtime.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/Core.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/DB.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/DB.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/FluentNHibernate.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/Iesi.Collections.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.JsonWebTokens.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Logging.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Tokens.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/NHibernate.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/Npgsql.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/Parser.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/Parser.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/Remotion.Linq.EagerFetching.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/Remotion.Linq.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/System.Configuration.ConfigurationManager.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/System.IdentityModel.Tokens.Jwt.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/System.Net.Http.WinHttpHandler.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/System.ServiceModel.Primitives.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/WebApplication2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/WebApplication2.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/WebApplication2.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/WebApplication2.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/WebApplication2.runtimeconfig.dev.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/WebApplication2.runtimeconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/log4net.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netstandard2.0/System.Private.ServiceModel.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Net.Http.WinHttpHandler.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/runtimes/win7/lib/netstandard2.0/System.Private.ServiceModel.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/Antlr3.Runtime.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/Core.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/DB.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/DB.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/FluentNHibernate.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/Iesi.Collections.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/Microsoft.IdentityModel.JsonWebTokens.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/Microsoft.IdentityModel.Logging.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/Microsoft.IdentityModel.Tokens.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/NHibernate.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/Npgsql.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/Parser.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/Parser.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/Remotion.Linq.EagerFetching.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/Remotion.Linq.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/System.Configuration.ConfigurationManager.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/System.IdentityModel.Tokens.Jwt.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/System.Net.Http.WinHttpHandler.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/System.ServiceModel.Primitives.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/WebApplication2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/WebApplication2.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/WebApplication2.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/WebApplication2.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/WebApplication2.runtimeconfig.dev.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/WebApplication2.runtimeconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/log4net.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/Antlr3.Runtime.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/Core.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/DB.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/DB.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/FluentNHibernate.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/Iesi.Collections.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/Microsoft.IdentityModel.JsonWebTokens.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/Microsoft.IdentityModel.Logging.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/Microsoft.IdentityModel.Tokens.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/NHibernate.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/Npgsql.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/Parser.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/Parser.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/Remotion.Linq.EagerFetching.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/Remotion.Linq.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/System.Configuration.ConfigurationManager.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/System.IdentityModel.Tokens.Jwt.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/System.Net.Http.WinHttpHandler.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/System.ServiceModel.Primitives.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/WebApplication2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/WebApplication2.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/WebApplication2.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/WebApplication2.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/WebApplication2.runtimeconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/log4net.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/runtimes/unix/lib/netstandard2.0/System.Private.ServiceModel.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/runtimes/win/lib/netstandard2.0/System.Net.Http.WinHttpHandler.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/runtimes/win7/lib/netstandard2.0/System.Private.ServiceModel.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/publish/web.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/runtimes/unix/lib/netstandard2.0/System.Private.ServiceModel.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Net.Http.WinHttpHandler.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/bin/Release/netcoreapp3.1/runtimes/win7/lib/netstandard2.0/System.Private.ServiceModel.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Debug/netcoreapp3.1/WebApplication2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Debug/netcoreapp3.1/WebApplication2.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Debug/netcoreapp3.1/WebApplication2.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Debug/netcoreapp3.1/WebApplication2.MvcApplicationPartsAssemblyInfo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Debug/netcoreapp3.1/WebApplication2.RazorTargetAssemblyInfo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Debug/netcoreapp3.1/WebApplication2.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Debug/netcoreapp3.1/WebApplication2.csproj.CopyComplete" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Debug/netcoreapp3.1/WebApplication2.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Debug/netcoreapp3.1/WebApplication2.csprojAssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Debug/netcoreapp3.1/WebApplication2.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Debug/netcoreapp3.1/WebApplication2.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Debug/netcoreapp3.1/staticwebassets/WebApplication2.StaticWebAssets.Manifest.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Debug/netcoreapp3.1/staticwebassets/WebApplication2.StaticWebAssets.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Release/netcoreapp3.1/WebApplication2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Release/netcoreapp3.1/WebApplication2.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Release/netcoreapp3.1/WebApplication2.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Release/netcoreapp3.1/WebApplication2.MvcApplicationPartsAssemblyInfo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Release/netcoreapp3.1/WebApplication2.RazorTargetAssemblyInfo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Release/netcoreapp3.1/WebApplication2.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Release/netcoreapp3.1/WebApplication2.csproj.CopyComplete" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Release/netcoreapp3.1/WebApplication2.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Release/netcoreapp3.1/WebApplication2.csprojAssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Release/netcoreapp3.1/WebApplication2.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Release/netcoreapp3.1/WebApplication2.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Release/netcoreapp3.1/staticwebassets/WebApplication2.StaticWebAssets.Manifest.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/Release/netcoreapp3.1/staticwebassets/WebApplication2.StaticWebAssets.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/WebApplication2.csproj.nuget.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/WebApplication2.csproj.nuget.dgspec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/WebApplication2.csproj.nuget.g.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/WebApplication2.csproj.nuget.g.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/project.assets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication2/obj/project.packagespec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Antlr.3.5.0.2/.signature.p7s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Antlr.3.5.0.2/Antlr.3.5.0.2.nupkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Antlr.3.5.0.2/lib/Antlr3.Runtime.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Antlr.3.5.0.2/lib/Antlr3.Runtime.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.Mvc.5.2.7/.signature.p7s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.Mvc.5.2.7/Content/Web.config.install.xdt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.Mvc.5.2.7/Content/Web.config.uninstall.xdt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.Mvc.5.2.7/Microsoft.AspNet.Mvc.5.2.7.nupkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.Mvc.5.2.7/lib/net45/System.Web.Mvc.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.Mvc.5.2.7/lib/net45/System.Web.Mvc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.Razor.3.2.7/.signature.p7s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.Razor.3.2.7/Microsoft.AspNet.Razor.3.2.7.nupkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.Razor.3.2.7/lib/net45/System.Web.Razor.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.Razor.3.2.7/lib/net45/System.Web.Razor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.Web.Optimization.1.1.3/.signature.p7s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.Web.Optimization.1.1.3/Microsoft.AspNet.Web.Optimization.1.1.3.nupkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.Web.Optimization.1.1.3/lib/net40/System.Web.Optimization.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.Web.Optimization.1.1.3/lib/net40/system.web.optimization.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.WebPages.3.2.7/.signature.p7s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.WebPages.3.2.7/Content/Web.config.install.xdt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.WebPages.3.2.7/Content/Web.config.uninstall.xdt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.WebPages.3.2.7/Microsoft.AspNet.WebPages.3.2.7.nupkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.WebPages.3.2.7/lib/net45/System.Web.Helpers.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.WebPages.3.2.7/lib/net45/System.Web.Helpers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.WebPages.3.2.7/lib/net45/System.Web.WebPages.Deployment.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.WebPages.3.2.7/lib/net45/System.Web.WebPages.Deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.WebPages.3.2.7/lib/net45/System.Web.WebPages.Razor.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.WebPages.3.2.7/lib/net45/System.Web.WebPages.Razor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.WebPages.3.2.7/lib/net45/System.Web.WebPages.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.AspNet.WebPages.3.2.7/lib/net45/System.Web.WebPages.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/.signature.p7s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0.nupkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/build/net45/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.Extensions.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/build/net45/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/build/net46/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.Extensions.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/build/net46/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/content/net45/app.config.install.xdt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/content/net45/app.config.uninstall.xdt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/content/net45/web.config.install.xdt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/content/net45/web.config.uninstall.xdt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/content/net46/app.config.install.xdt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/content/net46/app.config.uninstall.xdt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/content/net46/web.config.install.xdt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/content/net46/web.config.uninstall.xdt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/lib/net45/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/lib/net45/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/Microsoft.Build.Tasks.CodeAnalysis.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/Microsoft.CSharp.Core.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/Microsoft.CodeAnalysis.CSharp.Scripting.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/Microsoft.CodeAnalysis.CSharp.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/Microsoft.CodeAnalysis.Scripting.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/Microsoft.CodeAnalysis.VisualBasic.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/Microsoft.CodeAnalysis.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/Microsoft.DiaSymReader.Native.amd64.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/Microsoft.DiaSymReader.Native.x86.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/Microsoft.VisualBasic.Core.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/System.AppContext.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/System.Collections.Immutable.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/System.Diagnostics.StackTrace.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/System.IO.FileSystem.Primitives.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/System.IO.FileSystem.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/System.Reflection.Metadata.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/VBCSCompiler.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/VBCSCompiler.exe.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/csc.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/csc.exe.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/csc.rsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/csi.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/csi.rsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/vbc.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/vbc.exe.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/Roslyn45/vbc.rsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/Microsoft.Build.Tasks.CodeAnalysis.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/Microsoft.CSharp.Core.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/Microsoft.CodeAnalysis.CSharp.Scripting.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/Microsoft.CodeAnalysis.CSharp.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/Microsoft.CodeAnalysis.Scripting.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/Microsoft.CodeAnalysis.VisualBasic.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/Microsoft.CodeAnalysis.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/Microsoft.DiaSymReader.Native.amd64.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/Microsoft.DiaSymReader.Native.x86.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/Microsoft.Managed.Core.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/Microsoft.VisualBasic.Core.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.AppContext.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.Collections.Immutable.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.Console.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.Diagnostics.FileVersionInfo.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.Diagnostics.StackTrace.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.IO.Compression.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.IO.FileSystem.Primitives.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.IO.FileSystem.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.IO.Pipes.AccessControl.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.IO.Pipes.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.Reflection.Metadata.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.Security.AccessControl.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.Security.Claims.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.Security.Cryptography.Algorithms.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.Security.Cryptography.Encoding.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.Security.Cryptography.Primitives.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.Security.Cryptography.X509Certificates.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.Security.Principal.Windows.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.Text.Encoding.CodePages.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.ValueTuple.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.Xml.ReaderWriter.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.Xml.XPath.XDocument.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.Xml.XPath.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/System.Xml.XmlDocument.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/VBCSCompiler.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/VBCSCompiler.exe.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/csc.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/csc.exe.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/csc.rsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/csi.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/csi.exe.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/csi.rsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/vbc.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/vbc.exe.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/RoslynLatest/vbc.rsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/net45/install.ps1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0/tools/net45/uninstall.ps1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.Web.Infrastructure.1.0.0.0/.signature.p7s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.Web.Infrastructure.1.0.0.0/Microsoft.Web.Infrastructure.1.0.0.0.nupkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.Web.Infrastructure.1.0.0.0/lib/net40/Microsoft.Web.Infrastructure.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.jQuery.Unobtrusive.Validation.3.2.11/.signature.p7s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.jQuery.Unobtrusive.Validation.3.2.11/Content/Scripts/jquery.validate.unobtrusive.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.jQuery.Unobtrusive.Validation.3.2.11/Content/Scripts/jquery.validate.unobtrusive.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Microsoft.jQuery.Unobtrusive.Validation.3.2.11/Microsoft.jQuery.Unobtrusive.Validation.3.2.11.nupkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Modernizr.2.8.3/.signature.p7s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Modernizr.2.8.3/Content/Scripts/modernizr-2.8.3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Modernizr.2.8.3/Modernizr.2.8.3.nupkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Modernizr.2.8.3/Tools/common.ps1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Modernizr.2.8.3/Tools/install.ps1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Modernizr.2.8.3/Tools/uninstall.ps1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Newtonsoft.Json.11.0.1/.signature.p7s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Newtonsoft.Json.11.0.1/LICENSE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Newtonsoft.Json.11.0.1/Newtonsoft.Json.11.0.1.nupkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Newtonsoft.Json.11.0.1/lib/net20/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Newtonsoft.Json.11.0.1/lib/net20/Newtonsoft.Json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Newtonsoft.Json.11.0.1/lib/net35/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Newtonsoft.Json.11.0.1/lib/net35/Newtonsoft.Json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Newtonsoft.Json.11.0.1/lib/net40/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Newtonsoft.Json.11.0.1/lib/net40/Newtonsoft.Json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Newtonsoft.Json.11.0.1/lib/net45/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Newtonsoft.Json.11.0.1/lib/net45/Newtonsoft.Json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Newtonsoft.Json.11.0.1/lib/netstandard1.0/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Newtonsoft.Json.11.0.1/lib/netstandard1.0/Newtonsoft.Json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Newtonsoft.Json.11.0.1/lib/netstandard1.3/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Newtonsoft.Json.11.0.1/lib/netstandard1.3/Newtonsoft.Json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Newtonsoft.Json.11.0.1/lib/netstandard2.0/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Newtonsoft.Json.11.0.1/lib/netstandard2.0/Newtonsoft.Json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Newtonsoft.Json.11.0.1/lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Newtonsoft.Json.11.0.1/lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Newtonsoft.Json.11.0.1/lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/Newtonsoft.Json.11.0.1/lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/WebGrease.1.6.0/.signature.p7s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/WebGrease.1.6.0/WebGrease.1.6.0.nupkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/WebGrease.1.6.0/lib/WebGrease.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/WebGrease.1.6.0/tools/WG.EXE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/.signature.p7s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/bootstrap.3.4.1.nupkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/content/Content/bootstrap-theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/content/Content/bootstrap-theme.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/content/Content/bootstrap-theme.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/content/Content/bootstrap-theme.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/content/Content/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/content/Content/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/content/Content/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/content/Content/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/content/Scripts/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/content/Scripts/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/content/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/content/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/content/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/content/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/content/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/contentFiles/Content/bootstrap-theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/contentFiles/Content/bootstrap-theme.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/contentFiles/Content/bootstrap-theme.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/contentFiles/Content/bootstrap-theme.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/contentFiles/Content/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/contentFiles/Content/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/contentFiles/Content/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/contentFiles/Content/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/contentFiles/Scripts/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/contentFiles/Scripts/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/contentFiles/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/contentFiles/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/contentFiles/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/contentFiles/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/contentFiles/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/jQuery.3.3.1/.signature.p7s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/jQuery.3.3.1/Content/Scripts/jquery-3.3.1-vsdoc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/jQuery.3.3.1/Content/Scripts/jquery-3.3.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/jQuery.3.3.1/Content/Scripts/jquery-3.3.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/jQuery.3.3.1/Content/Scripts/jquery-3.3.1.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/jQuery.3.3.1/Content/Scripts/jquery-3.3.1.slim.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/jQuery.3.3.1/Content/Scripts/jquery-3.3.1.slim.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/jQuery.3.3.1/Content/Scripts/jquery-3.3.1.slim.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/jQuery.3.3.1/Tools/common.ps1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/jQuery.3.3.1/Tools/install.ps1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/jQuery.3.3.1/Tools/jquery-3.3.1.intellisense.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/jQuery.3.3.1/Tools/uninstall.ps1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/jQuery.3.3.1/jQuery.3.3.1.nupkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/jQuery.Validation.1.17.0/.signature.p7s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/jQuery.Validation.1.17.0/Content/Scripts/jquery.validate-vsdoc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/jQuery.Validation.1.17.0/Content/Scripts/jquery.validate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/jQuery.Validation.1.17.0/Content/Scripts/jquery.validate.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/jQuery.Validation.1.17.0/jQuery.Validation.1.17.0.nupkg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/AuthIdentity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/AuthIdentity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Context/DBContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Context/DBContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Context/IKPCContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Context/IKPCContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Context/StaticContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Context/StaticContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Core.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Fluent/Menus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Fluent/Menus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Fluent/ShoppingLists.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Fluent/ShoppingLists.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Ingredients/IngredientAggregation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Ingredients/IngredientAggregation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Modeler/RatingBinding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Modeler/RatingBinding.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Modeler/RatingGraph.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Modeler/RatingGraph.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Properties/AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Provisioning/DTO/Favorites.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Provisioning/DTO/Favorites.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Provisioning/DTO/Menus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Provisioning/DTO/Menus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Provisioning/DTO/QueuedRecipes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Provisioning/DTO/QueuedRecipes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Provisioning/DTO/RecipeRatings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Provisioning/DTO/RecipeRatings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Provisioning/DTO/ShoppingListItems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Provisioning/DTO/ShoppingListItems.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Provisioning/DTO/ShoppingLists.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Provisioning/DTO/ShoppingLists.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/ShoppingLists/IShoppingListSource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/ShoppingLists/IShoppingListSource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/ShoppingLists/ShoppingList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/ShoppingLists/ShoppingList.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/packages.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/DB.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DB/DB.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/DatabaseAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DB/DatabaseAdapter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/DatabaseExporter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DB/DatabaseExporter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/Models/Favorites.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DB/Models/Favorites.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/Models/Menus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DB/Models/Menus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/Models/QueuedRecipes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DB/Models/QueuedRecipes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/Models/RecipeRatings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DB/Models/RecipeRatings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/Models/ShoppingListItems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DB/Models/ShoppingListItems.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/Models/ShoppingLists.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DB/Models/ShoppingLists.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/Properties/AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/packages.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KitchenPC.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SampleData/KPCData.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication2/Resources/KPCData.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnitTests/Mock/MockContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTests/Mock/MockContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnitTests/Mock/MockModelerDBLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTests/Mock/MockModelerDBLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnitTests/Properties/AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication1/Properties/AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnitTests/UnitTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTests/UnitTests.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnitTests/packages.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/FluentNHibernate.2.0.3.0/FluentNHibernate.2.0.3.0.nupkg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/FluentNHibernate.2.0.3.0/FluentNHibernate.2.0.3.0.nuspec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/FluentNHibernate.2.0.3.0/lib/net40/FluentNHibernate.XML" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/FluentNHibernate.2.0.3.0/lib/net40/FluentNHibernate.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/FluentNHibernate.2.0.3.0/lib/net40/FluentNHibernate.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/Iesi.Collections.4.0.1.4000/Iesi.Collections.4.0.1.4000.nupkg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/Iesi.Collections.4.0.1.4000/Iesi.Collections.4.0.1.4000.nuspec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/Iesi.Collections.4.0.1.4000/lib/net40/Iesi.Collections.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/Iesi.Collections.4.0.1.4000/lib/net40/Iesi.Collections.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NHibernate.4.0.4.4000/ConfigurationTemplates/FireBird.cfg.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NHibernate.4.0.4.4000/ConfigurationTemplates/MSSQL.cfg.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NHibernate.4.0.4.4000/ConfigurationTemplates/MySql.cfg.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NHibernate.4.0.4.4000/ConfigurationTemplates/Oracle.cfg.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NHibernate.4.0.4.4000/ConfigurationTemplates/PostgreSQL.cfg.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NHibernate.4.0.4.4000/ConfigurationTemplates/SQLite.cfg.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NHibernate.4.0.4.4000/ConfigurationTemplates/SybaseASE.cfg.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NHibernate.4.0.4.4000/ConfigurationTemplates/SybaseSQLAnywhere.cfg.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NHibernate.4.0.4.4000/NHibernate.4.0.4.4000.nupkg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NHibernate.4.0.4.4000/NHibernate.4.0.4.4000.nuspec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NHibernate.4.0.4.4000/NHibernate.license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NHibernate.4.0.4.4000/NHibernate.readme.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NHibernate.4.0.4.4000/NHibernate.releasenotes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NHibernate.4.0.4.4000/lib/net40/NHibernate.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NHibernate.4.0.4.4000/lib/net40/NHibernate.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NHibernate.4.0.4.4000/nhibernate-configuration.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NHibernate.4.0.4.4000/nhibernate-mapping.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NUnit.3.4.1/CHANGES.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NUnit.3.4.1/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/packages/bootstrap.3.4.1/LICENSE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NUnit.3.4.1/NOTICES.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NUnit.3.4.1/NUnit.3.4.1.nupkg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NUnit.3.4.1/NUnit.3.4.1.nuspec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NUnit.3.4.1/lib/dotnet/nunit.framework.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NUnit.3.4.1/lib/dotnet/nunit.framework.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NUnit.3.4.1/lib/net20/NUnit.System.Linq.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NUnit.3.4.1/lib/net20/nunit.framework.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NUnit.3.4.1/lib/net20/nunit.framework.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NUnit.3.4.1/lib/net35/nunit.framework.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NUnit.3.4.1/lib/net35/nunit.framework.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NUnit.3.4.1/lib/net40/nunit.framework.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NUnit.3.4.1/lib/net40/nunit.framework.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NUnit.3.4.1/lib/net45/nunit.framework.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTests/bin/Release/netstandard2.0/publish/nunit.framework.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NUnit.3.4.1/lib/net45/nunit.framework.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NUnit.3.4.1/lib/portable-net45+win8+wp8+wpa81+Xamarin.Mac+MonoAndroid10+MonoTouch10+Xamarin.iOS10/nunit.framework.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/NUnit.3.4.1/lib/portable-net45+win8+wp8+wpa81+Xamarin.Mac+MonoAndroid10+MonoTouch10+Xamarin.iOS10/nunit.framework.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/Npgsql.3.1.7/Npgsql.3.1.7.nupkg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/Npgsql.3.1.7/Npgsql.3.1.7.nuspec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/Npgsql.3.1.7/lib/net45/Npgsql.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/Npgsql.3.1.7/lib/net45/Npgsql.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/Npgsql.3.1.7/lib/net451/Npgsql.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/Npgsql.3.1.7/lib/net451/Npgsql.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/Npgsql.3.1.7/lib/netstandard1.3/Npgsql.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/Npgsql.3.1.7/lib/netstandard1.3/Npgsql.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/log4net.2.0.5/lib/net10-full/log4net.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/log4net.2.0.5/lib/net10-full/log4net.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/log4net.2.0.5/lib/net11-full/log4net.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/log4net.2.0.5/lib/net11-full/log4net.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/log4net.2.0.5/lib/net20-full/log4net.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/log4net.2.0.5/lib/net20-full/log4net.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/log4net.2.0.5/lib/net35-client/log4net.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/log4net.2.0.5/lib/net35-client/log4net.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/log4net.2.0.5/lib/net35-full/log4net.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/log4net.2.0.5/lib/net35-full/log4net.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/log4net.2.0.5/lib/net40-client/log4net.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/log4net.2.0.5/lib/net40-client/log4net.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/log4net.2.0.5/lib/net40-full/log4net.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/log4net.2.0.5/lib/net40-full/log4net.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/log4net.2.0.5/lib/net45-full/log4net.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/log4net.2.0.5/lib/net45-full/log4net.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/log4net.2.0.5/log4net.2.0.5.nupkg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/log4net.2.0.5/log4net.2.0.5.nuspec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/repositories.config" beforeDir="false" />
+    <list default="true" id="674ea0ac-cd0a-4896-a5e8-9055544a787e" name="Default Changelist" comment="add routes">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.KitchenPCCore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KitchenPCCore/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parser/Parser/ParseJson.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/Parser/ParseJson.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parser/bin/Debug/netcoreapp3.1/Parser.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/bin/Debug/netcoreapp3.1/Parser.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parser/bin/Debug/netcoreapp3.1/Parser.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/bin/Debug/netcoreapp3.1/Parser.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parser/obj/Debug/netcoreapp3.1/Parser.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/obj/Debug/netcoreapp3.1/Parser.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parser/obj/Debug/netcoreapp3.1/Parser.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/obj/Debug/netcoreapp3.1/Parser.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/Parser.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/Parser.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/Parser.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/Parser.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/WebApplication2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/WebApplication2.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/WebApplication2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication2/bin/Debug/netcoreapp3.1/WebApplication2.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication2/obj/Debug/netcoreapp3.1/WebApplication2.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication2/obj/Debug/netcoreapp3.1/WebApplication2.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication2/obj/Debug/netcoreapp3.1/WebApplication2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication2/obj/Debug/netcoreapp3.1/WebApplication2.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication2/obj/Debug/netcoreapp3.1/WebApplication2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication2/obj/Debug/netcoreapp3.1/WebApplication2.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1271,7 +223,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/WebApplication2/Controllers/WeatherForecastController.cs" />
         <option value="$PROJECT_DIR$/Core/Recipes/RecipeResult.cs" />
         <option value="$PROJECT_DIR$/Parser/Resources/Edamam_recipes.json" />
         <option value="$PROJECT_DIR$/DB/DatabaseImporter.cs" />
@@ -1318,10 +269,11 @@
         <option value="$PROJECT_DIR$/ConsoleAppData/Program.cs" />
         <option value="$PROJECT_DIR$/WebApplication2/Dockerfile.xml" />
         <option value="$PROJECT_DIR$/WebApplication2/Properties/launchSettings.json" />
-        <option value="$PROJECT_DIR$/WebApplication2/Controllers/FooController.cs" />
         <option value="$PROJECT_DIR$/WebApplication2/Dockerfile" />
         <option value="$PROJECT_DIR$/WebApplication2/Program.cs" />
         <option value="$PROJECT_DIR$/DB/DatabaseAdapter.cs" />
+        <option value="$PROJECT_DIR$/WebApplication2/Controllers/FooController.cs" />
+        <option value="$PROJECT_DIR$/Parser/Parser/ParseJson.cs" />
       </list>
     </option>
   </component>
@@ -1510,8 +462,16 @@
       <workItem from="1581504186741" duration="904000" />
       <workItem from="1581514849822" duration="2219000" />
       <workItem from="1581519485451" duration="5053000" />
-      <workItem from="1581596515546" duration="631000" />
+      <workItem from="1581596515546" duration="2510000" />
     </task>
+    <task id="LOCAL-00001" summary="add routes">
+      <created>1581597259772</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1581597259772</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1529,6 +489,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add routes" />
+    <option name="LAST_COMMIT_MESSAGE" value="add routes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2743" y="310" width="922" height="818" key="#WebApplication1" timestamp="1579883811825">
@@ -1572,29 +536,29 @@
     </state>
     <state x="2930" y="420" width="530" height="598" key="FileChooserDialogImpl/75.322.1845.1046/1920.0.2560.1440@1920.0.2560.1440" timestamp="1581441688703" />
     <state x="3305" y="568" key="FileChooserDialogImpl/75.322.1845.1046/1920.0.2560.1440@75.322.1845.1046" timestamp="1581585061052" />
-    <state width="2514" height="398" key="GridCell.Tab.0.bottom" timestamp="1581597158018">
+    <state width="2514" height="398" key="GridCell.Tab.0.bottom" timestamp="1581599028673">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state width="1789" height="589" key="GridCell.Tab.0.bottom/0.288.1920.1080/1920.0.2560.1440@0.288.1920.1080" timestamp="1580385767034" />
-    <state width="2514" height="398" key="GridCell.Tab.0.bottom/75.322.1845.1046/1920.0.2560.1440@1920.0.2560.1440" timestamp="1581597158018" />
+    <state width="2514" height="398" key="GridCell.Tab.0.bottom/75.322.1845.1046/1920.0.2560.1440@1920.0.2560.1440" timestamp="1581599028673" />
     <state width="1799" height="271" key="GridCell.Tab.0.bottom/75.322.1845.1046/1920.0.2560.1440@75.322.1845.1046" timestamp="1581596611766" />
-    <state width="2514" height="398" key="GridCell.Tab.0.center" timestamp="1581597158018">
+    <state width="2514" height="398" key="GridCell.Tab.0.center" timestamp="1581599028673">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state width="1789" height="589" key="GridCell.Tab.0.center/0.288.1920.1080/1920.0.2560.1440@0.288.1920.1080" timestamp="1580385767033" />
-    <state width="2514" height="398" key="GridCell.Tab.0.center/75.322.1845.1046/1920.0.2560.1440@1920.0.2560.1440" timestamp="1581597158018" />
+    <state width="2514" height="398" key="GridCell.Tab.0.center/75.322.1845.1046/1920.0.2560.1440@1920.0.2560.1440" timestamp="1581599028673" />
     <state width="1799" height="271" key="GridCell.Tab.0.center/75.322.1845.1046/1920.0.2560.1440@75.322.1845.1046" timestamp="1581596611766" />
-    <state width="2514" height="398" key="GridCell.Tab.0.left" timestamp="1581597158018">
+    <state width="2514" height="398" key="GridCell.Tab.0.left" timestamp="1581599028673">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state width="1789" height="589" key="GridCell.Tab.0.left/0.288.1920.1080/1920.0.2560.1440@0.288.1920.1080" timestamp="1580385767033" />
-    <state width="2514" height="398" key="GridCell.Tab.0.left/75.322.1845.1046/1920.0.2560.1440@1920.0.2560.1440" timestamp="1581597158018" />
+    <state width="2514" height="398" key="GridCell.Tab.0.left/75.322.1845.1046/1920.0.2560.1440@1920.0.2560.1440" timestamp="1581599028673" />
     <state width="1799" height="271" key="GridCell.Tab.0.left/75.322.1845.1046/1920.0.2560.1440@75.322.1845.1046" timestamp="1581596611765" />
-    <state width="2514" height="398" key="GridCell.Tab.0.right" timestamp="1581597158018">
+    <state width="2514" height="398" key="GridCell.Tab.0.right" timestamp="1581599028673">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state width="1789" height="589" key="GridCell.Tab.0.right/0.288.1920.1080/1920.0.2560.1440@0.288.1920.1080" timestamp="1580385767034" />
-    <state width="2514" height="398" key="GridCell.Tab.0.right/75.322.1845.1046/1920.0.2560.1440@1920.0.2560.1440" timestamp="1581597158018" />
+    <state width="2514" height="398" key="GridCell.Tab.0.right/75.322.1845.1046/1920.0.2560.1440@1920.0.2560.1440" timestamp="1581599028673" />
     <state width="1799" height="271" key="GridCell.Tab.0.right/75.322.1845.1046/1920.0.2560.1440@75.322.1845.1046" timestamp="1581596611766" />
     <state width="2504" height="457" key="GridCell.Tab.1.bottom" timestamp="1581498232927">
       <screen x="1920" y="0" width="2560" height="1440" />
@@ -1684,6 +648,10 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2565" y="266" key="SettingsEditor/75.322.1845.1046/1920.0.2560.1440@1920.0.2560.1440" timestamp="1580230059176" />
+    <state x="2795" y="443" width="800" height="551" key="Vcs.Push.Dialog.v2" timestamp="1581599044414">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2795" y="443" width="800" height="551" key="Vcs.Push.Dialog.v2/75.322.1845.1046/1920.0.2560.1440@1920.0.2560.1440" timestamp="1581599044414" />
     <state x="2987" y="530" width="405" height="377" key="WebReference.SettingsDialog" timestamp="1579885970976">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
@@ -1749,13 +717,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/WebApplication2/Controllers/FooController.cs</url>
-          <line>112</line>
+          <line>94</line>
           <properties documentPath="$PROJECT_DIR$/WebApplication2/Controllers/FooController.cs" initialLine="105">
             <startOffsets>
-              <option value="4903" />
+              <option value="4293" />
             </startOffsets>
             <endOffsets>
-              <option value="4947" />
+              <option value="4337" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="121" />
