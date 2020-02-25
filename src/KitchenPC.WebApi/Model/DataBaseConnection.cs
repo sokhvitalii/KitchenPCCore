@@ -12,7 +12,7 @@ namespace KitchenPC.WebApi.Model
         public DataBaseConnection(AuthIdentity authIdentity)
         {
             var postgreConf = PostgreSQLConfiguration.PostgreSQL82
-                .ConnectionString(@"Server=localhost;Port=5432;User Id=pguser;Password=postgres;Database=KPCTest")
+                .ConnectionString(@"Server=localhost;Port=5432;User Id=postgres;Password=postgres;Database=postgres")
                 .ShowSql();
             
             Context = Configuration<DBContext>.Build
