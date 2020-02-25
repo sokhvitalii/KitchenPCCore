@@ -1,8 +1,0 @@
-/home/vitaliisokh/project/work/kitchenpc/test2/KitchenPCCore/Core/bin/Release/netstandard2.0/Core.deps.json
-/home/vitaliisokh/project/work/kitchenpc/test2/KitchenPCCore/Core/bin/Release/netstandard2.0/Core.dll
-/home/vitaliisokh/project/work/kitchenpc/test2/KitchenPCCore/Core/bin/Release/netstandard2.0/Core.pdb
-/home/vitaliisokh/project/work/kitchenpc/test2/KitchenPCCore/Core/obj/Release/netstandard2.0/Core.csprojAssemblyReference.cache
-/home/vitaliisokh/project/work/kitchenpc/test2/KitchenPCCore/Core/obj/Release/netstandard2.0/Core.AssemblyInfoInputs.cache
-/home/vitaliisokh/project/work/kitchenpc/test2/KitchenPCCore/Core/obj/Release/netstandard2.0/Core.AssemblyInfo.cs
-/home/vitaliisokh/project/work/kitchenpc/test2/KitchenPCCore/Core/obj/Release/netstandard2.0/Core.dll
-/home/vitaliisokh/project/work/kitchenpc/test2/KitchenPCCore/Core/obj/Release/netstandard2.0/Core.pdb

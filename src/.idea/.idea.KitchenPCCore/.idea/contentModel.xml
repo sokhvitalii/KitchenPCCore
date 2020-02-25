@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
+    <e p="$APPLICATION_CONFIG_DIR$/scratches" t="IncludeRecursive" />
     <e p="$USER_HOME$/.Rider2019.3/system/extResources" t="IncludeRecursive" />
     <e p="$USER_HOME$/.Rider2019.3/system/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_KitchenPCCore.89684150.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
@@ -238,6 +239,11 @@
         <e p="DatabaseExporter.cs" t="Include" />
         <e p="DatabaseImporter.cs" t="Include" />
         <e p="EnumMapper.cs" t="Include" />
+        <e p="Helper" t="Include">
+          <e p="GraphQlRequestBuilder.cs" t="Include" />
+          <e p="TagProccesHelper.cs" t="Include" />
+          <e p="TagTypeGraphQLResponse.cs" t="Include" />
+        </e>
         <e p="Models" t="Include">
           <e p="Favorites.cs" t="Include" />
           <e p="IngredientForms.cs" t="Include" />
@@ -277,15 +283,147 @@
           </e>
         </e>
       </e>
+      <e p="KitchenPC.WebApi" t="IncludeRecursive">
+        <e p="Controllers" t="Include">
+          <e p="HomeController.cs" t="Include" />
+          <e p="ParseFoodComControllers.cs" t="Include" />
+        </e>
+        <e p="Dockerfile" t="Include" />
+        <e p="KitchenPC.WebApi.csproj" t="IncludeRecursive" />
+        <e p="Model" t="Include">
+          <e p="DataBaseConnection.cs" t="Include" />
+          <e p="FoodComRequest.cs" t="Include" />
+          <e p="GraphQlRequestBuilder.cs" t="Include" />
+          <e p="ShoppingListEvent.cs" t="Include" />
+          <e p="TagGraphQlResponse.cs" t="Include" />
+          <e p="TagProccesHelper.cs" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Resources" t="Include">
+          <e p="KPCData.xml" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="KitchenPC.WebApi.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="published" t="Include">
+          <e p="Antlr3.Runtime.dll" t="Include" />
+          <e p="Core.dll" t="Include" />
+          <e p="Core.pdb" t="Include" />
+          <e p="DB.dll" t="Include" />
+          <e p="DB.pdb" t="Include" />
+          <e p="FluentNHibernate.dll" t="Include" />
+          <e p="HtmlAgilityPack.dll" t="Include" />
+          <e p="Iesi.Collections.dll" t="Include" />
+          <e p="KitchenPC.WebApi" t="Include" />
+          <e p="KitchenPC.WebApi.deps.json" t="Include" />
+          <e p="KitchenPC.WebApi.dll" t="Include" />
+          <e p="KitchenPC.WebApi.pdb" t="Include" />
+          <e p="KitchenPC.WebApi.runtimeconfig.json" t="Include" />
+          <e p="Microsoft.IdentityModel.JsonWebTokens.dll" t="Include" />
+          <e p="Microsoft.IdentityModel.Logging.dll" t="Include" />
+          <e p="Microsoft.IdentityModel.Tokens.dll" t="Include" />
+          <e p="NHibernate.dll" t="Include" />
+          <e p="Newtonsoft.Json.dll" t="Include" />
+          <e p="Npgsql.dll" t="Include" />
+          <e p="ParserConsole" t="Include" />
+          <e p="ParserConsole.dll" t="Include" />
+          <e p="ParserConsole.pdb" t="Include" />
+          <e p="ParserJson.dll" t="Include" />
+          <e p="ParserJson.pdb" t="Include" />
+          <e p="Remotion.Linq.EagerFetching.dll" t="Include" />
+          <e p="Remotion.Linq.dll" t="Include" />
+          <e p="System.Configuration.ConfigurationManager.dll" t="Include" />
+          <e p="System.IdentityModel.Tokens.Jwt.dll" t="Include" />
+          <e p="System.Net.Http.WinHttpHandler.dll" t="Include" />
+          <e p="System.Security.Cryptography.ProtectedData.dll" t="Include" />
+          <e p="System.ServiceModel.Primitives.dll" t="Include" />
+          <e p="appsettings.Development.json" t="Include" />
+          <e p="appsettings.json" t="Include" />
+          <e p="log4net.dll" t="Include" />
+          <e p="published" t="Include">
+            <e p="KitchenPC.WebApi.deps.json" t="Include" />
+            <e p="KitchenPC.WebApi.runtimeconfig.json" t="Include" />
+            <e p="appsettings.Development.json" t="Include" />
+            <e p="appsettings.json" t="Include" />
+            <e p="published" t="Include">
+              <e p="KitchenPC.WebApi.deps.json" t="Include" />
+              <e p="KitchenPC.WebApi.runtimeconfig.json" t="Include" />
+              <e p="appsettings.Development.json" t="Include" />
+              <e p="appsettings.json" t="Include" />
+              <e p="published" t="Include">
+                <e p="KitchenPC.WebApi.deps.json" t="Include" />
+                <e p="KitchenPC.WebApi.runtimeconfig.json" t="Include" />
+                <e p="appsettings.Development.json" t="Include" />
+                <e p="appsettings.json" t="Include" />
+                <e p="web.config" t="Include" />
+              </e>
+              <e p="web.config" t="Include" />
+            </e>
+            <e p="web.config" t="Include" />
+          </e>
+          <e p="runtimes" t="Include">
+            <e p="unix" t="Include">
+              <e p="lib" t="Include">
+                <e p="netstandard2.0" t="Include">
+                  <e p="System.Private.ServiceModel.dll" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="win" t="Include">
+              <e p="lib" t="Include">
+                <e p="netstandard2.0" t="Include">
+                  <e p="System.Net.Http.WinHttpHandler.dll" t="Include" />
+                  <e p="System.Security.Cryptography.ProtectedData.dll" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="win7" t="Include">
+              <e p="lib" t="Include">
+                <e p="netstandard2.0" t="Include">
+                  <e p="System.Private.ServiceModel.dll" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+          <e p="web.config" t="Include" />
+        </e>
+      </e>
       <e p="KitchenPCCore.sln" t="IncludeFlat" />
-      <e p="Parser" t="IncludeRecursive">
+      <e p="ParserConsole" t="IncludeRecursive">
+        <e p="Exceptions.cs" t="Include" />
+        <e p="ParserConsole.csproj" t="IncludeRecursive" />
+        <e p="ParserFactory.cs" t="Include" />
+        <e p="Parsers.cs" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="ParserConsole.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="vcv.html" t="Include" />
+      </e>
+      <e p="ParserJson" t="IncludeRecursive">
         <e p="Model" t="Include">
           <e p="RecipesFromJson.cs" t="Include" />
         </e>
         <e p="Parser" t="Include">
           <e p="ParseJson.cs" t="Include" />
         </e>
-        <e p="Parser.csproj" t="IncludeRecursive" />
+        <e p="ParserJson.csproj" t="IncludeRecursive" />
         <e p="Resources" t="Include">
           <e p="Edamam_recipes.json" t="Include" />
         </e>
@@ -293,7 +431,7 @@
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
-              <e p="Parser.AssemblyInfo.cs" t="Include" />
+              <e p="ParserJson.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
@@ -328,37 +466,6 @@
           <e p="Release" t="Include">
             <e p="netstandard2.0" t="Include">
               <e p="UnitTests.AssemblyInfo.cs" t="Include" />
-            </e>
-          </e>
-        </e>
-      </e>
-      <e p="WebApplication2" t="IncludeRecursive">
-        <e p="Controllers" t="Include">
-          <e p="FooController.cs" t="Include" />
-          <e p="WeatherForecastController.cs" t="Include" />
-        </e>
-        <e p="Dockerfile" t="Include" />
-        <e p="Model" t="Include">
-          <e p="DataBaseConnection.cs" t="Include" />
-          <e p="ShoppingListEvent.cs" t="Include" />
-        </e>
-        <e p="Program.cs" t="Include" />
-        <e p="Properties" t="Include">
-          <e p="launchSettings.json" t="Include" />
-        </e>
-        <e p="Resources" t="Include">
-          <e p="KPCData.xml" t="Include" />
-        </e>
-        <e p="Startup.cs" t="Include" />
-        <e p="WeatherForecast.cs" t="Include" />
-        <e p="WebApplication2.csproj" t="IncludeRecursive" />
-        <e p="appsettings.Development.json" t="Include" />
-        <e p="appsettings.json" t="Include" />
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
-            <e p="netcoreapp3.1" t="Include">
-              <e p="WebApplication2.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>

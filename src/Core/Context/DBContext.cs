@@ -577,7 +577,7 @@ namespace KitchenPC.Context
          var parsedIng = Parser.ParseAll(updates.Where(u => !String.IsNullOrWhiteSpace(u.NewRaw)).Select(r => r.NewRaw).ToArray()).ToList();
 
          var recipeAgg = AggregateRecipes(updates.Where(u => u.NewRecipe != null)
-            .Select(r => r.NewRecipe.Id).ToArray());
+            .Select(r => r.NewRecipe).ToArray());
 
          var ingAgg = updates.Where(u => u.NewIngredient != null)
             .Select(i => new IngredientAggregation(i.NewIngredient, null));

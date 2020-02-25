@@ -6,7 +6,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Parser\Parser.csproj" />
+      <ProjectReference Include="..\DB\DB.csproj" />
+      <ProjectReference Include="..\KitchenPC.WebApi\KitchenPC.WebApi.csproj" />
+      <ProjectReference Include="..\ParserJson\ParserJson.csproj" />
     </ItemGroup>
 
 </Project>

@@ -1,0 +1,8 @@
+/home/vitaliisokh/project/work/kitchenpc/core-master-git/src/ParserJson/bin/Debug/netcoreapp3.1/ParserJson.deps.json
+/home/vitaliisokh/project/work/kitchenpc/core-master-git/src/ParserJson/bin/Debug/netcoreapp3.1/ParserJson.dll
+/home/vitaliisokh/project/work/kitchenpc/core-master-git/src/ParserJson/bin/Debug/netcoreapp3.1/ParserJson.pdb
+/home/vitaliisokh/project/work/kitchenpc/core-master-git/src/ParserJson/obj/Debug/netcoreapp3.1/ParserJson.csprojAssemblyReference.cache
+/home/vitaliisokh/project/work/kitchenpc/core-master-git/src/ParserJson/obj/Debug/netcoreapp3.1/ParserJson.AssemblyInfoInputs.cache
+/home/vitaliisokh/project/work/kitchenpc/core-master-git/src/ParserJson/obj/Debug/netcoreapp3.1/ParserJson.AssemblyInfo.cs
+/home/vitaliisokh/project/work/kitchenpc/core-master-git/src/ParserJson/obj/Debug/netcoreapp3.1/ParserJson.dll
+/home/vitaliisokh/project/work/kitchenpc/core-master-git/src/ParserJson/obj/Debug/netcoreapp3.1/ParserJson.pdb

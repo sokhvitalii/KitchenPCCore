@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using FluentNHibernate.Conventions;
@@ -10,6 +11,7 @@ using KitchenPC.Context;
 using KitchenPC.Data;
 using KitchenPC.DB.Models;
 using KitchenPC.DB.Provisioning;
+using KitchenPC.Helper;
 using KitchenPC.Ingredients;
 using KitchenPC.Menus;
 using KitchenPC.Modeler;
@@ -33,6 +35,8 @@ namespace KitchenPC.DB
       Configuration nhConfig;
       readonly DatabaseAdapterBuilder builder;
 
+      private IQueryOver<ShoppingListItems> eeee;
+      private IList<ShoppingListItems> eeee2;
       public IPersistenceConfigurer DatabaseConfiguration { get; set; }
       public List<IConvention> DatabaseConventions { get; set; }
       public ISearchProvider SearchProvider { get; set; }
@@ -829,7 +833,16 @@ namespace KitchenPC.DB
             {
                loadDef = lists.Contains(ShoppingList.Default);
                var ids = lists.Where(l => l.Id.HasValue).Select(l => l.Id.Value).ToArray();
-               query = query.AndRestrictionOn(x => x.ShoppingListId).IsInG(ids);
+
+               if (ids.Length == 0)
+               {
+                  var idsPlan = lists.Where(l => l.PlanId != 0).Select(l => l.PlanId).ToArray();
+                  query = query.AndRestrictionOn(x => x.PlanId).IsInG(idsPlan);
+               }
+               else
+               {
+                  query = query.AndRestrictionOn(x => x.ShoppingListId).IsInG(ids);
+               }
             }
 
             var dbLists = query.List();
@@ -933,12 +946,13 @@ namespace KitchenPC.DB
                   var dbDeletes = session.QueryOver<ShoppingListItems>()
                      .Where(p => p.UserId == identity.UserId)
                      .Where(listId.HasValue
-                        ? Expression.Eq("ShoppingList", listId.Value)
+                        ? Expression.Eq("ShoppingList", KitchenPC.DB.Models.ShoppingLists.FromId(listId.Value))
                         : Expression.IsNull("ShoppingList")
                      ).AndRestrictionOn(p => p.ItemId).IsInG(toRemove)
                      .List();
 
                   dbDeletes.ForEach(session.Delete);
+                  transaction.Commit();
                }
 
                // Updates
@@ -968,84 +982,96 @@ namespace KitchenPC.DB
                      .List();
                }
 
-               toModify.ForEach(item =>
+               if (toModify.Any() || toAdd.Any())
                {
-                  var dbItem = dbItems.FirstOrDefault(i => i.ItemId == item.ModifiedItemId);
-                  if (dbItem == null) return;
 
-                  if (item.CrossOut.HasValue) dbItem.CrossedOut = item.CrossOut.Value;
-                  if (item.NewAmount != null) dbItem.Amount = item.NewAmount;
-               });
-
-               toAdd.ForEach(item =>
-               {
-                  var source = item.GetItem();
-
-                  if (source.Ingredient == null && !String.IsNullOrWhiteSpace(source.Raw)) // Raw shopping list item
+                  toModify.ForEach(item =>
                   {
-                     if (!dbItems.Any(i => source.Raw.Equals(i.Raw, StringComparison.OrdinalIgnoreCase))) // Add it
-                     {
-                        var newItem = new ShoppingListItems
-                        {
-                           ShoppingList = dbList,
-                           UserId = identity.UserId,
-                           Raw = source.Raw
-                        };
+                     var dbItem = dbItems.FirstOrDefault(i => i.ItemId == item.ModifiedItemId);
+                     if (dbItem == null) return;
 
-                        session.Save(newItem);
-                        dbItems.Add(newItem);
-                     }
+                     if (item.CrossOut.HasValue) dbItem.CrossedOut = item.CrossOut.Value;
+                     if (item.NewAmount != null) dbItem.Amount = item.NewAmount;
+                  });
 
-                     return;
-                  }
-
-                  if (source.Ingredient != null && source.Amount == null) // Raw ingredient without any amount
+                  toAdd.ForEach(item =>
                   {
-                     var existingItem = dbItems.FirstOrDefault(i => i.Ingredient != null && i.Ingredient.IngredientId == source.Ingredient.Id);
+                     var source = item.GetItem();
+                     var res = new Models.Recipes();
+                     res.RecipeId = source.Recipe?.Id ?? Guid.Empty;
 
-                     if (existingItem == null) // Add it
+                     if (source.Ingredient == null && !String.IsNullOrWhiteSpace(source.Raw)) // Raw shopping list item
                      {
-                        var newItem = new ShoppingListItems
+                        if (!dbItems.Any(i => source.Raw.Equals(i.Raw, StringComparison.OrdinalIgnoreCase))) // Add it
                         {
-                           ShoppingList = dbList,
-                           UserId = identity.UserId,
-                           Ingredient = Models.Ingredients.FromId(source.Ingredient.Id)
-                        };
+                           var newItem = new ShoppingListItems
+                           {
+                              ShoppingList = dbList,
+                              UserId = identity.UserId,
+                              Raw = source.Raw,
+                              Recipe = res
+                           };
 
-                        session.Save(newItem);
-                        dbItems.Add(newItem);
+                           session.Save(newItem);
+                           dbItems.Add(newItem);
+                        }
+
+                        return;
                      }
-                     else // Clear out existing amount
-                     {
-                        existingItem.Amount = null;
-                     }
-                  }
 
-                  if (source.Ingredient != null && source.Amount != null) // Ingredient with amount, aggregate if necessary
-                  {
-                     var existingItem = dbItems.FirstOrDefault(i => i.Ingredient != null && i.Ingredient.IngredientId == source.Ingredient.Id);
-
-                     if (existingItem == null) // Add it
+                     if (source.Ingredient != null && source.Amount == null) // Raw ingredient without any amount
                      {
-                        var newItem = new ShoppingListItems
+                        var existingItem = dbItems.FirstOrDefault(i =>
+                           i.Ingredient != null && i.Ingredient.IngredientId == source.Ingredient.Id);
+
+                        if (existingItem == null) // Add it
                         {
-                           ShoppingList = dbList,
-                           UserId = identity.UserId,
-                           Ingredient = Models.Ingredients.FromId(source.Ingredient.Id),
-                           Amount = source.Amount
-                        };
+                           var newItem = new ShoppingListItems
+                           {
+                              ShoppingList = dbList,
+                              UserId = identity.UserId,
+                              Ingredient = Models.Ingredients.FromId(source.Ingredient.Id),
+                              Recipe = res
+                           };
 
-                        session.Save(newItem);
-                        dbItems.Add(newItem);
+                           session.Save(newItem);
+                           dbItems.Add(newItem);
+                        }
+                        else // Clear out existing amount
+                        {
+                           existingItem.Amount = null;
+                        }
                      }
-                     else if (existingItem.Amount != null) // Add to total
+
+                     if (source.Ingredient != null && source.Amount != null
+                     ) // Ingredient with amount, aggregate if necessary
                      {
-                        existingItem.Amount += source.Amount;
-                     }
-                  }
-               });
+                        var existingItem = dbItems.FirstOrDefault(i =>
+                           i.Ingredient != null && i.Ingredient.IngredientId == source.Ingredient.Id);
 
-               transaction.Commit();
+                        if (existingItem == null) // Add it
+                        {
+                           var newItem = new ShoppingListItems
+                           {
+                              ShoppingList = dbList,
+                              UserId = identity.UserId,
+                              Ingredient = Models.Ingredients.FromId(source.Ingredient.Id),
+                              Amount = source.Amount,
+                              Recipe = res
+                           };
+
+                           session.Save(newItem);
+                           dbItems.Add(newItem);
+                        }
+                        else if (existingItem.Amount != null) // Add to total
+                        {
+                           existingItem.Amount += source.Amount;
+                        }
+                     }
+                  });
+
+                  transaction.Commit();
+               }
 
                return new ShoppingListResult
                {
@@ -1120,6 +1146,9 @@ namespace KitchenPC.DB
             importer.Import(store.ShoppingLists);
             importer.Import(store.ShoppingListItems);
          }
+         
+         TagProcessHelper tag = new TagProcessHelper();
+         tag.ImportTagToHasura(store);
 
          KPCContext.Log.DebugFormat("Done importing data from into DBContext.");
       }

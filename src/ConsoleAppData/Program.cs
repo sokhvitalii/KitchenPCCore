@@ -1,99 +1,110 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using ConsoleAppData.Helper;
-using FluentNHibernate.Cfg.Db;
-using KitchenPC;
-using KitchenPC.Context;
-using KitchenPC.Context.Fluent;
+using KitchenPC.Helper;
+using KitchenPC.Data;
 using KitchenPC.Data.DTO;
-using KitchenPC.DB;
-using KitchenPC.DB.Provisioning;
-using KitchenPC.DB.Search;
-using KitchenPC.Ingredients;
-using KitchenPC.Recipes;
-using NHibernate.Criterion;
-using NHibernate.Mapping;
-using Parser.Model;
-using Parser.Parser;
+using KitchenPC.WebApi.Model;
 
 namespace ConsoleAppData
 {
+
+    
     class Program
     {
+
+        public static JsonSerializerOptions Options = new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            WriteIndented = true
+        };
+        
+        
         static void Main(string[] args)
         {
-           DataBaseHelper.SaveInitData();
-            var dbConfig = DataBaseHelper.DBConnector();
-            var objRecipes = new ParseJson();
-            var recipesFromJson = objRecipes.RecipesFromJson[1];
+             //DataBaseHelper.SaveInitData();
             
-     var recipes = dbConfig.Context.Recipes
-         .Load(Recipe.FromId(new Guid("96f00d3f-c6c9-49e4-8f5b-357b6b635e78")))
-         .Load(Recipe.FromId(new Guid("0ce9cc8f-ed2b-4ad2-936d-8fbe697ceaff")))
-         .WithMethod
-         .WithUserRating
-         .List();
 
-     /*
-     var created = dbConfig.Context.Recipes.Create
-         .WithImage(new Uri(recipesFromJson.Image))
-         .WithTitle(recipesFromJson.Label)
-         .WithCookTime(Convert.ToInt16(recipesFromJson.TotalTime))
-         .WithIngredients(x => setAdder(x, recipesFromJson, dbConfig.Context))
-         .WithTags(RecipeTag.Breakfast | RecipeTag.Dinner)
-         .WithMethod(recipesFromJson.Instructions);
-        
-     
-     var res = created.Commit().NewRecipe;
-*/
-            //var created2 = dbConfig.Context.ShoppingLists.Create.AddItems(imem => imem.AddRecipe(recipes[0])).Commit();
-            var foo = new ShoppingListAdder
-            {
-                Recipes = new List<Recipe>(recipes),
-                Ingredients = recipes.SelectMany(x => x.Ingredients.Select(j => j.Ingredient)).ToList(),
-                Usages = recipes.SelectMany(x => x.Ingredients).ToList()
-            };
+            var data =
+                "{\"event\": {\"session_variables\": {\"x-hasura-role\": \"admin\",\"x-hasura-user-id\": \"e\"},\"op\": \"INSERT\",\"data\": {\"new\": {\"recipe_id\": \"4140a462-216e-4573-b721-c5b74818a568\",\"meal\": \"dffffffffffffffff\",\"id\": 4,\"plan_id\": 2,\"servings\": \"2edasdrere\"}} }}";
 
-            var created2 = dbConfig.Context.ShoppingLists.Create.AddItems(foo).Commit();
-            Console.WriteLine("111111111111111111111111 = " + JsonSerializer.Serialize(objRecipes.RecipesFromJson, objRecipes.Options));
-        }
-        
-        public static IngredientAdder setAdder(IngredientAdder adder, RecipesFromJson js, DBContext context)
-        {
+            StringContent queryString = new StringContent(data, Encoding.UTF8, "application/json");
+
+            var bar = nameof(SessionVariables.HasuraUserId);
+
+
             
-            var ingredientDto = new List<Ingredients>();
             
-            foreach (var ingredient in js.Ingredients)
+            var list = new List<TagAndTagType>
             {
-                if (!ingredientDto.Any(x => x.DisplayName == ingredient.Food))
-               {
-                   var id = Guid.NewGuid();
-                   ingredientDto.Add(new Ingredients
-                   {
-                       IngredientId = id,
-                       ConversionType = (UnitType)Enum.Parse(typeof(Units), ingredient.Measure, true),
-                       UnitWeight = Convert.ToInt32(ingredient.Weight),
-                       DisplayName = ingredient.Food
-                   
-                   });
+                new TagAndTagType("333333e", "vvvvvv"),
+                new TagAndTagType("vetal33", "rrrrttttt"),
+                new TagAndTagType("vetal33", "vvvvvv"),
+                new TagAndTagType("333333e", "vvvvvv")
+            }.GroupBy(x => x.TagName);
+            
+            var recipeId = new Guid("f419a451-c11a-4e00-82ff-17d73cfbfe75");
 
-                   adder.AddIngredient(new Ingredient(id, ingredient.Food));
-               }
-             
-            }
 
-            if (context.Adapter is DatabaseAdapter databaseAdapter)
+            TagProcessHelper tagHelper = new TagProcessHelper();
+            
+            using (var client = new HttpClient())
             {
-                using (var importer = new DatabaseImporter(databaseAdapter.GetSession()))
+                /*client.BaseAddress = uri;
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.DefaultRequestHeaders.Add("x-hasura-admin-secret", "ADMIN_SECRET_KEY");*/
+                
+                foreach (var tagType in list)
                 {
-                    importer.Import(ingredientDto);
+                  
+                    var tagTypeResult = tagHelper.SendTagType(client, tagType);
+                    foreach (var tag in tagType)
+                    {
+                        var tagResult = tagHelper.SendTag(client, tag, tagTypeResult.Data.InsertTagType);
+                        tagHelper.SendRecipeTag(client, recipeId, tagResult.Data.InsertTag.Returning.First().id);
+                        
+                    }
+
                 }
             }
+            
+            
+            
+            
+            /*
+            StringBuilder builder = new StringBuilder();
+            foreach (char c in bar) {
+                if (Char.IsUpper(c) && builder.Length > 0) builder.Append(' ');
+                builder.Append(c);
+            }*/
+            
+            string[] SplitCamelCase(string source) {
+                return Regex.Split(source, @"(?<!^)(?=[A-Z])");
+            }
 
-            return adder;
+            var tt = SplitCamelCase(bar);
+
+            var yyy = tt.Skip(1);
+
+            var iii = string.Join("", yyy);
+            
+
+            /*
+            HttpResponseMessage response =
+                client2.PostAsync(new Uri("http://localhost:5001/ShoppingList"), queryString).Result;
+
+            string responseBody = response.Content.ReadAsStringAsync().Result;
+            */
+            
+            
+
+            Console.WriteLine("111111111111111111111111 = ");
         }
+
     }
 }

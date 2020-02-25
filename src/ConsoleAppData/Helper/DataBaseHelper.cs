@@ -28,7 +28,7 @@ namespace ConsoleAppData.Helper
         
         public static void SaveInitData()
         {
-            var path = "/home/vitaliisokh/project/work/kitchenpc/test2/KitchenPCCore/WebApplication2/Resources/";
+            var path = "/home/vitaliisokh/project/work/kitchenpc/core-master-git/src/KitchenPC.WebApi/Resources/";
             var staticConfig = Configuration<StaticContext>.Build
                 .Context(StaticContext.Configure
                     .DataDirectory(path)
@@ -38,7 +38,7 @@ namespace ConsoleAppData.Helper
             
             var dbConfig = DBConfiguration();
             
-            dbConfig.Context.InitializeStore();
+            dbConfig.Context.Initialize();
             
             staticConfig.Context.Initialize();
             dbConfig.Context.Import(staticConfig.Context);

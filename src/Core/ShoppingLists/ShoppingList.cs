@@ -32,7 +32,7 @@ namespace KitchenPC.ShoppingLists
          list = new List<ShoppingListItem>();
       }
 
-      public ShoppingList(Guid? id, int planId, String title) : this()
+      public ShoppingList(Guid? id, int planId, String title = null) : this()
       {
          this.Id = id;
          this.PlanId = planId;
