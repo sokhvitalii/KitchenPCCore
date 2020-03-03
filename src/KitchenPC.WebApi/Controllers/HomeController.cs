@@ -4,6 +4,7 @@ using System.Linq;
 using KitchenPC.Context;
 using Microsoft.AspNetCore.Mvc;
 using KitchenPC.Context.Fluent;
+using KitchenPC.Modeler;
 using KitchenPC.Recipes;
 using KitchenPC.ShoppingLists;
 using KitchenPC.WebApi.Model;
@@ -58,7 +59,7 @@ namespace KitchenPC.WebApi.Controllers
 
                 if (!sList.Any())
                 {
-                    context.ShoppingLists.Create.WithName(request.Event.Data.New.Planid.ToString())
+                    context.ShoppingLists.Create.WithName(request.Event.Data.New.Planid.ToString()).WithPlan(request.Event.Data.New.Planid)
                         .AddItems(CreateShoppingListAdder(context, request.Event.Data.New.Recipeid)).Commit();
                 }
                 else
