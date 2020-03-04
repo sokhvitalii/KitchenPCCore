@@ -15,7 +15,7 @@ namespace KitchenPC.Modeler
          if (usage.Amount != null)
          {
             var toUnit = Unit.GetDefaultUnitType(usage.Ingredient.ConversionType);
-            if (UnitConverter.CanConvert(usage.Form.FormUnitType, toUnit))
+            if (usage.Form != null && UnitConverter.CanConvert(usage.Form.FormUnitType, toUnit))
             {
                Amt = UnitConverter.Convert(usage.Amount, toUnit).SizeHigh; //Always take high amount for pantry items
             }

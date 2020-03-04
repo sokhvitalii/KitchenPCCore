@@ -30,11 +30,11 @@ namespace KPCServer.UnitTests
          };
       }
 
-      public Guid UserId
+      public string UserId
       {
          get
          {
-            return new Guid("ccb283de-c980-46a5-8fb4-1bb55398b8bb");
+            return "ccb283de-c980-46a5-8fb4-1bb55398b8bb";
          }
       } //This is a unique identifier for the user, and is not used by the engine
 

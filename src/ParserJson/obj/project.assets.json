@@ -20,7 +20,7 @@
       "outputPath": "/home/vitaliisokh/project/work/kitchenpc/core-master-git/src/ParserJson/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/vitaliisokh/.nuget/NuGet/NuGet.Config"
+        "/home/vitaliisokh/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"

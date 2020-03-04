@@ -18,7 +18,7 @@ namespace KitchenPC.Modeler
             {
                anonymous = new UserProfile
                {
-                  UserId = Guid.Empty,
+                  UserId = "",
                   Ratings = new RecipeRating[0],
                   FavoriteIngredients = new Guid[0],
                   FavoriteTags = RecipeTags.None,
@@ -30,7 +30,7 @@ namespace KitchenPC.Modeler
          }
       }
 
-      public Guid UserId { get; set; }
+      public string UserId { get; set; }
       public RecipeRating[] Ratings { get; set; }
       public PantryItem[] Pantry { get; set; }
       public Guid[] FavoriteIngredients { get; set; }

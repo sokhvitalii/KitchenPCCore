@@ -27,7 +27,7 @@ namespace ConsoleAppData
         
         static void Main(string[] args)
         {
-             //DataBaseHelper.SaveInitData();
+             DataBaseHelper.SaveInitData();
             
 
             var data =

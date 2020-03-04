@@ -46,7 +46,7 @@ namespace KitchenPC.Context.Fluent
 
    public class ProfileCreator
    {
-      Guid userid;
+      string userid;
       readonly IList<RecipeRating> ratings;
       readonly IList<PantryItem> pantry;
       readonly IList<Guid> favIngs;
@@ -63,7 +63,7 @@ namespace KitchenPC.Context.Fluent
          blacklistIng = new List<Guid>();
       }
 
-      public ProfileCreator WithUserId(Guid userid)
+      public ProfileCreator WithUserId(string userid)
       {
          this.userid = userid;
          return this;

@@ -42,6 +42,15 @@ namespace ConsoleAppData.Helper
             
             staticConfig.Context.Initialize();
             dbConfig.Context.Import(staticConfig.Context);
+        }    
+        
+        public static void InitTable()
+        {
+           
+            var dbConfig = DBConfiguration();
+            
+            dbConfig.Context.InitializeStore();
+            
         }
 
         public static IConfiguration<DBContext> DBConnector()

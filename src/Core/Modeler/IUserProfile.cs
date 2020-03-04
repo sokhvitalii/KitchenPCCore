@@ -9,7 +9,7 @@ namespace KitchenPC.Modeler
    /// </summary>
    public interface IUserProfile
    {
-      Guid UserId { get; } //DB User ID
+      string UserId { get; } //DB User ID
       RecipeRating[] Ratings { get; } //Every recipe ID user has rated with the rating
       PantryItem[] Pantry { get; } //Set of ingredients user has available with amounts
       Guid[] FavoriteIngredients { get; } //Ingredients to favor

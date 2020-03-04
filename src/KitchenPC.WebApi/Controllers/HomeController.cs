@@ -4,7 +4,6 @@ using System.Linq;
 using KitchenPC.Context;
 using Microsoft.AspNetCore.Mvc;
 using KitchenPC.Context.Fluent;
-using KitchenPC.Modeler;
 using KitchenPC.Recipes;
 using KitchenPC.ShoppingLists;
 using KitchenPC.WebApi.Model;
@@ -26,14 +25,56 @@ namespace KitchenPC.WebApi.Controllers
     [Route("[controller]")]
     public class ShoppingListController : ControllerBase
     {
-        private ShoppingListAdder CreateShoppingListAdder(DBContext cont, Guid id)
+        private ShoppingListAdder CreateShoppingListAdder(DBContext cont, ShoppingListEntity res)
         {
+
+            var recipes = cont.Recipes.Load(Recipe.FromId(res.Data.New.Recipeid)).WithMethod.WithUserRating.List();
+
+            if (res.Data.New.Servings != 0)
+            {
+                foreach (var r in recipes)
+                {
+                    if (r.ServingSize != res.Data.New.Servings)
+                    {
+                        
+                        foreach (var ingredient in r.Ingredients)
+                        {
+                            ingredient.Amount.SizeHigh = (ingredient.Amount.SizeHigh * res.Data.New.Servings) / r.ServingSize;
+                        }
+                    }
+                }
+            }
+
             return new ShoppingListAdder
             {
-                Recipes = cont.Recipes.Load(Recipe.FromId(id)).WithMethod.WithUserRating.List()
+                Recipes = recipes
             };
         }
+        
+        private ShoppingListUpdater CreateShoppingListItemUpdater(IEnumerator<ShoppingListItem> query, DBContext cont, ShoppingListUpdater shoppingListUpdater, ShoppingListEntity res)
+        {
+            if (res.Data.Old.Servings == 0)
+            {
+                var recipes = cont.Recipes.Load(Recipe.FromId(res.Data.New.Recipeid)).WithMethod.WithUserRating.List().First();
+                res.Data.Old.Servings = recipes.ServingSize;
+            }
+            
+            while (query.MoveNext())
+            {
+                ShoppingListItem item = query.Current;
+                
+                if (item.Amount != null && item.Recipe != null && item.Recipe.Id == res.Data.New.Recipeid && res.Data.Old.Servings != res.Data.New.Servings)
+                {
+                    var amount = item.Amount;
+                    amount.SizeHigh = (amount.SizeHigh * res.Data.New.Servings) / res.Data.Old.Servings;
+                    
+                    shoppingListUpdater.UpdateItem(item, x => x.NewAmount(amount));
+                }
+            }
 
+            return shoppingListUpdater;
+        }
+        
         private ShoppingListUpdater SetItemToRemove(IEnumerator<ShoppingListItem> query, Guid recipeId,
             ShoppingListUpdater shoppingListUpdater)
         {
@@ -59,8 +100,10 @@ namespace KitchenPC.WebApi.Controllers
 
                 if (!sList.Any())
                 {
-                    context.ShoppingLists.Create.WithName(request.Event.Data.New.Planid.ToString()).WithPlan(request.Event.Data.New.Planid)
-                        .AddItems(CreateShoppingListAdder(context, request.Event.Data.New.Recipeid)).Commit();
+                    context.ShoppingLists.Create
+                        .WithName(request.Event.Data.New.Planid.ToString())
+                        .WithPlan(request.Event.Data.New.Planid)
+                        .AddItems(CreateShoppingListAdder(context, request.Event)).Commit();
                 }
                 else
                 {
@@ -69,13 +112,17 @@ namespace KitchenPC.WebApi.Controllers
                     if (request.Event.Op == "INSERT")
                     {
                         context.ShoppingLists.Update(shopping)
-                            .AddItems(CreateShoppingListAdder(context, request.Event.Data.New.Recipeid)).Commit();
+                            .AddItems(CreateShoppingListAdder(context, request.Event)).Commit();
+                    }
+                    else if (request.Event.Op == "UPDATE" && request.Event.Data.New.Servings != 0 && request.Event.Data.New.Servings != request.Event.Data.Old.Servings)
+                    {
+                        var shoppingListUpdater = context.ShoppingLists.Update(shopping);
+                        CreateShoppingListItemUpdater(shopping.GetEnumerator(), context, shoppingListUpdater, request.Event).Commit();
                     }
                     else if (request.Event.Op == "DELETE")
                     {
                         var shoppingListUpdater = context.ShoppingLists.Update(shopping);
-                        SetItemToRemove(shopping.GetEnumerator(), request.Event.Data.New.Recipeid, shoppingListUpdater)
-                            ?.Commit();
+                        SetItemToRemove(shopping.GetEnumerator(), request.Event.Data.New.Recipeid, shoppingListUpdater)?.Commit();
                     }
                 }
             }

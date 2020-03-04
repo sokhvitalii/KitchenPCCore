@@ -15,6 +15,7 @@ namespace KitchenPC.Context
    {
       void Initialize(IKPCContext context);
       IEnumerable<IngredientSource> LoadIngredientsForIndex();
+      UserProfile GetUserProfiles(AuthIdentity identity);
 
       //Modeler support
       IEnumerable<RecipeBinding> LoadRecipeGraph();

@@ -257,12 +257,16 @@
           <e p="NlpPrepNotes.cs" t="Include" />
           <e p="NlpUnitSynonyms.cs" t="Include" />
           <e p="QueuedRecipes.cs" t="Include" />
+          <e p="RatingsReferences.cs" t="Include" />
           <e p="RecipeIngredients.cs" t="Include" />
           <e p="RecipeMetadata.cs" t="Include" />
           <e p="RecipeRatings.cs" t="Include" />
           <e p="Recipes.cs" t="Include" />
           <e p="ShoppingListItems.cs" t="Include" />
           <e p="ShoppingLists.cs" t="Include" />
+          <e p="UserBlacklistedIngredients.cs" t="Include" />
+          <e p="UserFavoriteIngredients.cs" t="Include" />
+          <e p="UserProfiles.cs" t="Include" />
         </e>
         <e p="NHSearch.cs" t="Include" />
         <e p="NLP" t="Include">
@@ -287,6 +291,7 @@
         <e p="Controllers" t="Include">
           <e p="HomeController.cs" t="Include" />
           <e p="ParseFoodComControllers.cs" t="Include" />
+          <e p="RecommendationEngineController.cs" t="Include" />
         </e>
         <e p="Dockerfile" t="Include" />
         <e p="KitchenPC.WebApi.csproj" t="IncludeRecursive" />
@@ -294,6 +299,7 @@
           <e p="DataBaseConnection.cs" t="Include" />
           <e p="FoodComRequest.cs" t="Include" />
           <e p="GraphQlRequestBuilder.cs" t="Include" />
+          <e p="RecommendationEngineRequest.cs" t="Include" />
           <e p="ShoppingListEvent.cs" t="Include" />
           <e p="TagGraphQlResponse.cs" t="Include" />
           <e p="TagProccesHelper.cs" t="Include" />
@@ -426,6 +432,7 @@
         <e p="ParserJson.csproj" t="IncludeRecursive" />
         <e p="Resources" t="Include">
           <e p="Edamam_recipes.json" t="Include" />
+          <e p="test.json" t="Include" />
         </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">

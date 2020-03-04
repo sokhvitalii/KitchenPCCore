@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "WebApplication2": {
+    "KitchenPC.WebApi": {
       "commandName": "Project",
       "launchBrowser": false,
       "launchUrl": "home",

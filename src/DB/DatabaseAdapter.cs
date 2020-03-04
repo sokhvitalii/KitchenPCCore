@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using FluentNHibernate.Conventions;
@@ -34,9 +32,7 @@ namespace KitchenPC.DB
       ISessionFactory sessionFactory;
       Configuration nhConfig;
       readonly DatabaseAdapterBuilder builder;
-
-      private IQueryOver<ShoppingListItems> eeee;
-      private IList<ShoppingListItems> eeee2;
+      
       public IPersistenceConfigurer DatabaseConfiguration { get; set; }
       public List<IConvention> DatabaseConventions { get; set; }
       public ISearchProvider SearchProvider { get; set; }
@@ -821,6 +817,30 @@ namespace KitchenPC.DB
          }
       }
 
+      public UserProfile GetUserProfiles(AuthIdentity identity)
+      {
+         using (var session = GetSession())
+         {
+           
+            var user = session.QueryOver<Models.UserProfiles>()
+               .Where(x => x.UserId == identity.UserId)
+               .TransformUsing(Transformers.DistinctRootEntity)
+               .SingleOrDefault();
+            
+            var profile = new UserProfile();
+               profile.UserId = user.UserId;
+               profile.FavoriteTags = user.FavoriteTags.Tags;
+               profile.AllowedTags = user.AllowedTags.Tags;
+               profile.AvoidRecipe = user.AvoidRecipe;
+               profile.FavoriteIngredients = user.FavoriteIngredients.Select(x => x.RecipeIngredients.Ingredient.IngredientId).ToArray();
+               profile.BlacklistedIngredients = user.BlacklistedIngredients.Select(x => x.RecipeIngredients.Ingredient.IngredientId).ToArray();
+               profile.Ratings = user.Ratings.Select(x => new RecipeRating(){RecipeId = x.Ratings.Recipe.RecipeId, Rating = Convert.ToByte(x.Ratings.Rating)}).ToArray();
+
+            return profile;
+         }
+      }
+
+
       public ShoppingList[] GetShoppingLists(AuthIdentity identity, IList<ShoppingList> lists, GetShoppingListOptions options)
       {
          using (var session = GetSession())
@@ -891,6 +911,7 @@ namespace KitchenPC.DB
                var dbList = new Models.ShoppingLists();
                dbList.Title = list.Title.Trim();
                dbList.UserId = identity.UserId;
+               dbList.PlanId = list.PlanId;
                session.Save(dbList);
 
                if (list.Any()) // Create ShoppingListItems

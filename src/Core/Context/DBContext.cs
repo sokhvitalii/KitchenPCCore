@@ -623,6 +623,12 @@ namespace KitchenPC.Context
       {
          return Adapter.GetShoppingLists(Identity, lists, options);
       }
+      
+      public virtual UserProfile GetUserProfiles(AuthIdentity identityA)
+      {
+         return Adapter.GetUserProfiles(identityA);
+      }
+
 
       protected virtual void LoadTemplates()
       {
