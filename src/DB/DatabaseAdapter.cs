@@ -447,7 +447,8 @@ namespace KitchenPC.DB
                return new RecipeResult
                {
                   RecipeCreated = true,
-                  NewRecipeId = dbRecipe.RecipeId
+                  NewRecipeId = dbRecipe.RecipeId,
+                  NewRecipe = recipe
                };
             }
          }

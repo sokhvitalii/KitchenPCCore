@@ -8,7 +8,8 @@ using System.Text.RegularExpressions;
 using ConsoleAppData.Helper;
 using KitchenPC.Helper;
 using KitchenPC.Data;
-using KitchenPC.Data.DTO;
+using KitchenPC;
+using KitchenPC.Recipes;
 using KitchenPC.WebApi.Model;
 
 namespace ConsoleAppData
@@ -25,11 +26,34 @@ namespace ConsoleAppData
         };
         
         
+        
+        private static UnitType loop(string[] units)
+        {
+            if (Enum.TryParse(typeof(Units), units.First(), true, out var possible)) 
+                return (UnitType)possible;
+            else 
+                return loop(units.Skip(1).ToArray());
+        }
+        
         static void Main(string[] args)
         {
-             DataBaseHelper.SaveInitData();
-            
+             // DataBaseHelper.SaveInitData();
 
+
+             var testData = "   ounces unsweetened chocolate 1⁄2  teaspoon vanilla 1 cup sugar  2  eggs 3⁄4 cup flour1⁄4 teaspoon salt 3⁄4 cup chocolate chips  DIRECTIONS  Preheat oven to 325°F.  Melt butter and chocolate in pan over low heat, stirring. Cool. Beat in vanilla and sugar. Add eggs one at a time, stir well. Sift flour and salt, add to chocolate. Gently stir in chocolate chips. Pour into 8x8x2 pan.  Bake 25 minutes.";
+
+             var ctx = DataBaseHelper.DBConnector();
+             
+             var i3 = ctx.Context.Parser.Parse("Salt");
+             var i4 = ctx.Context.Parser.Parse("Leeks");
+
+             var request = new [] { "No Animals"};
+
+             var uio = RecipeTags.Parse(string.Join(",", request));
+             var i2 = ctx.Context.ParseIngredient(testData);
+             var i = ctx.Context.Parser.Parse(testData);
+             
+          
             var data =
                 "{\"event\": {\"session_variables\": {\"x-hasura-role\": \"admin\",\"x-hasura-user-id\": \"e\"},\"op\": \"INSERT\",\"data\": {\"new\": {\"recipe_id\": \"4140a462-216e-4573-b721-c5b74818a568\",\"meal\": \"dffffffffffffffff\",\"id\": 4,\"plan_id\": 2,\"servings\": \"2edasdrere\"}} }}";
 

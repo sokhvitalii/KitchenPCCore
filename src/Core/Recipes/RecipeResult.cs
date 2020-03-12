@@ -8,5 +8,6 @@ namespace KitchenPC.Recipes
       public bool RecipeUpdated;
 
       public Guid? NewRecipeId;
+      public Recipe NewRecipe;
    }
 }

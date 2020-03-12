@@ -14,19 +14,7 @@ namespace KitchenPC.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class Home2Controller : ControllerBase
-    {
-        [HttpGet]
-        public string Get()
-        {
-            return Response.StatusCode.ToString();
-        }
-    }
-
-
-    [ApiController]
-    [Route("[controller]")]
-    public class ParseFoodComControllers : ControllerBase
+    public class ParseFoodComController : ControllerBase
     {
         [HttpPost]
         public IActionResult Post(FoodComRequest request)
