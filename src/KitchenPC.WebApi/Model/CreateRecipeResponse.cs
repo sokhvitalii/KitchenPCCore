@@ -31,7 +31,7 @@ namespace KitchenPC.WebApi.Model
         public DateTime DateEntered { get; }
         public int ServingSize { get; }
         public string ImageUrl { get; }
-        public RecipeTag[] Tags { get; }
+        public string[] Tags { get; }
 
         public CreateRecipeResponse(Recipe recipe)
         {
@@ -46,7 +46,7 @@ namespace KitchenPC.WebApi.Model
             DateEntered = recipe.DateEntered;
             ServingSize = recipe.ServingSize;
             ImageUrl = recipe.ImageUrl;
-            Tags = recipe.Tags.ToArray();
+            Tags = recipe.Tags.Select(x => x.ToString()).ToArray();
         }
 
         public CreateRecipeResponse()
