@@ -11,6 +11,8 @@ namespace KitchenPC.DB.Helper
         private string tableName;
         private Dictionary<string, object> objectsInput;
         private List<string> returning;
+        private string nameQuery;
+        private string queryParams;
         
         private void CreateRoot()
         {
@@ -20,6 +22,8 @@ namespace KitchenPC.DB.Helper
         
         public GraphQlBuilderContext(bool foo)
         {
+            nameQuery = foo ? "MyMutation" :"MyQuery";
+            queryParams = foo ? "mutation" :"query";
             CreateRoot();
         }
 
@@ -59,8 +63,8 @@ namespace KitchenPC.DB.Helper
         public string Result()
         {
             var ret = String.Join(" ", returning);
-            var head = $"{{\"query\":\"mutation MyMutation {{ {tableName}(objects: {{ ";
-            var last = $" }}) {{ returning {{  {ret} }}}}}}\", \"operationName\":\"MyMutation\"}}";
+            var head = $"{{\"query\":\"{queryParams} {nameQuery} {{ {tableName}(objects: {{ ";
+            var last = $" }}) {{ returning {{  {ret} }}}}}}\", \"operationName\":\"{nameQuery}\"}}";
             
             var inputString = objectsInput.Select(InputProcess);
             var input = String.Join(" ", inputString);
@@ -71,10 +75,9 @@ namespace KitchenPC.DB.Helper
 
     class GraphQlRequestBuilder
     {
-
-        public static GraphQlBuilderContext CreateMutable()
+        public static GraphQlBuilderContext CreateQuery(bool isMutation = true)
         {
-            return new GraphQlBuilderContext(true);
+            return new GraphQlBuilderContext(isMutation);
         }
     }
 }

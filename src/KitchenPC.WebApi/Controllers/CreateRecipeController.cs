@@ -11,6 +11,7 @@ using KitchenPC.Ingredients;
 using KitchenPC.Recipes;
 using KitchenPC.WebApi.Common;
 using KitchenPC.WebApi.Model;
+using KitchenPC.WebApi.Model.error;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KitchenPC.WebApi.Controllers
@@ -111,8 +112,8 @@ namespace KitchenPC.WebApi.Controllers
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                return BadRequest(e.Message); 
+                Console.WriteLine("error = " + e.Message);
+                return BadRequest(JsonSerializer.Serialize(new ResponseError(e.Message), JsonHelper.Options)); 
             }
         }
     }

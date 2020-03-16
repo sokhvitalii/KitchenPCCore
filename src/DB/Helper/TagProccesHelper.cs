@@ -54,7 +54,7 @@ namespace KitchenPC.Helper
 
         public TagTypeGraphQLResponse SendTagType(HttpClient client, IGrouping<string, TagAndTagType> tagType)
         {
-            var queryMutationType = GraphQlRequestBuilder.CreateMutable()
+            var queryMutationType = GraphQlRequestBuilder.CreateQuery()
                 .Table("insert_tag_type")
                 .AppendObject("name", tagType.Key)
                 .AppendReturn("id").Result();
@@ -74,7 +74,7 @@ namespace KitchenPC.Helper
 
         public TagGraphQlResponse SendTag(HttpClient client, TagAndTagType tag, InsertTagType tagType)
         {
-            var queryMutationTag = GraphQlRequestBuilder.CreateMutable()
+            var queryMutationTag = GraphQlRequestBuilder.CreateQuery()
                 .Table("insert_tag")
                 .AppendObject("name", tag.TagName)
                 .AppendObject("tag_type_id", tagType.Returning.First().id)
@@ -93,7 +93,7 @@ namespace KitchenPC.Helper
 
         public void SendRecipeTag(HttpClient client, Guid recipeId, int tagId)
         {
-            var queryMutationRecipeTag = GraphQlRequestBuilder.CreateMutable()
+            var queryMutationRecipeTag = GraphQlRequestBuilder.CreateQuery()
                 .Table("insert_recipe_tag")
                 .AppendObject("recipe_id", recipeId.ToString())
                 .AppendObject("tag_id", tagId)
