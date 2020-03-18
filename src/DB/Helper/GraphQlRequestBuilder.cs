@@ -5,35 +5,30 @@ using System.Linq;
 
 namespace KitchenPC.DB.Helper
 {
-
-    class GraphQlBuilderContext
+    public class MutationBuilderContext
     {
         private string tableName;
         private Dictionary<string, object> objectsInput;
         private List<string> returning;
-        private string nameQuery;
-        private string queryParams;
-        
+
         private void CreateRoot()
         {
             objectsInput = new Dictionary<string, object>();
             returning = new List<string>();
         }
         
-        public GraphQlBuilderContext(bool foo)
+        public MutationBuilderContext()
         {
-            nameQuery = foo ? "MyMutation" :"MyQuery";
-            queryParams = foo ? "mutation" :"query";
             CreateRoot();
         }
 
-        public GraphQlBuilderContext Table(string tableName)
+        public MutationBuilderContext Table(string tableName)
         {
             this.tableName = tableName;
             return this;
         }
 
-        public GraphQlBuilderContext AppendObject<T>(string key, T value)
+        public MutationBuilderContext AppendObject<T>(string key, T value)
         {
             if (value is ValueType || value is string)
             {
@@ -43,13 +38,13 @@ namespace KitchenPC.DB.Helper
             return this;
         }
 
-        public GraphQlBuilderContext AppendReturn(string name)
+        public MutationBuilderContext AppendReturn(string name)
         {
             returning.Add(name);
             return this;
         }
 
-        public GraphQlBuilderContext AppendReturns(IEnumerable<string> names)
+        public MutationBuilderContext AppendReturns(IEnumerable<string> names)
         {
             foreach (var name in names)
             {
@@ -63,8 +58,8 @@ namespace KitchenPC.DB.Helper
         public string Result()
         {
             var ret = String.Join(" ", returning);
-            var head = $"{{\"query\":\"{queryParams} {nameQuery} {{ {tableName}(objects: {{ ";
-            var last = $" }}) {{ returning {{  {ret} }}}}}}\", \"operationName\":\"{nameQuery}\"}}";
+            var head = $"{{\"query\":\"mutation MyMutation {{ {tableName}(objects: {{ ";
+            var last = $" }}) {{ returning {{  {ret} }}}}}}\", \"operationName\":\"MyMutation\"}}";
             
             var inputString = objectsInput.Select(InputProcess);
             var input = String.Join(" ", inputString);
@@ -72,12 +67,110 @@ namespace KitchenPC.DB.Helper
             return head + input + last;
         }
     }
-
-    class GraphQlRequestBuilder
+    
+    
+    public class ConditionType
     {
-        public static GraphQlBuilderContext CreateQuery(bool isMutation = true)
+        public object Value { get; set; }
+        public string Key { get; set; }
+        public string Label;
+        public string labelCondition;
+        private static List<string> lables;
+
+        static ConditionType()
         {
-            return new GraphQlBuilderContext(isMutation);
+            lables = new List<string>
+            {
+                "eq", "like"
+            };
+        }
+        
+        public ConditionType(string key, object value, string label)
+        {
+            if (lables.Contains(label))
+            {
+                Value = value;
+                Key = key;
+                labelCondition = $"_{label}";
+                Label = label;
+            }
+        }
+    }
+
+    public class QueryBuilderContext
+    {
+        private string tableName;
+        private ConditionType objectsInput;
+        private List<string> returning;
+
+        private void CreateRoot()
+        {
+            returning = new List<string>();
+        }
+        
+        public QueryBuilderContext()
+        {
+            CreateRoot();
+        }
+
+        public QueryBuilderContext Table(string tableName)
+        {
+            this.tableName = tableName;
+            return this;
+        }
+
+        public QueryBuilderContext AppendCondition(ConditionType value)
+        {
+            if (value.Value is ValueType || value.Value is string)
+            {
+                objectsInput = value;
+            } 
+            
+            return this;
+        }
+
+        public QueryBuilderContext AppendReturn(string name)
+        {
+            returning.Add(name);
+            return this;
+        }
+
+        public QueryBuilderContext AppendReturns(IEnumerable<ConditionType> names)
+        {
+            foreach (var name in names)
+            {
+                AppendCondition(name);
+            }
+            return this;
+        }
+        
+        string InputProcess(ConditionType pair) => 
+            pair.Value is string ? pair.Key + $": {{ {pair.labelCondition}: \\\"" + pair.Value + "\\\"" : pair.Key + $": {{ {pair.labelCondition}" + pair.Value;
+        
+        public string Result()
+        {
+            var ret = String.Join(" ", returning);
+            var condition = "";
+            if ( objectsInput?.labelCondition != null)
+            {
+                condition = "(where: {" + InputProcess(objectsInput)  + "}})";
+            }
+            return $"{{\"query\":\"query MyQuery {{ {tableName}{condition} {{  {ret} }}}}\", \"operationName\":\"MyQuery\"}}";
+        }
+    }
+
+
+    public class GraphQlRequestBuilder
+    {
+        public static MutationBuilderContext CreateMutation()
+        {
+            return new MutationBuilderContext();
+        }
+        
+        
+        public static QueryBuilderContext CreateQuery()
+        {
+            return new QueryBuilderContext();
         }
     }
 }

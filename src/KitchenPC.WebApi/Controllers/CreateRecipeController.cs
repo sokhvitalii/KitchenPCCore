@@ -1,13 +1,5 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text.Json;
-using FluentNHibernate.Conventions;
-using KitchenPC.Context;
-using KitchenPC.Context.Fluent;
-using KitchenPC.DB;
-using KitchenPC.DB.Provisioning;
-using KitchenPC.Ingredients;
 using KitchenPC.Recipes;
 using KitchenPC.WebApi.Common;
 using KitchenPC.WebApi.Model;
@@ -20,67 +12,23 @@ namespace KitchenPC.WebApi.Controllers
     [Route("[controller]")]
     public class CreateRecipeController : ControllerBase
     {
-        private static Units getUnit(string units)
-        {
-            if (Enum.TryParse(typeof(Units), units, true, out var possible))
-                return (Units) possible;
-            
-            return Units.Unit;
-        }
-
-
-        public static IngredientAdder setAdder(IngredientAdder adder, IngredientsRequest[] ingredients,
-            DBContext context)
-        {
-            
-            var ingredientDto = new List<Data.DTO.Ingredients>();
-            foreach (var ingredient in ingredients)
-            {
-                var unitType = getUnit(ingredient.Quantity.Unit);
-                var pResult = context.Parser.Parse(ingredient.Name.Trim());
-                Amount amount = new Amount();
-                amount.SizeHigh = ingredient.Quantity.Size;
-                amount.Unit = unitType;
-                
-                Guid id;
-               
-                try
-                {
-                    id = context.ReadIngredient(pResult.Usage.Ingredient.Name).Id;
-                }
-                catch (Exception e)
-                {
-                    id = Guid.NewGuid();
-                    var ing = new Data.DTO.Ingredients();
-                    ing.DisplayName = pResult.Usage.Ingredient.Name;
-                    ing.ConversionType = (UnitType)unitType;
-                    ing.IngredientId = id;
-                    ing.ManufacturerName = ingredient.Name;
-                    ing.UnitName = ingredient.Aisle;
-                    ingredientDto.Add(ing);
-                }
-
-                adder.AddIngredient(new Ingredient(id, ingredient.Name), amount);
-            }
-
-            if (context.Adapter is DatabaseAdapter databaseAdapter)
-            {
-                using (var importer = new DatabaseImporter(databaseAdapter.GetSession()))
-                {
-                    importer.Import(ingredientDto);
-                }
-            }
-
-            return adder;
-        }
-
-
         [HttpPost]
         public IActionResult Post(CreateRecipeRequest request)
         {
             try
             {
                 var context = new DataBaseConnection(new AuthIdentity("systemUser", "")).Context.Context;
+                var createRecipeHelper = new CreateRecipeHelper(context);
+
+                RecipeTags tegs = RecipeTag.Easy | RecipeTag.Quick;
+                try
+                {
+                    tegs = RecipeTags.Parse(string.Join(",", request.Tags));
+                }  
+                catch (Exception e)
+                {
+                    Console.WriteLine("error = " + e);
+                }
                 var create = context.Recipes.Create
                     .WithCredit(request.Credit)
                     .WithDescription(request.Description)
@@ -89,10 +37,10 @@ namespace KitchenPC.WebApi.Controllers
                     .WithTitle(request.Title)
                     .WithDateEntered(request.DateEntered)
                     .WithRating(request.Rating)
-                    .WithTags(RecipeTags.Parse(string.Join(",", request.Tags)))
+                    .WithTags(tegs)
                     .WithCookTime((short) request.CookTime)
                     .WithPrepTime((short) request.PrepTime)
-                    .WithIngredients(x => setAdder(x, request.Ingredients, context));
+                    .WithIngredients(x => createRecipeHelper.setAdder(x, request.Ingredients));
 
                 if (request.CreditUrl != null)
                     create.WithImage(new Uri(request.ImageUrl));
@@ -104,6 +52,9 @@ namespace KitchenPC.WebApi.Controllers
 
                 if (created.RecipeCreated)
                 {
+                    var ids = createRecipeHelper.GetTagIds(request.Tags);
+                    createRecipeHelper.SendToInsertRecipeTag(ids, created.NewRecipeId.Value);
+                    
                     return Ok(JsonSerializer.Serialize(new CreateRecipeResponse(created.NewRecipe),
                         JsonHelper.Options));
                 }
@@ -112,7 +63,7 @@ namespace KitchenPC.WebApi.Controllers
             }
             catch (Exception e)
             {
-                Console.WriteLine("error = " + e.Message);
+                Console.WriteLine("error = " + e);
                 return BadRequest(JsonSerializer.Serialize(new ResponseError(e.Message), JsonHelper.Options)); 
             }
         }

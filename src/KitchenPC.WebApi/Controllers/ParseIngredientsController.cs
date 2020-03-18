@@ -22,8 +22,6 @@ namespace KitchenPC.WebApi.Controllers
             var aSplit = request.Request.Split("\n", StringSplitOptions.RemoveEmptyEntries).Select(x => x.Trim());
             var list = new List<IngredientUsageResponse>();
 
-            var ttt = ctx.Recipes.Create;
-
             foreach (var ingredient in aSplit)
             {
                 try
