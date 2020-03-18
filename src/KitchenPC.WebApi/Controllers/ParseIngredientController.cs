@@ -11,7 +11,7 @@ namespace KitchenPC.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ParseIngredientsController: ControllerBase
+    public class ParseIngredientController: ControllerBase
     {
         
         [HttpPost]
