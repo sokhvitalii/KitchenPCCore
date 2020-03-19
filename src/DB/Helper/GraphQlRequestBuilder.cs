@@ -5,16 +5,40 @@ using System.Linq;
 
 namespace KitchenPC.DB.Helper
 {
+
+    public class MutationSingleObject
+    {
+        public Dictionary<string, object> objectsInput;
+        
+         
+        public MutationSingleObject()
+        {
+            objectsInput = new Dictionary<string, object>();
+        }
+
+        public MutationSingleObject AppendObject<T>(string key, T value)
+        {
+            if (value is ValueType || value is string)
+            {
+                objectsInput.Add(key, value);
+            }
+            
+            return this;
+        }
+    }
+    
     public class MutationBuilderContext
     {
         private string tableName;
         private Dictionary<string, object> objectsInput;
+        private List<MutationSingleObject> bulkInput;
         private List<string> returning;
 
         private void CreateRoot()
         {
             objectsInput = new Dictionary<string, object>();
             returning = new List<string>();
+            bulkInput = new List<MutationSingleObject>();
         }
         
         public MutationBuilderContext()
@@ -37,6 +61,12 @@ namespace KitchenPC.DB.Helper
             
             return this;
         }
+        
+        public MutationBuilderContext AppendObject(MutationSingleObject value)
+        {
+            bulkInput.Add(value);
+            return this;
+        }
 
         public MutationBuilderContext AppendReturn(string name)
         {
@@ -53,8 +83,15 @@ namespace KitchenPC.DB.Helper
             return this;
         }
         
-        string InputProcess(KeyValuePair<string, object> pair) => pair.Value is string ? pair.Key + ": \\\"" + pair.Value + "\\\"" : pair.Key + ": " + pair.Value;
-        
+        string InputProcess(KeyValuePair<string, object> pair)
+        {
+            var res = pair.Value is string ?
+                pair.Key + ": \\\"" + pair.Value + "\\\"" : 
+                pair.Key + ": " + pair.Value;
+
+            return res;
+        }
+
         public string Result()
         {
             var ret = String.Join(" ", returning);
@@ -66,6 +103,23 @@ namespace KitchenPC.DB.Helper
             
             return head + input + last;
         }
+        
+        public string BulkResult()
+        {
+            // id: 10, recipe_id: "b", tag_id: 10
+            // objects: [{id: 10, recipe_id: "b", tag_id: 10}, {id: 10, recipe_id: "", tag_id: 10}]
+            // bulkInput
+            var ret = String.Join(" ", returning);
+            var head = $"{{\"query\":\"mutation MyMutation {{ {tableName}(objects: [";
+            var last = $" ]) {{ returning {{  {ret} }}}}}}\", \"operationName\":\"MyMutation\"}}";
+
+            var inputString = 
+                bulkInput.Select(x => "{" + String.Join(", ", x.objectsInput.Select(InputProcess)) + "}");
+            
+            var input = String.Join(", ", inputString);
+            
+            return head + input + last;
+        }
     }
     
     
@@ -74,38 +128,25 @@ namespace KitchenPC.DB.Helper
         public object Value { get; set; }
         public string Key { get; set; }
         public string Label;
-        public string labelCondition;
-        private static List<string> lables;
-
-        static ConditionType()
-        {
-            lables = new List<string>
-            {
-                "eq", "like"
-            };
-        }
         
         public ConditionType(string key, object value, string label)
         {
-            if (lables.Contains(label))
-            {
-                Value = value;
-                Key = key;
-                labelCondition = $"_{label}";
-                Label = label;
-            }
+            Value = value;
+            Key = key;
+            Label = label;
         }
     }
 
     public class QueryBuilderContext
     {
         private string tableName;
-        private ConditionType objectsInput;
+        private List<ConditionType> objectsInput;
         private List<string> returning;
 
         private void CreateRoot()
         {
             returning = new List<string>();
+            objectsInput = new List<ConditionType>();
         }
         
         public QueryBuilderContext()
@@ -123,7 +164,7 @@ namespace KitchenPC.DB.Helper
         {
             if (value.Value is ValueType || value.Value is string)
             {
-                objectsInput = value;
+                objectsInput.Add(value);
             } 
             
             return this;
@@ -144,16 +185,34 @@ namespace KitchenPC.DB.Helper
             return this;
         }
         
-        string InputProcess(ConditionType pair) => 
-            pair.Value is string ? pair.Key + $": {{ {pair.labelCondition}: \\\"" + pair.Value + "\\\"" : pair.Key + $": {{ {pair.labelCondition}" + pair.Value;
-        
-        public string Result()
+        string InputProcess(ConditionType pair)
+        {
+            var prepare = 
+                pair.Value is string ? 
+                    pair.Key + $": {{ {pair.Label}: \\\"" + pair.Value + "\\\"" : 
+                    pair.Key + $": {{ {pair.Label}" + pair.Value;
+            return "{" + prepare + "}}";
+        }
+
+        public string SingleResult()
         {
             var ret = String.Join(" ", returning);
             var condition = "";
-            if ( objectsInput?.labelCondition != null)
+            if (objectsInput.Any())
             {
-                condition = "(where: {" + InputProcess(objectsInput)  + "}})";
+                condition = "(where:" + InputProcess(objectsInput.First()) + ")";
+            }
+            return $"{{\"query\":\"query MyQuery {{ {tableName}{condition} {{  {ret} }}}}\", \"operationName\":\"MyQuery\"}}";
+        }
+        
+            
+        public string BulkResult(string conditionType)
+        {
+            var ret = String.Join(" ", returning);
+            var condition = "";
+            if (objectsInput.Any())
+            {
+                condition = $"(where: {{ {conditionType}: [" +  String.Join(", ", objectsInput.Select(InputProcess))  + "]})";
             }
             return $"{{\"query\":\"query MyQuery {{ {tableName}{condition} {{  {ret} }}}}\", \"operationName\":\"MyQuery\"}}";
         }

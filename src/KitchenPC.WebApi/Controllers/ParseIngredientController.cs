@@ -20,7 +20,7 @@ namespace KitchenPC.WebApi.Controllers
 
             var ctx = new DataBaseConnection(new AuthIdentity("systemUser", "")).Context.Context;
             var aSplit = request.Request.Split("\n", StringSplitOptions.RemoveEmptyEntries).Select(x => x.Trim());
-            var list = new List<IngredientUsageResponse>();
+            var list = new List<ParseIngredientsResponse>();
 
             foreach (var ingredient in aSplit)
             {
@@ -28,9 +28,14 @@ namespace KitchenPC.WebApi.Controllers
                 {
                     var result = ctx.Parser.Parse(ingredient);
                     if (result.Status == MatchResult.Match || result.Status == MatchResult.PartialMatch ||
-                        result.Status == MatchResult.IncompatibleForm) 
-                    { 
-                        list.Add(new IngredientUsageResponse(result.Usage)); 
+                        result.Status == MatchResult.IncompatibleForm)
+                    {
+                        var res = new ParseIngredientsResponse();
+                        res.Name = result.Usage.Ingredient.Name;
+                        res.PossibleUnits.Add(result.Usage.Amount.Unit.ToString());
+                        res.Quantity = result.Usage.Amount.SizeHigh;
+
+                        list.Add(res); 
                     }
                 }
                 catch (Exception e)

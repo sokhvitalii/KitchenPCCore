@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace KitchenPC.WebApi.Model
 {
     
@@ -10,6 +12,36 @@ namespace KitchenPC.WebApi.Model
         {
         }
     } 
+    
+    public class DataReturning
+    {
+    
+        public TagsGQ[] Returning { get; set; }
+       
+        public DataReturning()
+        {
+        }
+    }
+
+    public class DataRecipeTag
+    {
+        [JsonPropertyName("insert_recipe_tag")]
+        public DataReturning Tag { get; set; }
+       
+        public DataRecipeTag()
+        {
+        }
+    }
+
+    public class RecipeTagResponseFromGq
+    {
+        public DataRecipeTag Data { get; set; }
+
+        public RecipeTagResponseFromGq()
+        {
+
+        }
+    }
     
     public class DataTag
     {

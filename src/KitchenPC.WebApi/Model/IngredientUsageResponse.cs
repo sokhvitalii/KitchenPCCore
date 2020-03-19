@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using KitchenPC.Ingredients;
 
 namespace KitchenPC.WebApi.Model
@@ -71,6 +72,22 @@ namespace KitchenPC.WebApi.Model
         {
         }
     } 
+    
+        
+    public class ParseIngredientsResponse
+    {
+        public string Name { get; set; }
+        public string Image { get; set; }
+        public int Id { get; set; }
+        public string Aisle { get; set; }
+        public float Quantity { get; set; }
+        public List<string> PossibleUnits { get; set; }
+        
+        public ParseIngredientsResponse()
+        {
+            PossibleUnits = new List<string>();
+        }
+    }
     
     public class IngredientUsageResponse
     {

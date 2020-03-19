@@ -23,63 +23,65 @@ namespace KitchenPC.WebApi.Common
             HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "http://localhost:8080/v1/graphql");
             request.Headers.Add("x-hasura-admin-secret", "ADMIN_SECRET_KEY");
             request.Content = new StringContent(query, Encoding.UTF8, "application/json");
-
+            Console.WriteLine("Request query: {0}", query);
             return request;
         }
 
-        public TagResponseFromGq SendHttpRequest(HttpClient client, HttpRequestMessage msg)
+        public T SendHttpRequest<T>(HttpClient client, HttpRequestMessage msg)
         {
+           
             return client.SendAsync(msg)
                 .ContinueWith(responseTask =>
                 {
-                    Console.WriteLine("Response from tag: {0}", responseTask.Result.Content.ReadAsStringAsync().Result);
-                    return JsonSerializer.Deserialize<TagResponseFromGq>(
-                        responseTask.Result.Content.ReadAsStringAsync().Result, JsonHelper.Options);
+                    var res = responseTask.Result.Content.ReadAsStringAsync().Result;
+                    Console.WriteLine("Response from tag: {0}", res);
+                    return JsonSerializer.Deserialize<T>(res, JsonHelper.Options);
                 }).Result;
         }
 
-        public List<TagResponseFromGq> GetTagIds(string[] tags)
+        public TagResponseFromGq GetTagIds(string[] tags)
         {
-            var list = new List<TagResponseFromGq>(); 
+            TagResponseFromGq list; 
             using (var client = new HttpClient())
-            {
+            { 
+                var query = GraphQlRequestBuilder
+                    .CreateQuery()
+                    .Table("tag")
+                    .AppendReturn("id")
+                    .AppendReturn("name");
+                
                 foreach (var t in tags)
                 {
-                    var query = GraphQlRequestBuilder
-                        .CreateQuery()
-                        .Table("tag")
-                        .AppendCondition(new ConditionType("name", t, "eq"))
-                        .AppendReturn("id")
-                        .AppendReturn("name")
-                        .Result();
-                    
-                    var request = Request(query);
-
-                    list.Add(SendHttpRequest(client, request));
+                    query.AppendCondition(new ConditionType("name", t, "_eq"));
                 }
+                
+                var request = Request(query.BulkResult("_or"));
+                list = SendHttpRequest<TagResponseFromGq>(client, request);
             }
 
             return list;
         }
         
         
-        public List<TagResponseFromGq> SendToInsertRecipeTag(List<TagResponseFromGq> tags, Guid recipeId)
+        public RecipeTagResponseFromGq SendToInsertRecipeTag(TagResponseFromGq tags, Guid recipeId)
         {
-            var list = new List<TagResponseFromGq>(); 
+            RecipeTagResponseFromGq list = new RecipeTagResponseFromGq(); 
             using (var client = new HttpClient())
             {
-                foreach (var t in tags)
-                {
-                    var query =  GraphQlRequestBuilder.CreateMutation()
-                        .Table("insert_recipe_tag")
-                        .AppendObject("recipe_id", recipeId.ToString())
-                        .AppendObject("tag_id", t.Data.Tag.First().Id)
-                        .AppendReturn("id").Result();
-                    
-                    var request = Request(query);
+                var query =  GraphQlRequestBuilder.CreateMutation()
+                    .Table("insert_recipe_tag")
+                    .AppendReturn("id");
 
-                    list.Add(SendHttpRequest(client, request));
+                foreach (var t in tags.Data.Tag)
+                {
+                    var record = new MutationSingleObject();
+                    record.AppendObject("tag_id", t.Id);
+                    record.AppendObject("recipe_id", recipeId.ToString());
+                    query.AppendObject(record);
                 }
+                 var request = Request(query.BulkResult());
+                 list = SendHttpRequest<RecipeTagResponseFromGq>(client, request);
+                
             }
 
             return list;
