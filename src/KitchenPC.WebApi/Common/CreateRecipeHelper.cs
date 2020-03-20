@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
+using DB.Helper;
 using KitchenPC.Context;
 using KitchenPC.Context.Fluent;
 using KitchenPC.DB;
@@ -11,6 +12,7 @@ using KitchenPC.DB.Helper;
 using KitchenPC.DB.Provisioning;
 using KitchenPC.Ingredients;
 using KitchenPC.WebApi.Model;
+using KitchenPC.WebApi.Model.error;
 
 namespace KitchenPC.WebApi.Common
 {
@@ -38,7 +40,7 @@ namespace KitchenPC.WebApi.Common
                 }).Result;
         }
 
-        public TagResponseFromGq GetTagIds(string[] tags, JsonHelper conf)
+        public TagResponseFromGq GetTagIds(List<string> tags, JsonHelper conf)
         {
             TagResponseFromGq list; 
             using (var client = new HttpClient())
@@ -60,6 +62,52 @@ namespace KitchenPC.WebApi.Common
 
             return list;
         }
+        
+           
+        public int SendToInsertMainIngredient(Ingredient ingredient, Guid recipeId, JsonHelper conf)
+        {
+            int id = 0; 
+            using (var client = new HttpClient())
+            {
+                
+                var queryGet = GraphQlRequestBuilder
+                    .CreateQuery()
+                    .Table("tag")
+                    .AppendReturn("id")
+                    .AppendReturn("name")
+                    .AppendCondition(new ConditionType("tag_type_id", 3, "_eq"))
+                    .AppendCondition(new ConditionType("name", ingredient.Name, "_eq"));
+                
+                
+                var requestGet = Request(queryGet.BulkResult("_and"), conf);
+                var response = SendHttpRequest<TagResponseFromGq>(client, requestGet, conf);
+
+                if (response.Data?.Tag == null)
+                {
+                    var query =  GraphQlRequestBuilder.CreateMutation()
+                        .Table("insert_tag")
+                        .AppendReturn("id")
+                        .AppendReturn("name")
+                        .AppendObject("name", ingredient.Name)
+                        .AppendObject("tag_type_id", 3);
+                
+                    var request = Request(query.Result(), conf);
+                    var obj = SendHttpRequest<TagGraphQlResponse>(client, request, conf);
+                    
+                    if (obj.Data?.InsertTag?.Returning == null)
+                    {
+                        id = SendHttpRequest<TagGraphQlResponse>(client, request, conf).Data.InsertTag.Returning.First().id;  
+                    }
+                }
+                else
+                {
+                    id = response.Data.Tag.First().Id;
+                }
+            }
+
+            return id;
+        }
+
         
         
         public RecipeTagResponseFromGq SendToInsertRecipeTag(TagResponseFromGq tags, Guid recipeId, JsonHelper conf)
@@ -94,16 +142,31 @@ namespace KitchenPC.WebApi.Common
             return Units.Unit;
         }
 
-        public IngredientAdder setAdder(IngredientAdder adder, IngredientsRequest[] ingredients)
+        public IngredientAdder setAdder(IngredientAdder adder, List<IngredientUsage> ingredients)
+        {
+            foreach (var ingredient in ingredients)
+            {
+                adder.AddIngredient(ingredient.Ingredient, ingredient.Amount);
+            }
+            
+            return adder;
+        }
+        
+        
+        public List<IngredientUsage> GetIngredients(CreateRecipeRequest req)
         {
             var ingredientDto = new List<Data.DTO.Ingredients>();
-            foreach (var ingredient in ingredients)
+            var allIngredient = new List<IngredientUsage>();
+            foreach (var ingredient in req.Ingredients)
             {
                 var unitType = getUnit(ingredient.Quantity.Unit);
                 var pResult = context.Parser.Parse(ingredient.Name.Trim());
                 Amount amount = new Amount();
                 amount.SizeHigh = ingredient.Quantity.Size;
                 amount.Unit = unitType;
+                
+                if (pResult.Usage?.Ingredient == null)
+                    throw new ResponseError("NLP can not parse ingredient name: " + ingredient.Name);
 
                 Guid id;
 
@@ -123,7 +186,8 @@ namespace KitchenPC.WebApi.Common
                     ingredientDto.Add(ing);
                 }
 
-                adder.AddIngredient(new Ingredient(id, ingredient.Name), amount);
+                var ingr = new Ingredient(id, ingredient.Name);
+                allIngredient.Add(new IngredientUsage(ingr, null, amount, null));
             }
 
             if (context.Adapter is DatabaseAdapter databaseAdapter)
@@ -133,9 +197,10 @@ namespace KitchenPC.WebApi.Common
                     importer.Import(ingredientDto);
                 }
             }
-
-            return adder;
+            
+            return allIngredient;
         }
+
 
         public CreateRecipeHelper(DBContext ctx)
         {

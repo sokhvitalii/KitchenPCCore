@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Text.Json;
 using KitchenPC.Recipes;
 using KitchenPC.WebApi.Common;
@@ -31,6 +32,9 @@ namespace KitchenPC.WebApi.Controllers
                 {
                     Console.WriteLine("error = " + e);
                 }
+
+                var ingredients = createRecipeHelper.GetIngredients(request);
+                
                 var create = context.Recipes.Create
                     .WithCredit(request.Credit)
                     .WithDescription(request.Description)
@@ -42,7 +46,7 @@ namespace KitchenPC.WebApi.Controllers
                     .WithTags(tegs)
                     .WithCookTime((short) request.CookTime)
                     .WithPrepTime((short) request.PrepTime)
-                    .WithIngredients(x => createRecipeHelper.setAdder(x, request.Ingredients));
+                    .WithIngredients(x => createRecipeHelper.setAdder(x, ingredients));
 
                 if (request.CreditUrl != null)
                     create.WithImage(new Uri(request.ImageUrl));
@@ -54,7 +58,14 @@ namespace KitchenPC.WebApi.Controllers
 
                 if (created.RecipeCreated)
                 {
+                    var ingredient = ingredients.SingleOrDefault(x => x.Ingredient.Name == request.MainIngredient.Name)?.Ingredient;
+                    var mainId = createRecipeHelper.SendToInsertMainIngredient(ingredient, created.NewRecipeId.Value, jsonHelper);
+
+                    if (mainId == 0)
+                        throw new ResponseError("main ingredient was not save, name: " + ingredient.Name);
+                    
                     var ids = createRecipeHelper.GetTagIds(request.Tags, jsonHelper);
+                    ids.Data.Tag.Add(new TagsGQ(mainId));
                     createRecipeHelper.SendToInsertRecipeTag(ids, created.NewRecipeId.Value, jsonHelper);
                     
                     return Ok(JsonSerializer.Serialize(new CreateRecipeResponse(created.NewRecipe),

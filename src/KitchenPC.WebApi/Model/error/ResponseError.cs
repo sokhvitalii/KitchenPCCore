@@ -1,12 +1,14 @@
+using System;
+
 namespace KitchenPC.WebApi.Model.error
 {
-    public class ResponseError
+    public class ResponseError : Exception
     {
-        public string Message { get; set; }
         
-        public ResponseError(string m)
+        
+        public ResponseError(string m) : base(m)
         {
-            Message = m;
+           
         }
         
         public ResponseError()

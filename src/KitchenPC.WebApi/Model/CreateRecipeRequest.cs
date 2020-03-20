@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using KitchenPC.Recipes;
 
 namespace KitchenPC.WebApi.Model
@@ -55,7 +56,7 @@ namespace KitchenPC.WebApi.Model
         public DateTime DateEntered { get; set; }
         public int ServingSize { get; set; }
         public string ImageUrl { get; set; }
-        public string[] Tags { get; set; }
+        public List<string> Tags { get; set; }
         
         public CreateRecipeRequest()
         {

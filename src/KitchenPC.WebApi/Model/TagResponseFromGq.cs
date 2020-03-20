@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace KitchenPC.WebApi.Model
@@ -8,6 +9,11 @@ namespace KitchenPC.WebApi.Model
         public int Id { get; set; }
         public string Name { get; set; }
        
+        public TagsGQ(int id)
+        {
+            Id = id;
+        }  
+        
         public TagsGQ()
         {
         }
@@ -45,7 +51,7 @@ namespace KitchenPC.WebApi.Model
     
     public class DataTag
     {
-        public TagsGQ[] Tag { get; set; }
+        public List<TagsGQ> Tag { get; set; }
        
         public DataTag()
         {

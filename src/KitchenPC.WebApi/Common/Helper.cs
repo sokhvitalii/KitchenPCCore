@@ -17,7 +17,6 @@ namespace KitchenPC.WebApi.Common
         {
             DBHost = System.Configuration.ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
             HasuraHost = System.Configuration.ConfigurationManager.ConnectionStrings["HasuraConnection"].ConnectionString;
-            
         }
 
     }

@@ -106,9 +106,6 @@ namespace KitchenPC.DB.Helper
         
         public string BulkResult()
         {
-            // id: 10, recipe_id: "b", tag_id: 10
-            // objects: [{id: 10, recipe_id: "b", tag_id: 10}, {id: 10, recipe_id: "", tag_id: 10}]
-            // bulkInput
             var ret = String.Join(" ", returning);
             var head = $"{{\"query\":\"mutation MyMutation {{ {tableName}(objects: [";
             var last = $" ]) {{ returning {{  {ret} }}}}}}\", \"operationName\":\"MyMutation\"}}";
@@ -190,7 +187,7 @@ namespace KitchenPC.DB.Helper
             var prepare = 
                 pair.Value is string ? 
                     pair.Key + $": {{ {pair.Label}: \\\"" + pair.Value + "\\\"" : 
-                    pair.Key + $": {{ {pair.Label}" + pair.Value;
+                    pair.Key + $": {{ {pair.Label}: " + pair.Value;
             return "{" + prepare + "}}";
         }
 
