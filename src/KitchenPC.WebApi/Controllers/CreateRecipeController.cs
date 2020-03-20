@@ -15,9 +15,11 @@ namespace KitchenPC.WebApi.Controllers
         [HttpPost]
         public IActionResult Post(CreateRecipeRequest request)
         {
+            var jsonHelper = new JsonHelper();
             try
             {
-                var context = new DataBaseConnection(new AuthIdentity("systemUser", "")).Context.Context;
+                Console.WriteLine("request = " + request);
+                var context = new DataBaseConnection(new AuthIdentity("systemUser", ""), jsonHelper).Context.Context;
                 var createRecipeHelper = new CreateRecipeHelper(context);
 
                 RecipeTags tegs = RecipeTag.Easy | RecipeTag.Quick;
@@ -52,11 +54,11 @@ namespace KitchenPC.WebApi.Controllers
 
                 if (created.RecipeCreated)
                 {
-                    var ids = createRecipeHelper.GetTagIds(request.Tags);
-                    createRecipeHelper.SendToInsertRecipeTag(ids, created.NewRecipeId.Value);
+                    var ids = createRecipeHelper.GetTagIds(request.Tags, jsonHelper);
+                    createRecipeHelper.SendToInsertRecipeTag(ids, created.NewRecipeId.Value, jsonHelper);
                     
                     return Ok(JsonSerializer.Serialize(new CreateRecipeResponse(created.NewRecipe),
-                        JsonHelper.Options));
+                        jsonHelper.Options));
                 }
 
                 return NoContent();
@@ -64,7 +66,7 @@ namespace KitchenPC.WebApi.Controllers
             catch (Exception e)
             {
                 Console.WriteLine("error = " + e);
-                return BadRequest(JsonSerializer.Serialize(new ResponseError(e.Message), JsonHelper.Options)); 
+                return BadRequest(JsonSerializer.Serialize(new ResponseError(e.Message), jsonHelper.Options)); 
             }
         }
     }

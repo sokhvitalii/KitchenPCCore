@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using KitchenPC.Context.Fluent;
 using KitchenPC.Recipes;
 using KitchenPC.ShoppingLists;
+using KitchenPC.WebApi.Common;
 using KitchenPC.WebApi.Model;
 
 namespace KitchenPC.WebApi.Controllers
@@ -91,9 +92,10 @@ namespace KitchenPC.WebApi.Controllers
         [HttpPost]
         public IActionResult Post(ShoppingListEvent request)
         {
+            var jsonHelper = new JsonHelper();
             try
             {
-                var context = new DataBaseConnection(new AuthIdentity(request.Event.SessionVariables.HasuraUserId, ""))
+                var context = new DataBaseConnection(new AuthIdentity(request.Event.SessionVariables.HasuraUserId, ""), jsonHelper)
                     .Context.Context;
                 var sList = context.ShoppingLists.Load(new ShoppingList(null, request.Event.Data.New.Planid)).WithItems
                     .List();

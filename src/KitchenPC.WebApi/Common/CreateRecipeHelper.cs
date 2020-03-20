@@ -18,28 +18,27 @@ namespace KitchenPC.WebApi.Common
     {
         public DBContext context;
 
-        public static HttpRequestMessage Request(string query)
+        public static HttpRequestMessage Request(string query, JsonHelper conf)
         {
-            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "http://localhost:8080/v1/graphql");
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, conf.HasuraHost);
             request.Headers.Add("x-hasura-admin-secret", "ADMIN_SECRET_KEY");
             request.Content = new StringContent(query, Encoding.UTF8, "application/json");
             Console.WriteLine("Request query: {0}", query);
             return request;
         }
 
-        public T SendHttpRequest<T>(HttpClient client, HttpRequestMessage msg)
+        public T SendHttpRequest<T>(HttpClient client, HttpRequestMessage msg, JsonHelper conf)
         {
-           
             return client.SendAsync(msg)
                 .ContinueWith(responseTask =>
                 {
                     var res = responseTask.Result.Content.ReadAsStringAsync().Result;
                     Console.WriteLine("Response from tag: {0}", res);
-                    return JsonSerializer.Deserialize<T>(res, JsonHelper.Options);
+                    return JsonSerializer.Deserialize<T>(res, conf.Options);
                 }).Result;
         }
 
-        public TagResponseFromGq GetTagIds(string[] tags)
+        public TagResponseFromGq GetTagIds(string[] tags, JsonHelper conf)
         {
             TagResponseFromGq list; 
             using (var client = new HttpClient())
@@ -55,15 +54,15 @@ namespace KitchenPC.WebApi.Common
                     query.AppendCondition(new ConditionType("name", t, "_eq"));
                 }
                 
-                var request = Request(query.BulkResult("_or"));
-                list = SendHttpRequest<TagResponseFromGq>(client, request);
+                var request = Request(query.BulkResult("_or"), conf);
+                list = SendHttpRequest<TagResponseFromGq>(client, request, conf);
             }
 
             return list;
         }
         
         
-        public RecipeTagResponseFromGq SendToInsertRecipeTag(TagResponseFromGq tags, Guid recipeId)
+        public RecipeTagResponseFromGq SendToInsertRecipeTag(TagResponseFromGq tags, Guid recipeId, JsonHelper conf)
         {
             RecipeTagResponseFromGq list = new RecipeTagResponseFromGq(); 
             using (var client = new HttpClient())
@@ -79,8 +78,8 @@ namespace KitchenPC.WebApi.Common
                     record.AppendObject("recipe_id", recipeId.ToString());
                     query.AppendObject(record);
                 }
-                 var request = Request(query.BulkResult());
-                 list = SendHttpRequest<RecipeTagResponseFromGq>(client, request);
+                 var request = Request(query.BulkResult(), conf);
+                 list = SendHttpRequest<RecipeTagResponseFromGq>(client, request, conf);
                 
             }
 

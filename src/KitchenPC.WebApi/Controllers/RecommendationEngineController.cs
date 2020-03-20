@@ -4,6 +4,7 @@ using System.Linq;
 using KitchenPC.Context.Fluent;
 using KitchenPC.Modeler;
 using KitchenPC.ShoppingLists;
+using KitchenPC.WebApi.Common;
 using KitchenPC.WebApi.Model;
 using Microsoft.AspNetCore.Mvc;
 using IngredientUsage = KitchenPC.Ingredients.IngredientUsage;
@@ -32,8 +33,8 @@ namespace KitchenPC.WebApi.Controllers
         [HttpPost]
         public IActionResult Post(string request)
         {
-            
-            var context = new DataBaseConnection(new AuthIdentity("Vetal", "")).Context.Context;
+            var jsonHelper = new JsonHelper();
+            var context = new DataBaseConnection(new AuthIdentity("Vetal", ""), jsonHelper).Context.Context;
             var sList = context.ShoppingLists.LoadAll.WithItems.List();
             var pantryItems = sList.SelectMany(x => SetItemToRemove(x.GetEnumerator())).ToArray();
             

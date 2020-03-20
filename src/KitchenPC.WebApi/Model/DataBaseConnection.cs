@@ -2,6 +2,7 @@ using FluentNHibernate.Cfg.Db;
 using KitchenPC.Context;
 using KitchenPC.DB;
 using KitchenPC.DB.Search;
+using KitchenPC.WebApi.Common;
 
 namespace KitchenPC.WebApi.Model
 {
@@ -9,10 +10,10 @@ namespace KitchenPC.WebApi.Model
     {
         public IConfiguration<DBContext> Context { get; }
 
-        public DataBaseConnection(AuthIdentity authIdentity)
+        public DataBaseConnection(AuthIdentity authIdentity, JsonHelper conf)
         {
             var postgreConf = PostgreSQLConfiguration.PostgreSQL82
-                .ConnectionString(@"Server=167.71.168.83;Port=5432;User Id=postgres;Password=postgres;Database=postgres")
+                .ConnectionString(@conf.DBHost)
                 .ShowSql();
             
             Context = Configuration<DBContext>.Build

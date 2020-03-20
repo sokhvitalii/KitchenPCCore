@@ -17,8 +17,8 @@ namespace KitchenPC.WebApi.Controllers
         [HttpPost]
         public IActionResult Post(ParseIngredients request)
         {
-
-            var ctx = new DataBaseConnection(new AuthIdentity("systemUser", "")).Context.Context;
+            var jsonHelper = new JsonHelper();
+            var ctx = new DataBaseConnection(new AuthIdentity("systemUser", ""), jsonHelper).Context.Context;
             var aSplit = request.Request.Split("\n", StringSplitOptions.RemoveEmptyEntries).Select(x => x.Trim());
             var list = new List<ParseIngredientsResponse>();
 
@@ -44,7 +44,7 @@ namespace KitchenPC.WebApi.Controllers
                 }
             }
 
-            return list.Any()? (IActionResult) Ok(JsonSerializer.Serialize(list, JsonHelper.Options)): NoContent();
+            return list.Any()? (IActionResult) Ok(JsonSerializer.Serialize(list, jsonHelper.Options)): NoContent();
         }
     }
 }

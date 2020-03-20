@@ -7,6 +7,7 @@ using KitchenPC.DB.Provisioning;
 using KitchenPC.Ingredients;
 using KitchenPC.Parser;
 using KitchenPC.Recipes;
+using KitchenPC.WebApi.Common;
 using KitchenPC.WebApi.Model;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,9 +20,10 @@ namespace KitchenPC.WebApi.Controllers
         [HttpPost]
         public IActionResult Post(FoodComRequest request)
         {
+            var jsonHelper = new JsonHelper();
             try
             {
-                var context = new DataBaseConnection(new AuthIdentity("systemUser", "")).Context.Context;
+                var context = new DataBaseConnection(new AuthIdentity("systemUser", ""), jsonHelper).Context.Context;
                 var result = ParserFactory.StartParse(new Uri(request.Url), context);
                 if (result.Result == ParserResult.Status.Success)
                 {
