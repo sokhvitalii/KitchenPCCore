@@ -50,6 +50,7 @@ namespace KitchenPC.WebApi.Model
         public int PrepTime { get; set; }
         public Rating Rating { get; set; }
         public string Description { get; set; }
+        public string Difficulty { get; set; }
         public string Title { get; set; }
         public string Credit { get; set; }
         public string CreditUrl { get; set; }

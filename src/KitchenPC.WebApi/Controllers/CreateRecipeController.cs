@@ -64,6 +64,7 @@ namespace KitchenPC.WebApi.Controllers
                     if (mainId == 0)
                         throw new ResponseError("main ingredient was not save, name: " + ingredient.Name);
                     
+                    request.Tags.Add(request.Difficulty);
                     var ids = createRecipeHelper.GetTagIds(request.Tags, jsonHelper);
                     ids.Data.Tag.Add(new TagsGQ(mainId));
                     createRecipeHelper.SendToInsertRecipeTag(ids, created.NewRecipeId.Value, jsonHelper);
