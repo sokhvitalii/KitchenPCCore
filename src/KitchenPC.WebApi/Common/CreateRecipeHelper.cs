@@ -66,7 +66,7 @@ namespace KitchenPC.WebApi.Common
            
         public int SendToInsertMainIngredient(Ingredient ingredient, Guid recipeId, JsonHelper conf)
         {
-            int id = 0; 
+           
             using (var client = new HttpClient())
             {
                 
@@ -82,7 +82,7 @@ namespace KitchenPC.WebApi.Common
                 var requestGet = Request(queryGet.BulkResult("_and"), conf);
                 var response = SendHttpRequest<TagResponseFromGq>(client, requestGet, conf);
 
-                if (response.Data?.Tag == null)
+                if (response.Data?.Tag == null || response.Data?.Tag.Count == 0)
                 {
                     var query =  GraphQlRequestBuilder.CreateMutation()
                         .Table("insert_tag")
@@ -94,18 +94,18 @@ namespace KitchenPC.WebApi.Common
                     var request = Request(query.Result(), conf);
                     var obj = SendHttpRequest<TagGraphQlResponse>(client, request, conf);
                     
-                    if (obj.Data?.InsertTag?.Returning == null)
+                    if (obj.Data!?.InsertTag!?.Returning != null || obj.Data.InsertTag.Returning.Length >= 0)
                     {
-                        id = SendHttpRequest<TagGraphQlResponse>(client, request, conf).Data.InsertTag.Returning.First().id;  
+                        return obj.Data.InsertTag.Returning.First().id;  
                     }
                 }
                 else
                 {
-                    id = response.Data.Tag.First().Id;
+                    return response.Data.Tag.First().Id;
                 }
             }
 
-            return id;
+            return 0;
         }
 
         

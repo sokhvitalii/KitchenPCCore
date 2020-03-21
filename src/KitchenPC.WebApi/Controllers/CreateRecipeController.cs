@@ -58,11 +58,14 @@ namespace KitchenPC.WebApi.Controllers
 
                 if (created.RecipeCreated)
                 {
-                    var ingredient = ingredients.SingleOrDefault(x => x.Ingredient.Name == request.MainIngredient.Name)?.Ingredient;
-                    var mainId = createRecipeHelper.SendToInsertMainIngredient(ingredient, created.NewRecipeId.Value, jsonHelper);
+                    var ingredient = ingredients.SingleOrDefault(x => x.Ingredient.Name == request.MainIngredient.Name);
+                    if (ingredient?.Ingredient.Name == null)
+                        throw new ResponseError("ingredients does not contains main ingredient");  
+                    
+                    var mainId = createRecipeHelper.SendToInsertMainIngredient(ingredient.Ingredient, created.NewRecipeId.Value, jsonHelper);
 
                     if (mainId == 0)
-                        throw new ResponseError("main ingredient was not save, name: " + ingredient.Name);
+                        throw new ResponseError("main ingredient was not save, name: " + ingredient.Ingredient.Name);
                     
                     request.Tags.Add(request.Difficulty);
                     var ids = createRecipeHelper.GetTagIds(request.Tags, jsonHelper);
