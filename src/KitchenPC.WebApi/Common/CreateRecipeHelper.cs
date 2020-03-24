@@ -159,27 +159,27 @@ namespace KitchenPC.WebApi.Common
             var allIngredient = new List<IngredientUsage>();
             foreach (var ingredient in req.Ingredients)
             {
-                var unitType = getUnit(ingredient.Quantity.Unit);
-                var pResult = context.Parser.Parse(ingredient.Name.Trim());
-                Amount amount = new Amount();
-                amount.SizeHigh = ingredient.Quantity.Size;
-                amount.Unit = unitType;
+                var amount = ingredient.Quantity.Unit != null ? 
+                    new Amount(ingredient.Quantity.Size,  getUnit(ingredient.Quantity.Unit)) : 
+                    new Amount {SizeHigh = ingredient.Quantity.Size};
                 
+                // var pResult = context.Parser.Parse(ingredient.Name.Trim());
+                /*
                 if (pResult.Usage?.Ingredient == null)
                     throw new ResponseError("NLP can not parse ingredient name: " + ingredient.Name);
+                    */
 
                 Guid id;
 
                 try
                 {
-                    id = context.ReadIngredient(pResult.Usage.Ingredient.Name).Id;
+                    id = context.ReadIngredient(ingredient.Name.Trim()).Id;
                 }
                 catch (Exception e)
                 {
                     id = Guid.NewGuid();
                     var ing = new Data.DTO.Ingredients();
-                    ing.DisplayName = pResult.Usage.Ingredient.Name;
-                    ing.ConversionType = (UnitType) unitType;
+                    ing.DisplayName = ingredient.Name.Trim();
                     ing.IngredientId = id;
                     ing.ManufacturerName = ingredient.Name;
                     ing.UnitName = ingredient.Aisle;
