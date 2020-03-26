@@ -48,10 +48,10 @@ namespace KitchenPC.WebApi.Controllers
                     .WithPrepTime((short) request.PrepTime)
                     .WithIngredients(x => createRecipeHelper.setAdder(x, ingredients));
 
-                if (request.CreditUrl != null)
+                if (request.ImageUrl != null)
                     create.WithImage(new Uri(request.ImageUrl));
      
-                if (request.ImageUrl != null)
+                if (request.CreditUrl != null)
                     create.WithCreditUrl(new Uri(request.CreditUrl));
 
                 var created = create.Commit();
