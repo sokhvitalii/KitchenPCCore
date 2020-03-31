@@ -30,6 +30,7 @@ namespace KitchenPC.Recipes
       public bool PublicEdit = false;
       public bool AllowDelete = false;
       public int InMenus = 0;
+      public string UserChefId;
 
       public static Recipe FromId(Guid recipeId)
       {

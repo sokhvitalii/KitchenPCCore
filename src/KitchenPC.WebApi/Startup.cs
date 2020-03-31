@@ -20,6 +20,7 @@ namespace KitchenPC.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers().AddJsonOptions(o => o.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase);
+            services.AddControllers().AddJsonOptions(o => o.JsonSerializerOptions.Converters.Add(new DateTimeConverter()));
             // services.AddSingleton<DataBaseConnection>();
 
         }

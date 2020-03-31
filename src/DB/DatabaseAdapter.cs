@@ -392,6 +392,7 @@ namespace KitchenPC.DB
                   CreditUrl = recipe.CreditUrl,
                   DateEntered = recipe.DateEntered,
                   ImageUrl = recipe.ImageUrl,
+                  UserChefId = recipe.UserChefId,
                   Rating = recipe.AvgRating,
                   ServingSize = recipe.ServingSize,
                   Steps = recipe.Method

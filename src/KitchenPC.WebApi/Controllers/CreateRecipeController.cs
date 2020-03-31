@@ -41,7 +41,7 @@ namespace KitchenPC.WebApi.Controllers
                     .WithMethod(request.Steps)
                     .WithServingSize((short) request.ServingSize)
                     .WithTitle(request.Title)
-                    .WithDateEntered(request.DateEntered)
+                    .WithDateEntered(request.DateEntered ?? DateTime.Now)
                     .WithRating(request.Rating)
                     .WithTags(tegs)
                     .WithCookTime((short) request.CookTime)
@@ -50,6 +50,9 @@ namespace KitchenPC.WebApi.Controllers
 
                 if (request.ImageUrl != null)
                     create.WithImage(new Uri(request.ImageUrl));
+                
+                if (request.UserChefId != null)
+                    create.WithUserChef(request.UserChefId);
      
                 if (request.CreditUrl != null)
                     create.WithCreditUrl(new Uri(request.CreditUrl));

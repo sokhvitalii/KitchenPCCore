@@ -20,6 +20,7 @@ namespace KitchenPC.DB.Models
       public virtual DateTime DateEntered { get; set; }
       public virtual short ServingSize { get; set; }
       public virtual string ImageUrl { get; set; }
+      public virtual string UserChefId { get; set; }
 
       public virtual IList<RecipeIngredients> Ingredients { get; set; }
       public virtual RecipeMetadata RecipeMetadata { get; set; }
@@ -66,6 +67,7 @@ namespace KitchenPC.DB.Models
          Map(x => x.CreditUrl).Length(1024);
          Map(x => x.DateEntered).Not.Nullable();
          Map(x => x.ServingSize).Not.Nullable().Check("ServingSize > 0");
+         Map(x => x.UserChefId).Nullable().Column("user_chef_id");
          Map(x => x.ImageUrl).Length(100);
 
          HasMany(x => x.Ingredients).KeyColumn("RecipeId");

@@ -414,6 +414,12 @@ namespace KitchenPC.Context.Fluent
          recipe.Description = desc;
          return this;
       }
+      
+      public RecipeCreator WithUserChef(string id)
+      {
+         recipe.UserChefId = id;
+         return this;
+      }
 
       public RecipeCreator WithCredit(string credit)
       {

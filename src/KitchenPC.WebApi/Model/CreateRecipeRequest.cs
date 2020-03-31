@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 using KitchenPC.Recipes;
 
 namespace KitchenPC.WebApi.Model
@@ -50,11 +51,13 @@ namespace KitchenPC.WebApi.Model
         public int PrepTime { get; set; }
         public Rating Rating { get; set; }
         public string Description { get; set; }
+        [JsonPropertyName("user_chef_id")]
+        public string UserChefId { get; set; }
         public string Difficulty { get; set; }
         public string Title { get; set; }
         public string Credit { get; set; }
         public string CreditUrl { get; set; }
-        public DateTime DateEntered { get; set; }
+        public DateTime? DateEntered { get; set; }
         public int ServingSize { get; set; }
         public string ImageUrl { get; set; }
         public List<string> Tags { get; set; }
