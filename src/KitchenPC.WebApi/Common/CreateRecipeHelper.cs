@@ -109,7 +109,6 @@ namespace KitchenPC.WebApi.Common
         }
 
         
-        
         public RecipeTagResponseFromGq SendToInsertRecipeTag(TagResponseFromGq tags, Guid recipeId, JsonHelper conf)
         {
             RecipeTagResponseFromGq list = new RecipeTagResponseFromGq(); 
@@ -123,6 +122,32 @@ namespace KitchenPC.WebApi.Common
                 {
                     var record = new MutationSingleObject();
                     record.AppendObject("tag_id", t.Id);
+                    record.AppendObject("recipe_id", recipeId.ToString());
+                    query.AppendObject(record);
+                }
+                 var request = Request(query.BulkResult(), conf);
+                 list = SendHttpRequest<RecipeTagResponseFromGq>(client, request, conf);
+                
+            }
+
+            return list;
+        }        
+        
+        public RecipeTagResponseFromGq SendRecipeStep(RecipeStepRequest[] steps, Guid recipeId, JsonHelper conf)
+        {
+            RecipeTagResponseFromGq list = new RecipeTagResponseFromGq(); 
+            using (var client = new HttpClient())
+            {
+                var query =  GraphQlRequestBuilder.CreateMutation()
+                    .Table("insert_recipe_step")
+                    .AppendReturn("id");
+
+                foreach (var t in steps)
+                {
+                    var record = new MutationSingleObject();
+                    record.AppendObject("imageurl", t.ImageUrl);
+                    record.AppendObject("order", t.Order);
+                    record.AppendObject("text", t.Text);
                     record.AppendObject("recipe_id", recipeId.ToString());
                     query.AppendObject(record);
                 }

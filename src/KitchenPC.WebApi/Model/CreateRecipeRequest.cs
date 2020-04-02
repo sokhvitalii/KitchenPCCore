@@ -39,10 +39,22 @@ namespace KitchenPC.WebApi.Model
         {
         }
     }
+    
+    public class RecipeStepRequest
+    {
+        public string Text { get; set; }
+        public string ImageUrl { get; set; }
+        public int Order { get; set; }
+        
+        public RecipeStepRequest()
+        {
+        }
+    }
 
     public class CreateRecipeRequest
     {
         
+        public RecipeStepRequest[] RecipeStep { get; set; }        
         public IngredientsRequest[] Ingredients { get; set; }
         
         public MainIngredientRequest MainIngredient { get; set; }

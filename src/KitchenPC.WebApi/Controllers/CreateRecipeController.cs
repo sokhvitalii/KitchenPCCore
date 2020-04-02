@@ -35,6 +35,9 @@ namespace KitchenPC.WebApi.Controllers
 
                 var ingredients = createRecipeHelper.GetIngredients(request);
                 
+                if (request.RecipeStep == null || request.RecipeStep.Length == 0)
+                    throw new ResponseError("required field recipe step");
+                
                 var create = context.Recipes.Create
                     .WithCredit(request.Credit)
                     .WithDescription(request.Description)
@@ -74,6 +77,7 @@ namespace KitchenPC.WebApi.Controllers
                     var ids = createRecipeHelper.GetTagIds(request.Tags, jsonHelper);
                     ids.Data.Tag.Add(new TagsGQ(mainId));
                     createRecipeHelper.SendToInsertRecipeTag(ids, created.NewRecipeId.Value, jsonHelper);
+                    createRecipeHelper.SendRecipeStep(request.RecipeStep, created.NewRecipeId.Value, jsonHelper);
                     
                     return Ok(JsonSerializer.Serialize(new CreateRecipeResponse(created.NewRecipe),
                         jsonHelper.Options));
