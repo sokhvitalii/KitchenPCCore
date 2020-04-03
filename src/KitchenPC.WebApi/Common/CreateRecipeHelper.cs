@@ -147,7 +147,7 @@ namespace KitchenPC.WebApi.Common
                     var record = new MutationSingleObject();
                     record.AppendObject("imageurl", t.ImageUrl);
                     record.AppendObject("order", t.Order);
-                    record.AppendObject("text", t.Text);
+                    record.AppendObject("text", t.Text.Replace("\"", ""));
                     record.AppendObject("recipe_id", recipeId.ToString());
                     query.AppendObject(record);
                 }
