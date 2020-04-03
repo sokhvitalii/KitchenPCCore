@@ -64,7 +64,9 @@ namespace KitchenPC.WebApi.Model
         public Rating Rating { get; set; }
         public string Description { get; set; }
         [JsonPropertyName("user_chef_id")]
-        public string UserChefId { get; set; }
+        public string UserChefId { get; set; }       
+        [JsonPropertyName("user_updated_by")]
+        public string UserUpdatedId { get; set; }
         public string Difficulty { get; set; }
         public string Title { get; set; }
         public string Credit { get; set; }

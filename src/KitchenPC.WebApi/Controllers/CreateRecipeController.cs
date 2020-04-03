@@ -55,7 +55,10 @@ namespace KitchenPC.WebApi.Controllers
                     create.WithImage(new Uri(request.ImageUrl));
                 
                 if (request.UserChefId != null)
-                    create.WithUserChef(request.UserChefId);
+                    create.WithUserChef(request.UserChefId); 
+                
+                if (request.UserUpdatedId != null)
+                    create.WithUserUpdated(request.UserUpdatedId);
      
                 if (request.CreditUrl != null)
                     create.WithCreditUrl(new Uri(request.CreditUrl));
