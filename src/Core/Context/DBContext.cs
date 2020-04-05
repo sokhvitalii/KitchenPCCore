@@ -151,12 +151,12 @@ namespace KitchenPC.Context
                modeler.LoadSnapshot();
 
                // Initialize natural language parsing
-               IngredientSynonyms.InitIndex(Adapter.IngredientLoader);
+               /*IngredientSynonyms.InitIndex(Adapter.IngredientLoader);
                UnitSynonyms.InitIndex(Adapter.UnitLoader);
                FormSynonyms.InitIndex(Adapter.FormLoader);
                PrepNotes.InitIndex(Adapter.PrepLoader);
                Anomalies.InitIndex(Adapter.AnomalyLoader);
-               NumericVocab.InitIndex();
+               NumericVocab.InitIndex();*/
 
                parser = new Parser();
                LoadTemplates();
