@@ -20,6 +20,7 @@ namespace KitchenPC.WebApi.Model
     {
         public string Name { get; set; }
         public string Image { get; set; }
+        public string Comment { get; set; }
         public int Id { get; set; }
         public string Aisle { get; set; }
         public QuantityRequest Quantity { get; set; }

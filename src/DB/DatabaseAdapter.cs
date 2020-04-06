@@ -412,8 +412,9 @@ namespace KitchenPC.DB
                      IngredientForm = (i.Form != null ? IngredientForms.FromId(i.Form.FormId) : null),
                      Qty = (i.Amount != null ? (float?) i.Amount.SizeHigh : null),
                      QtyLow = (i.Amount != null ? (float?) i.Amount.SizeLow : null),
-                     Unit = (i.Amount != null ? i.Amount.Unit : Units.Unit),
+                     Unit = i.Amount.Unit,
                      Section = i.Section,
+                     Comment = i.Comment,
                      DisplayOrder = ++displayOrder
                   };
 

@@ -10,6 +10,7 @@ namespace KitchenPC.Ingredients
       public Amount Amount;
       public String PrepNote;
       public String Section;
+      public String Comment;
 
       public static IngredientUsageCreator Create
       {
@@ -26,6 +27,15 @@ namespace KitchenPC.Ingredients
          Amount = amount;
          PrepNote = prepnote;
       }
+      
+      
+      public IngredientUsage(Ingredient ingredient, Amount amount, String comment)
+      {
+         Ingredient = ingredient;
+         Amount = amount;
+         Comment = comment;
+      }
+
 
       public IngredientUsage()
       {

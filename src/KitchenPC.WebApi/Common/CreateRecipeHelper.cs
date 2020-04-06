@@ -171,7 +171,7 @@ namespace KitchenPC.WebApi.Common
         {
             foreach (var ingredient in ingredients)
             {
-                adder.AddIngredient(ingredient.Ingredient, ingredient.Amount);
+                adder.AddIngredient(ingredient);
             }
             
             return adder;
@@ -212,7 +212,7 @@ namespace KitchenPC.WebApi.Common
                 }
 
                 var ingr = new Ingredient(id, ingredient.Name);
-                allIngredient.Add(new IngredientUsage(ingr, null, amount, null));
+                allIngredient.Add(new IngredientUsage(ingr,  amount, ingredient.Comment));
             }
 
             if (context.Adapter is DatabaseAdapter databaseAdapter)

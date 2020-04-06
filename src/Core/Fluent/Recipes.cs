@@ -552,6 +552,11 @@ namespace KitchenPC.Context.Fluent
          return AddIngredientUsage(usage);
       }
 
+      public IngredientAdder AddIngredient(IngredientUsage usage)
+      {
+         return AddIngredientUsage(usage);
+      }
+      
       public IngredientAdder AddIngredient(Ingredient ingredient, Amount amount, string prepNote = null)
       {
          var usage = new IngredientUsage(ingredient, null, amount, prepNote);
