@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace KitchenPC
 {
    public static class Fractions
    {
-      static readonly Dictionary<decimal, String> _map;
+      static Dictionary<decimal, String> _map;
 
       static Fractions()
       {
@@ -91,6 +92,11 @@ namespace KitchenPC
          _map.Add(0.688m, "11/16");
          _map.Add(0.812m, "13/16");
          _map.Add(0.938m, "15/16");
+      }
+
+      public static Dictionary<string, double> GetMap()
+      {
+         return _map.ToDictionary(x => x.Value, x => Convert.ToDouble(x.Key));;
       }
 
       public static string FromDecimal(decimal value)
