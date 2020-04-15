@@ -19,6 +19,14 @@ namespace KitchenPC.WebApi.Controllers
             var jsonHelper = new JsonHelper();
             try
             {
+                var ingredientsName = request.Ingredients.Select(x => x.Name).ToList();
+                var duplicates = ingredientsName.GroupBy(x => x)
+                    .Where(g => g.Count() > 1)
+                    .Select(y => y.Key)
+                    .ToList();
+                if (duplicates.Count > 0)
+                    throw new ResponseError("ingredients has duplicate name: " +  String.Join(",", duplicates));
+
                 Console.WriteLine("request = " + request);
                 var context = new DataBaseConnection(new AuthIdentity("systemUser", ""), jsonHelper).Context.Context;
                 var createRecipeHelper = new CreateRecipeHelper(context);
