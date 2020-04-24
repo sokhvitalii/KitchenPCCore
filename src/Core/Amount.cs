@@ -63,6 +63,12 @@ namespace KitchenPC
          SizeHigh = size;
          Unit = unit;
       }
+      
+      public Amount(Single size)
+      {
+         SizeHigh = size;
+         Unit = Units.Unit;
+      }
 
       public Amount(Single? from, Single to, Units unit)
       {

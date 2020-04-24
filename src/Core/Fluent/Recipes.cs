@@ -468,6 +468,12 @@ namespace KitchenPC.Context.Fluent
          recipe.AvgRating = (short) rating;
          return this;
       }
+      
+      public RecipeCreator WithIsComplete(bool? isComplete)
+      {
+         recipe.isComplete = isComplete;
+         return this;
+      }
 
       public RecipeCreator WithServingSize(short servings)
       {

@@ -180,20 +180,24 @@ namespace KitchenPC.WebApi.Common
         
         public List<IngredientUsage> GetIngredients(CreateRecipeRequest req)
         {
+            
+            var duplicates = req.Ingredients.GroupBy(x => x.Name)
+                .Where(g => g.Count() > 1)
+                .Select(y => y)
+                .ToList();
+
+            var distinct = req.Ingredients
+                .GroupBy(customer => customer.Name)
+                .Select(group => group.First());;
+            
             var ingredientDto = new List<Data.DTO.Ingredients>();
             var allIngredient = new List<IngredientUsage>();
-            foreach (var ingredient in req.Ingredients)
+            foreach (var ingredient in distinct)
             {
                 var amount = ingredient.Quantity.Unit != null ? 
                     new Amount(ingredient.Quantity.Size,  getUnit(ingredient.Quantity.Unit)) : 
-                    new Amount {SizeHigh = ingredient.Quantity.Size};
+                    new Amount(ingredient.Quantity.Size);
                 
-                // var pResult = context.Parser.Parse(ingredient.Name.Trim());
-                /*
-                if (pResult.Usage?.Ingredient == null)
-                    throw new ResponseError("NLP can not parse ingredient name: " + ingredient.Name);
-                    */
-
                 Guid id;
 
                 try
@@ -220,6 +224,20 @@ namespace KitchenPC.WebApi.Common
                 using (var importer = new DatabaseImporter(databaseAdapter.GetSession()))
                 {
                     importer.Import(ingredientDto);
+                }
+            }
+            
+            foreach (var group in duplicates)
+            {
+                var ingredient = allIngredient.Find(x => x.Ingredient.Name == group.Key);
+                allIngredient.Remove(ingredient);
+                foreach (var value in group)
+                {
+                    var amount = value.Quantity.Unit != null
+                        ? new Amount(value.Quantity.Size, getUnit(value.Quantity.Unit))
+                        : new Amount(value.Quantity.Size);
+                    var ingr = new Ingredient(ingredient.Ingredient.Id, ingredient.Ingredient.Name);
+                    allIngredient.Add(new IngredientUsage(ingr, amount, value.Comment));
                 }
             }
             

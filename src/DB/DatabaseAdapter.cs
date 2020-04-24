@@ -393,6 +393,7 @@ namespace KitchenPC.DB
                   DateEntered = recipe.DateEntered,
                   ImageUrl = recipe.ImageUrl,
                   UserChefId = recipe.UserChefId,
+                  isComplete = recipe.isComplete,
                   UserUpdatedId = recipe.UserUpdatedId,
                   Rating = recipe.AvgRating,
                   ServingSize = recipe.ServingSize,

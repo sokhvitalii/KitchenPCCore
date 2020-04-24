@@ -19,14 +19,6 @@ namespace KitchenPC.WebApi.Controllers
             var jsonHelper = new JsonHelper();
             try
             {
-                var ingredientsName = request.Ingredients.Select(x => x.Name).ToList();
-                var duplicates = ingredientsName.GroupBy(x => x)
-                    .Where(g => g.Count() > 1)
-                    .Select(y => y.Key)
-                    .ToList();
-                if (duplicates.Count > 0)
-                    throw new ResponseError("ingredients has duplicate name: " +  String.Join(",", duplicates));
-
                 Console.WriteLine("request = " + request);
                 var context = new DataBaseConnection(new AuthIdentity("systemUser", ""), jsonHelper).Context.Context;
                 var createRecipeHelper = new CreateRecipeHelper(context);
@@ -41,10 +33,14 @@ namespace KitchenPC.WebApi.Controllers
                     Console.WriteLine("error = " + e);
                 }
 
-                var ingredients = createRecipeHelper.GetIngredients(request);
-                
                 if (request.RecipeStep == null || request.RecipeStep.Length == 0)
                     throw new ResponseError("required field recipe step");
+                
+                var ingredients = createRecipeHelper.GetIngredients(request);
+                
+                var mainIngredient = ingredients.SingleOrDefault(x => x.Ingredient.Name == request.MainIngredient.Name);
+                if (mainIngredient?.Ingredient?.Name == null)
+                    throw new ResponseError("ingredients does not contains main ingredient");
                 
                 var create = context.Recipes.Create
                     .WithCredit(request.Credit)
@@ -66,7 +62,10 @@ namespace KitchenPC.WebApi.Controllers
                     create.WithUserChef(request.UserChefId); 
                 
                 if (request.UserUpdatedId != null)
-                    create.WithUserUpdated(request.UserUpdatedId);
+                    create.WithUserUpdated(request.UserUpdatedId); 
+                
+                if (request.isComplete != null)
+                    create.WithIsComplete(request.isComplete);
      
                 if (request.CreditUrl != null)
                     create.WithCreditUrl(new Uri(request.CreditUrl));
@@ -75,14 +74,9 @@ namespace KitchenPC.WebApi.Controllers
 
                 if (created.RecipeCreated)
                 {
-                    var ingredient = ingredients.SingleOrDefault(x => x.Ingredient.Name == request.MainIngredient.Name);
-                    if (ingredient?.Ingredient?.Name == null)
-                        throw new ResponseError("ingredients does not contains main ingredient");  
-                    
-                    var mainId = createRecipeHelper.SendToInsertMainIngredient(ingredient.Ingredient, created.NewRecipeId.Value, jsonHelper);
-
+                    var mainId = createRecipeHelper.SendToInsertMainIngredient(mainIngredient.Ingredient, created.NewRecipeId.Value, jsonHelper);
                     if (mainId == 0)
-                        throw new ResponseError("main ingredient was not save, name: " + ingredient.Ingredient.Name);
+                        throw new ResponseError("main ingredient was not save, name: " + mainIngredient.Ingredient.Name);
                     
                     if (request.Difficulty != null)
                         request.Tags.Add(request.Difficulty);
