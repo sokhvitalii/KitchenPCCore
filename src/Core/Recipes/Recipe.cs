@@ -18,12 +18,13 @@ namespace KitchenPC.Recipes
       public String Credit;
       public String CreditUrl;
       public String Permalink;
+      public string Comment;
       public String Method;
       public DateTime DateEntered;
       public short? PrepTime = 0;
       public short? CookTime = 0;
       public short AvgRating = 0;
-      public bool? isComplete;
+      public bool? IsComplete;
       public Rating UserRating = Rating.None;
       public short ServingSize = 4;
       public int Comments = 0;
@@ -114,11 +115,6 @@ namespace KitchenPC.Recipes
          if (recipe.Tags == null || recipe.Tags.Length == 0)
          {
             throw new InvalidRecipeDataException("Recipes must contain at least one tag.");
-         }
-
-         if (recipe.Description != null && recipe.Description.Length > 250)
-         {
-            recipe.Description = recipe.Description.Substring(0, 250) + "...";
          }
 
          if (recipe.CreditUrl != null)

@@ -385,6 +385,7 @@ namespace KitchenPC.DB
                var dbRecipe = new Models.Recipes
                {
                   Title = recipe.Title,
+                  Comment = recipe.Comment,
                   Description = recipe.Description,
                   CookTime = recipe.CookTime,
                   PrepTime = recipe.PrepTime,
@@ -393,7 +394,7 @@ namespace KitchenPC.DB
                   DateEntered = recipe.DateEntered,
                   ImageUrl = recipe.ImageUrl,
                   UserChefId = recipe.UserChefId,
-                  isComplete = recipe.isComplete,
+                  isComplete = recipe.IsComplete,
                   UserUpdatedId = recipe.UserUpdatedId,
                   Rating = recipe.AvgRating,
                   ServingSize = recipe.ServingSize,

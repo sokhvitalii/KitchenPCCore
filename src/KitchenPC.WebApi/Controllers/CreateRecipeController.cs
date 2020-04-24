@@ -48,6 +48,7 @@ namespace KitchenPC.WebApi.Controllers
                     .WithMethod(request.Steps)
                     .WithServingSize((short) request.ServingSize)
                     .WithTitle(request.Title)
+                    .WithComment(request.Comment)
                     .WithDateEntered(request.DateEntered ?? DateTime.Now)
                     .WithRating(request.Rating)
                     .WithTags(tegs)
@@ -64,8 +65,8 @@ namespace KitchenPC.WebApi.Controllers
                 if (request.UserUpdatedId != null)
                     create.WithUserUpdated(request.UserUpdatedId); 
                 
-                if (request.isComplete != null)
-                    create.WithIsComplete(request.isComplete);
+                if (request.IsComplete != null)
+                    create.WithIsComplete(request.IsComplete);
      
                 if (request.CreditUrl != null)
                     create.WithCreditUrl(new Uri(request.CreditUrl));

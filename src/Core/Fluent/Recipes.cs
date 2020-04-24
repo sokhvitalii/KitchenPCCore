@@ -408,6 +408,12 @@ namespace KitchenPC.Context.Fluent
          recipe.Title = title;
          return this;
       }
+      
+      public RecipeCreator WithComment(string comment)
+      {
+         recipe.Comment = comment;
+         return this;
+      }
 
       public RecipeCreator WithDescription(string desc)
       {
@@ -471,7 +477,7 @@ namespace KitchenPC.Context.Fluent
       
       public RecipeCreator WithIsComplete(bool? isComplete)
       {
-         recipe.isComplete = isComplete;
+         recipe.IsComplete = isComplete;
          return this;
       }
 

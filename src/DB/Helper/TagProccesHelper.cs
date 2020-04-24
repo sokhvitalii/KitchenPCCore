@@ -54,6 +54,7 @@ namespace KitchenPC.Helper
 
         public TagTypeGraphQLResponse SendTagType(HttpClient client, IGrouping<string, TagAndTagType> tagType)
         {
+            
             var queryMutationType = GraphQlRequestBuilder.CreateMutation()
                 .Table("insert_tag_type")
                 .AppendObject("name", tagType.Key)

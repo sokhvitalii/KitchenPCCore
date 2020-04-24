@@ -14,6 +14,7 @@ namespace KitchenPC.DB.Models
       public virtual short Rating { get; set; }
       public virtual string Description { get; set; }
       public virtual string Title { get; set; }
+      public virtual string Comment { get; set; }
       public virtual bool Hidden { get; set; }
       public virtual string Credit { get; set; }
       public virtual string CreditUrl { get; set; }
@@ -64,6 +65,7 @@ namespace KitchenPC.DB.Models
          Map(x => x.Rating).Not.Nullable().Index("IDX_Recipes_Rating");
          Map(x => x.Description).Length(512);
          Map(x => x.Title).Not.Nullable().Length(100);
+         Map(x => x.Comment).Nullable();
          Map(x => x.Hidden).Not.Nullable().Index("IDX_Recipes_Hidden");
          Map(x => x.Credit).Length(100);
          Map(x => x.CreditUrl).Length(1024);
