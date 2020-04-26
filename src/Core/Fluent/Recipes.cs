@@ -477,7 +477,7 @@ namespace KitchenPC.Context.Fluent
       
       public RecipeCreator WithIsComplete(bool? isComplete)
       {
-         recipe.IsComplete = isComplete;
+         recipe.IsIncomplete = isComplete;
          return this;
       }
 

@@ -65,8 +65,8 @@ namespace KitchenPC.WebApi.Controllers
                 if (request.UserUpdatedId != null)
                     create.WithUserUpdated(request.UserUpdatedId); 
                 
-                if (request.IsComplete != null)
-                    create.WithIsComplete(request.IsComplete);
+                if (request.IsIncomplete != null)
+                    create.WithIsComplete(request.IsIncomplete);
      
                 if (request.CreditUrl != null)
                     create.WithCreditUrl(new Uri(request.CreditUrl));

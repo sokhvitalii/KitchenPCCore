@@ -69,7 +69,7 @@ namespace KitchenPC.WebApi.Model
         [JsonPropertyName("user_updated_by")]
         public string UserUpdatedId { get; set; }
         public string Difficulty { get; set; }
-        public bool? IsComplete { get; set; }
+        public bool? IsIncomplete { get; set; }
         public string Comment { get; set; }
         public string Title { get; set; }
         public string Credit { get; set; }

@@ -24,7 +24,7 @@ namespace KitchenPC.Recipes
       public short? PrepTime = 0;
       public short? CookTime = 0;
       public short AvgRating = 0;
-      public bool? IsComplete;
+      public bool? IsIncomplete;
       public Rating UserRating = Rating.None;
       public short ServingSize = 4;
       public int Comments = 0;
