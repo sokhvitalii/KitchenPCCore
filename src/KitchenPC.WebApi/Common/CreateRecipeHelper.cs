@@ -243,6 +243,25 @@ namespace KitchenPC.WebApi.Common
             
             return allIngredient;
         }
+        
+        public MealResponseFromGq GetMeal(Guid mealId, JsonHelper conf)
+        {
+            MealResponseFromGq list; 
+            using (var client = new HttpClient())
+            { 
+                var query = GraphQlRequestBuilder
+                    .CreateQuery()
+                    .Table("meal")
+                    .AppendReturn("meal_type")
+                    .AppendReturn("dishes { dish_type  meal_id recipe_id }")
+                    .AppendCondition(new ConditionType("id", mealId, "_eq"));
+
+                    var request = Request(query.SingleResult(), conf);
+                list = SendHttpRequest<MealResponseFromGq>(client, request, conf);
+            }
+
+            return list;
+        }
 
 
         public CreateRecipeHelper(DBContext ctx)

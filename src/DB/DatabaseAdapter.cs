@@ -862,7 +862,7 @@ namespace KitchenPC.DB
 
                if (ids.Length == 0)
                {
-                  var idsPlan = lists.Where(l => l.PlanId != 0).Select(l => l.PlanId).ToArray();
+                  var idsPlan = lists.Where(l => l.PlanId != Guid.Empty).Select(l => l.PlanId).ToArray();
                   query = query.AndRestrictionOn(x => x.PlanId).IsInG(idsPlan);
                }
                else
@@ -1104,7 +1104,7 @@ namespace KitchenPC.DB
                {
                   List = new ShoppingList(
                      dbList != null ? (Guid?) dbList.ShoppingListId : null,
-                     dbList != null ? dbList.PlanId : 0,
+                     dbList != null ? dbList.PlanId : Guid.Empty,
                      dbList != null ? dbList.Title : null,
                      dbItems.Select(i => i.AsShoppingListItem()))
                };

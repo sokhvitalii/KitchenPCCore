@@ -49,7 +49,7 @@ namespace KitchenPC.Context
 
       // Shopping list support
       ShoppingList[] GetShoppingLists(IList<ShoppingList> lists, GetShoppingListOptions options);
-      ShoppingListResult CreateShoppingList(int planId, string name, Recipe[] recipes, Ingredient[] ingredients, IngredientUsage[] usages, String[] items);
+      ShoppingListResult CreateShoppingList(Guid planId, string name, Recipe[] recipes, Ingredient[] ingredients, IngredientUsage[] usages, String[] items);
       ShoppingListResult CreateShoppingList(ShoppingList list);
       ShoppingListResult UpdateShoppingList(ShoppingList list, ShoppingListUpdateCommand[] updates, string newName = null);
       IList<IngredientAggregation> AggregateRecipes(params Guid[] recipeIds);

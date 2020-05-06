@@ -130,7 +130,7 @@ namespace KitchenPC.Context.Fluent
    {
       readonly IKPCContext context;
       string listName;
-      int planId;
+      Guid planId;
       readonly IList<ShoppingListAdder> addQueue;
 
       public ShoppingListCreator(IKPCContext context)
@@ -140,7 +140,7 @@ namespace KitchenPC.Context.Fluent
          listName = "New Shopping List";
       }
 
-      public ShoppingListCreator WithPlan(int planId)
+      public ShoppingListCreator WithPlan(Guid planId)
       {
          this.planId = planId;
          return this;

@@ -534,7 +534,7 @@ namespace KitchenPC.Context
       /// <param name="usages">Zero or more ingredient usages to add to this list.</param>
       /// <param name="items">Zero or more raw usages.  Raw usages will be parsed using NLP, and unsuccessful matches will be added to the list as raw items.</param>
       /// <returns>A fully aggregated shopping list, with like items combined and forms normalized.</returns>
-      public virtual ShoppingListResult CreateShoppingList(int planId, string name, Recipe[] recipes, Ingredient[] ingredients, IngredientUsage[] usages, String[] items)
+      public virtual ShoppingListResult CreateShoppingList(Guid planId, string name, Recipe[] recipes, Ingredient[] ingredients, IngredientUsage[] usages, String[] items)
       {
          var parsedIng = Parser.ParseAll(items).ToList();
 

@@ -8,7 +8,7 @@ namespace KitchenPC.Data.DTO
       public Guid ShoppingListId { get; set; }
       public string UserId { get; set; }
       public String Title { get; set; }
-      public int PlanId { get; set; }
+      public Guid PlanId { get; set; }
 
       public static ShoppingList ToShoppingList(ShoppingLists dtoList)
       {

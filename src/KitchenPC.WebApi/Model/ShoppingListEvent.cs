@@ -5,12 +5,12 @@ namespace KitchenPC.WebApi.Model
 {
     public class Diff
     {
-        [JsonPropertyName("recipe_id")]
-        public Guid Recipeid { get; set; }
-        public string Meal { get; set; }
-        public int Id { get; set; }
+     
+        [JsonPropertyName("meal_id")]
+        public Guid MealId { get; set; }
+        public Guid Id { get; set; }
         [JsonPropertyName("plan_id")]
-        public int Planid { get; set; }
+        public Guid Planid { get; set; }
         public int Servings { get; set; }
         public Diff()
         {

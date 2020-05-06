@@ -10,7 +10,7 @@ namespace KitchenPC.DB.Models
       public virtual Guid ShoppingListId { get; set; }
       public virtual string UserId { get; set; }
       public virtual String Title { get; set; }
-      public virtual int PlanId { get; set; }
+      public virtual Guid PlanId { get; set; }
 
       public virtual IList<ShoppingListItems> Items { get; set; }
 
