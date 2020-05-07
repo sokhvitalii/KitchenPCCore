@@ -125,12 +125,14 @@ namespace KitchenPC.DB.Helper
         public object Value { get; set; }
         public string Key { get; set; }
         public string Label;
+        public bool IsNested;
         
-        public ConditionType(string key, object value, string label)
+        public ConditionType(string key, object value, string label, bool isNested = false)
         {
             Value = value;
             Key = key;
             Label = label;
+            IsNested = isNested;
         }
     }
 
@@ -185,10 +187,10 @@ namespace KitchenPC.DB.Helper
         string InputProcess(ConditionType pair)
         {
             var prepare = 
-                pair.Value is string ? 
+                (pair.Value is string || pair.Value is DateTime || pair.Value is Guid) ? 
                     pair.Key + $": {{ {pair.Label}: \\\"" + pair.Value + "\\\"" : 
                     pair.Key + $": {{ {pair.Label}: " + pair.Value;
-            return "{" + prepare + "}}";
+            return "{" + prepare + "}}" + (pair.IsNested? "}" : "");
         }
 
         public string SingleResult()

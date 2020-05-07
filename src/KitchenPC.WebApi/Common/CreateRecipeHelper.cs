@@ -244,25 +244,48 @@ namespace KitchenPC.WebApi.Common
             return allIngredient;
         }
         
-        public MealResponseFromGq GetMeal(Guid mealId, JsonHelper conf)
+        public DishResponseFromGq GetDishe(Guid mealId, JsonHelper conf)
         {
-            MealResponseFromGq list; 
+            DishResponseFromGq list; 
             using (var client = new HttpClient())
             { 
                 var query = GraphQlRequestBuilder
                     .CreateQuery()
-                    .Table("meal")
-                    .AppendReturn("meal_type")
-                    .AppendReturn("dishes { dish_type  meal_id recipe_id }")
-                    .AppendCondition(new ConditionType("id", mealId, "_eq"));
+                    .Table("dish")
+                    .AppendReturn("id")
+                    .AppendReturn("recipe_id")
+                    .AppendCondition(new ConditionType("meal_id", mealId, "_eq"));
 
                     var request = Request(query.SingleResult(), conf);
-                list = SendHttpRequest<MealResponseFromGq>(client, request, conf);
+                list = SendHttpRequest<DishResponseFromGq>(client, request, conf);
             }
 
             return list;
         }
+ 
+        public PlanItemsResponseFromGq GetPlanItems(Guid mealId, JsonHelper conf)
+        {
+            var date = new DateTime();
+            PlanItemsResponseFromGq list; 
+            using (var client = new HttpClient())
+            {
+                var query = GraphQlRequestBuilder
+                    .CreateQuery()
+                    .Table("plan_item")
+                    .AppendReturn("id")
+                    .AppendReturn("plan_id")
+                    .AppendReturn("servings")
+                    .AppendReturn("date")
+                    .AppendCondition(new ConditionType("meal_id", mealId, "_eq"))
+                    .AppendCondition(new ConditionType("date", date.Date, "_gte"))
+                    .BulkResult("_and");
+                
+                var request = Request(query, conf);
+                list = SendHttpRequest<PlanItemsResponseFromGq>(client, request, conf);
+            }
 
+            return list;
+        }
 
         public CreateRecipeHelper(DBContext ctx)
         {

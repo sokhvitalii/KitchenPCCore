@@ -53,11 +53,11 @@ namespace KitchenPC.WebApi.Model
         }
     }
     
-    public class ShoppingListEvent
+    public class ShoppingListtPlanItemEvent
     {
         public ShoppingListEntity Event { get; set; }
         
-        public ShoppingListEvent()
+        public ShoppingListtPlanItemEvent()
         {
             
         }

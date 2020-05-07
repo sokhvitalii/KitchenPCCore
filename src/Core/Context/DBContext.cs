@@ -447,19 +447,19 @@ namespace KitchenPC.Context
                if (rNode == null) //Our cache is out of date, skip this result
                   continue;
 
-               foreach (var usage in rNode.Ingredients)
+               foreach (var usage in recipe.Ingredients)
                {
-                  var ingId = usage.Ingredient.IngredientId;
+                  var ingId = usage.Ingredient.Id;
                   var ingName = ingParser.GetIngredientById(ingId);
                   var ing = new Ingredient(ingId, ingName);
-                  ing.ConversionType = usage.Ingredient.ConvType;
+                  ing.ConversionType = usage.Ingredient.ConversionType;
 
                   IngredientAggregation agg;
                   if (!ings.TryGetValue(ingId, out agg))
                   {
                      ings.Add(ingId, agg = new IngredientAggregation(ing)
                      {
-                        Amount = new Amount(0, usage.Unit),
+                        Amount = new Amount(0, usage.Amount.Unit),
                         Recipe = new RecipeBrief(recipe)
                      });
                   }
@@ -467,10 +467,8 @@ namespace KitchenPC.Context
                   //TODO: If usage.Unit is different than agg.Amount.Unit then we have a problem, throw an exception if that happens?
                   if (agg.Amount == null) //This aggregation contains an empty amount, so we can't aggregate
                      continue;
-                  else if (!usage.Amt.HasValue) //This amount is null, cancel aggregation
-                     agg.Amount = null;
                   else
-                     agg.Amount += usage.Amt.Value;
+                     agg.Amount += usage.Amount.SizeHigh;
                }
             }
 
