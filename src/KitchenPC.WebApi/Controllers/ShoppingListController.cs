@@ -18,10 +18,10 @@ namespace KitchenPC.WebApi.Controllers
         [HttpPost]
         public IActionResult Post(ShoppingListEventDish request)
         { 
+            Console.WriteLine("ShoppingListEventDish" + request);
             var jsonHelper = new JsonHelper();
             try
             {
-                
                 var context = new DataBaseConnection(new AuthIdentity(request.Event.SessionVariables.HasuraUserId, ""), jsonHelper)
                     .Context.Context;
                 var createRecipeHelper = new CreateRecipeHelper(context);
@@ -82,6 +82,7 @@ namespace KitchenPC.WebApi.Controllers
         [HttpPost]
         public IActionResult Post(ShoppingListtPlanItemEvent request)
         {
+            Console.WriteLine("ShoppingListtPlanItemEvent" + request);
             var jsonHelper = new JsonHelper();
             try
             {
@@ -131,6 +132,7 @@ namespace KitchenPC.WebApi.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                Console.WriteLine("eeeeeeeeeeee");
                 Console.WriteLine(e.InnerException?.Message ?? "");
                 return BadRequest("invalid request");
             }
