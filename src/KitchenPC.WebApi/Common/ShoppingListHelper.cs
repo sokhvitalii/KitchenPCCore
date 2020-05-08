@@ -23,6 +23,7 @@ namespace KitchenPC.WebApi.Common
                         
                         foreach (var ingredient in r.Ingredients)
                         {
+                         if (ingredient.Amount != null)   
                             ingredient.Amount.SizeHigh = (ingredient.Amount.SizeHigh * servings) / r.ServingSize;
                         }
                     }
