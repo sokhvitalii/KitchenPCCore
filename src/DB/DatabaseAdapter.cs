@@ -1048,11 +1048,11 @@ namespace KitchenPC.DB
 
                      if (source.Ingredient != null && source.Amount == null) // Raw ingredient without any amount
                      {
-                        var existingItem = dbItems.FirstOrDefault(i =>
+                        /*var existingItem = dbItems.FirstOrDefault(i =>
                            i.Ingredient != null && i.Ingredient.IngredientId == source.Ingredient.Id);
 
                         if (existingItem == null) // Add it
-                        {
+                        {*/
                            var newItem = new ShoppingListItems
                            {
                               ShoppingList = dbList,
@@ -1063,21 +1063,21 @@ namespace KitchenPC.DB
 
                            session.Save(newItem);
                            dbItems.Add(newItem);
-                        }
+                        /*}
                         else // Clear out existing amount
                         {
                            existingItem.Amount = null;
-                        }
+                        }*/
                      }
 
                      if (source.Ingredient != null && source.Amount != null
                      ) // Ingredient with amount, aggregate if necessary
                      {
-                        var existingItem = dbItems.FirstOrDefault(i =>
+                        /*var existingItem = dbItems.FirstOrDefault(i =>
                            i.Ingredient != null && i.Ingredient.IngredientId == source.Ingredient.Id);
 
                         if (existingItem == null) // Add it
-                        {
+                        {*/
                            var newItem = new ShoppingListItems
                            {
                               ShoppingList = dbList,
@@ -1089,18 +1089,17 @@ namespace KitchenPC.DB
 
                            session.Save(newItem);
                            dbItems.Add(newItem);
-                        }
+                        /*}
                         else if (existingItem.Amount != null) // Add to total
                         {
                            existingItem.Amount += source.Amount;
-                        }
+                        }*/
                      }
                   });
 
                   transaction.Commit();
                }
-
-               return new ShoppingListResult
+               var ttt = new ShoppingListResult
                {
                   List = new ShoppingList(
                      dbList != null ? (Guid?) dbList.ShoppingListId : null,
@@ -1108,6 +1107,8 @@ namespace KitchenPC.DB
                      dbList != null ? dbList.Title : null,
                      dbItems.Select(i => i.AsShoppingListItem()))
                };
+
+               return ttt;
             }
          }
       }

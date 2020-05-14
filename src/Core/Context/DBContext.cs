@@ -443,7 +443,6 @@ namespace KitchenPC.Context
             {
                //Lookup ingredient through modeler cache
                var rNode = modeler.FindRecipe(recipe.Id);
-               var ttt = modeler;
                if (rNode == null) //Our cache is out of date, skip this result
                   continue;
 
@@ -464,11 +463,11 @@ namespace KitchenPC.Context
                      });
                   }
 
-                  //TODO: If usage.Unit is different than agg.Amount.Unit then we have a problem, throw an exception if that happens?
+                  /*//TODO: If usage.Unit is different than agg.Amount.Unit then we have a problem, throw an exception if that happens?
                   if (agg.Amount == null) //This aggregation contains an empty amount, so we can't aggregate
                      continue;
                   else
-                     agg.Amount += usage.Amount.SizeHigh;
+                     agg.Amount += usage.Amount.SizeHigh;*/
                }
             }
 

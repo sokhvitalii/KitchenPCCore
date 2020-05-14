@@ -66,7 +66,7 @@ namespace KitchenPC.WebApi.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                Console.WriteLine(e.InnerException?.Message ?? "");
+                Console.WriteLine(e);
                 return BadRequest("invalid request");
             }
             
