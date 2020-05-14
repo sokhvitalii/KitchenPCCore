@@ -147,8 +147,8 @@ namespace KitchenPC.Context
                ingParser.CreateIndex(ingredientIndex);
 
                // Initialize modeler
-               modeler = new ModelerProxy(this);
-               modeler.LoadSnapshot();
+               /*modeler = new ModelerProxy(this);
+               modeler.LoadSnapshot();*/
 
                // Initialize natural language parsing
                /*IngredientSynonyms.InitIndex(Adapter.IngredientLoader);
@@ -441,10 +441,10 @@ namespace KitchenPC.Context
 
             foreach (var recipe in recipes)
             {
-               //Lookup ingredient through modeler cache
+               /*//Lookup ingredient through modeler cache
                var rNode = modeler.FindRecipe(recipe.Id);
                if (rNode == null) //Our cache is out of date, skip this result
-                  continue;
+                  continue;*/
 
                foreach (var usage in recipe.Ingredients)
                {

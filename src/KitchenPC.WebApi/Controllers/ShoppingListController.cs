@@ -133,7 +133,7 @@ namespace KitchenPC.WebApi.Controllers
             {
                 Console.WriteLine(e.Message);
                 Console.WriteLine("eeeeeeeeeeee");
-                Console.WriteLine(e.InnerException?.Message ?? "");
+                Console.WriteLine(e);
                 return BadRequest("invalid request");
             }
 
