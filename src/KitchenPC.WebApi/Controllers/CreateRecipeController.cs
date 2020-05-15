@@ -72,7 +72,7 @@ namespace KitchenPC.WebApi.Controllers
                     
                     var ids = createRecipeHelper.GetTagIds(request.Tags, jsonHelper);
                     
-                    var mainIngredient = ingredients.SingleOrDefault(x => x.Ingredient.Name == request.MainIngredient.Name);
+                    var mainIngredient = ingredients.Find(x => x.Ingredient.Name == request.MainIngredient.Name);
                     if (mainIngredient?.Ingredient?.Name != null)
                     {
                         var mainId = createRecipeHelper.SendToInsertMainIngredient(mainIngredient.Ingredient, created.NewRecipeId.Value, jsonHelper);
