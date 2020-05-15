@@ -25,7 +25,8 @@ namespace KitchenPC.WebApi.Controllers
                 var context = new DataBaseConnection(new AuthIdentity(request.Event.SessionVariables.HasuraUserId, ""), jsonHelper)
                     .Context.Context;
                 var createRecipeHelper = new CreateRecipeHelper(context);
-                var recipesFromGq = createRecipeHelper.GetPlanItems(request.Event.Data.New.MealId, jsonHelper);
+                var mealId = request.Event.Data.New?.MealId ?? request.Event.Data.Old.MealId;
+                var recipesFromGq = createRecipeHelper.GetPlanItems(mealId, jsonHelper);
 
                 if (recipesFromGq.Data.PlanItems.Count > 0)
                 {
@@ -35,14 +36,14 @@ namespace KitchenPC.WebApi.Controllers
                     var sList = context.ShoppingLists.Load(new ShoppingList(null, recipesFromGq.Data.PlanItems.First().PlanId))
                         .WithItems
                         .List();
-                    var recipes = context.Recipes
-                        .Load(Recipe.FromId(request.Event.Data.New.RecipeId)).WithMethod.WithUserRating
-                        .List()
-                        .ToList();
+                    var recipeId = request.Event.Data.New?.RecipeId ?? request.Event.Data.Old.RecipeId;
+                  
                     if (!sList.Any())
                     {
+                        var recipes = 
+                            context.Recipes.Load(Recipe.FromId(recipeId)).WithMethod.WithUserRating.List().ToList();
                         context.ShoppingLists.Create
-                            .WithName(request.Event.Data.New.MealId.ToString() + recipesFromGq.Data.PlanItems.First().PlanId)
+                            .WithName(mealId.ToString() + recipesFromGq.Data.PlanItems.First().PlanId)
                             .WithPlan(recipesFromGq.Data.PlanItems.First().PlanId)
                             .AddItems(helper.CreateShoppingListAdder(context, serving, recipes)).Commit();
                     }
@@ -51,13 +52,15 @@ namespace KitchenPC.WebApi.Controllers
                         var shopping = sList.First();
                         if (request.Event.Op == "INSERT")
                         {
+                            var recipes = 
+                                context.Recipes.Load(Recipe.FromId(recipeId)).WithMethod.WithUserRating.List().ToList();
                             context.ShoppingLists.Update(shopping)
                                 .AddItems(helper.CreateShoppingListAdder(context, serving, recipes)).Commit();
                         }
                         else if (request.Event.Op == "DELETE")
                         {
                             var shoppingListUpdater = context.ShoppingLists.Update(shopping);
-                            helper.SetItemToRemove(shopping.GetEnumerator(), request.Event.Data.New.RecipeId, shoppingListUpdater);
+                            helper.SetItemToRemove(shopping.GetEnumerator(), recipeId, shoppingListUpdater);
                             shoppingListUpdater.Commit();
                         }
                     }
@@ -89,20 +92,23 @@ namespace KitchenPC.WebApi.Controllers
                 var helper = new ShoppingListHelper();
                 var context = new DataBaseConnection(new AuthIdentity(request.Event.SessionVariables.HasuraUserId, ""), jsonHelper)
                     .Context.Context;
-               
-                var sList = context.ShoppingLists.Load(new ShoppingList(null, request.Event.Data.New.Planid)).WithItems
+                
+                var mealId = request.Event.Data.New?.MealId ?? request.Event.Data.Old.MealId;
+                var planId = request.Event.Data.New?.Planid ?? request.Event.Data.Old.Planid;
+                
+                var sList = context.ShoppingLists.Load(new ShoppingList(null, planId)).WithItems
                     .List();
                 
                 var createRecipeHelper = new CreateRecipeHelper(context);
-                var recipesFromGq = createRecipeHelper.GetDishe(request.Event.Data.New.MealId, jsonHelper);
+                var recipesFromGq = createRecipeHelper.GetDishe(mealId, jsonHelper);
                 var recipeIds = recipesFromGq.Data.Dish.Select(d => d.RecipeId).ToList();
                 var recipes = recipeIds.SelectMany(r => context.Recipes.Load(Recipe.FromId(r)).WithMethod.WithUserRating.List()).ToList();
                 
                 if (!sList.Any())
                 {
                      context.ShoppingLists.Create
-                        .WithName(request.Event.Data.New.MealId.ToString() + request.Event.Data.New.Planid)
-                        .WithPlan(request.Event.Data.New.Planid)
+                        .WithName(mealId.ToString() + planId)
+                        .WithPlan(planId)
                         .AddItems(helper.CreateShoppingListAdder(context, request.Event.Data.New.Servings, recipes)).Commit();
                 }
                 else
