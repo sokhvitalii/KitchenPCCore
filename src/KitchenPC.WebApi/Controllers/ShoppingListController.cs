@@ -103,13 +103,14 @@ namespace KitchenPC.WebApi.Controllers
                 var recipesFromGq = createRecipeHelper.GetDishe(mealId, jsonHelper);
                 var recipeIds = recipesFromGq.Data.Dish.Select(d => d.RecipeId).ToList();
                 var recipes = recipeIds.SelectMany(r => context.Recipes.Load(Recipe.FromId(r)).WithMethod.WithUserRating.List()).ToList();
+                var servings = request.Event.Data.New?.Servings ?? request.Event.Data.Old.Servings;
                 
                 if (!sList.Any())
                 {
                      context.ShoppingLists.Create
                         .WithName(mealId.ToString() + planId)
                         .WithPlan(planId)
-                        .AddItems(helper.CreateShoppingListAdder(context, request.Event.Data.New.Servings, recipes)).Commit();
+                        .AddItems(helper.CreateShoppingListAdder(context, servings, recipes)).Commit();
                 }
                 else
                 {
@@ -117,9 +118,9 @@ namespace KitchenPC.WebApi.Controllers
                     if (request.Event.Op == "INSERT")
                     {
                         context.ShoppingLists.Update(shopping)
-                            .AddItems(helper.CreateShoppingListAdder(context, request.Event.Data.New.Servings, recipes)).Commit();
+                            .AddItems(helper.CreateShoppingListAdder(context, servings, recipes)).Commit();
                     }
-                    else if (request.Event.Op == "UPDATE" && request.Event.Data.New.Servings != 0 && request.Event.Data.New.Servings != request.Event.Data.Old.Servings)
+                    else if (request.Event.Op == "UPDATE" && servings != 0 && request.Event.Data.New.Servings != request.Event.Data.Old.Servings)
                     {
                         var shoppingListUpdater = context.ShoppingLists.Update(shopping);
                         helper.CreateShoppingListItemUpdater(shopping.GetEnumerator(), shoppingListUpdater, request.Event, recipes).Commit();

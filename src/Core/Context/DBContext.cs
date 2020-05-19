@@ -458,7 +458,7 @@ namespace KitchenPC.Context
                   {
                      ings.Add(ingId, agg = new IngredientAggregation(ing)
                      {
-                        Amount = usage.Amount != null? new  Amount(0, usage.Amount.Unit): usage.Amount,
+                        Amount = usage.Amount != null? new  Amount(usage.Amount.SizeHigh, usage.Amount.Unit): usage.Amount,
                         Recipe = new RecipeBrief(recipe)
                      });
                   }
