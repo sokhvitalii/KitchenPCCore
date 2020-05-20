@@ -11,10 +11,11 @@ namespace KitchenPC.WebApi.Common
 {
     public class ShoppingListHelper
     {
-         public ShoppingListAdder CreateShoppingListAdder(DBContext cont, int servings, List<Recipe> recipes)
+         public ShoppingListAdder CreateShoppingListAdder(int servings, List<Recipe> recipes)
         {
             
-            if (servings != 0)
+            /*
+            if (servings > 1)
             {
                 foreach (var r in recipes)
                 {
@@ -29,6 +30,7 @@ namespace KitchenPC.WebApi.Common
                     }
                 }
             }
+            */
 
             return new ShoppingListAdder
             {

@@ -45,7 +45,7 @@ namespace KitchenPC.WebApi.Controllers
                         context.ShoppingLists.Create
                             .WithName(mealId.ToString() + recipesFromGq.Data.PlanItems.First().PlanId)
                             .WithPlan(recipesFromGq.Data.PlanItems.First().PlanId)
-                            .AddItems(helper.CreateShoppingListAdder(context, serving, recipes)).Commit();
+                            .AddItems(helper.CreateShoppingListAdder(serving, recipes)).Commit();
                     }
                     else
                     {
@@ -55,7 +55,7 @@ namespace KitchenPC.WebApi.Controllers
                             var recipes = 
                                 context.Recipes.Load(Recipe.FromId(recipeId)).WithMethod.WithUserRating.List().ToList();
                             context.ShoppingLists.Update(shopping)
-                                .AddItems(helper.CreateShoppingListAdder(context, serving, recipes)).Commit();
+                                .AddItems(helper.CreateShoppingListAdder(serving, recipes)).Commit();
                         }
                         else if (request.Event.Op == "DELETE")
                         {
@@ -101,7 +101,7 @@ namespace KitchenPC.WebApi.Controllers
                 
                 var createRecipeHelper = new CreateRecipeHelper(context);
                 var recipesFromGq = createRecipeHelper.GetDishe(mealId, jsonHelper);
-                var recipeIds = recipesFromGq.Data.Dish.Select(d => d.RecipeId).ToList();
+                var recipeIds = recipesFromGq.Data.Dish.Select(d => d.RecipeId).Distinct().ToList();
                 var recipes = recipeIds.SelectMany(r => context.Recipes.Load(Recipe.FromId(r)).WithMethod.WithUserRating.List()).ToList();
                 var servings = request.Event.Data.New?.Servings ?? request.Event.Data.Old.Servings;
                 
@@ -110,7 +110,7 @@ namespace KitchenPC.WebApi.Controllers
                      context.ShoppingLists.Create
                         .WithName(mealId.ToString() + planId)
                         .WithPlan(planId)
-                        .AddItems(helper.CreateShoppingListAdder(context, servings, recipes)).Commit();
+                        .AddItems(helper.CreateShoppingListAdder(servings, recipes)).Commit();
                 }
                 else
                 {
@@ -118,7 +118,7 @@ namespace KitchenPC.WebApi.Controllers
                     if (request.Event.Op == "INSERT")
                     {
                         context.ShoppingLists.Update(shopping)
-                            .AddItems(helper.CreateShoppingListAdder(context, servings, recipes)).Commit();
+                            .AddItems(helper.CreateShoppingListAdder(servings, recipes)).Commit();
                     }
                     else if (request.Event.Op == "UPDATE" && servings != 0 && request.Event.Data.New.Servings != request.Event.Data.Old.Servings)
                     {
