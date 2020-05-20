@@ -54,12 +54,12 @@ namespace KitchenPC.ShoppingLists
 
       void AddItem(ShoppingListItem item)
       {
-         var existingItem = list.Find(i => i.Equals(item));
+         /*var existingItem = list.Find(i => i.Equals(item));
          if (existingItem == null)
-         {
+         {*/
             list.Add(item);
             return;
-         }
+         /*}
 
          existingItem.CrossedOut = item.CrossedOut; // If new item is crossed out, cross out existing item
 
@@ -73,7 +73,7 @@ namespace KitchenPC.ShoppingLists
          }
 
          //increment existing amount
-         existingItem.Amount += item.Amount;
+         existingItem.Amount += item.Amount;*/
       }
 
       public override string ToString()
