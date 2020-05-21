@@ -73,7 +73,6 @@ namespace KitchenPC.WebApi.Controllers
                 return BadRequest("invalid request");
             }
             
-
             return Ok();
         }
     }
@@ -120,10 +119,10 @@ namespace KitchenPC.WebApi.Controllers
                         context.ShoppingLists.Update(shopping)
                             .AddItems(helper.CreateShoppingListAdder(servings, recipes)).Commit();
                     }
-                    else if (request.Event.Op == "UPDATE" && servings != 0 && request.Event.Data.New.Servings != request.Event.Data.Old.Servings)
+                    else if (request.Event.Op == "UPDATE" && servings != 0 && request.Event.Data.New?.Servings != request.Event.Data.Old?.Servings)
                     {
                         var shoppingListUpdater = context.ShoppingLists.Update(shopping);
-                        helper.CreateShoppingListItemUpdater(shopping.GetEnumerator(), shoppingListUpdater, request.Event, recipes).Commit();
+                        helper.CreateShoppingListItemUpdater(shopping.ToList(), shoppingListUpdater, request.Event, recipes).Commit();
                     }
                     else if (request.Event.Op == "DELETE")
                     {

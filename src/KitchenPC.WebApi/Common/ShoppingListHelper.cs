@@ -13,58 +13,57 @@ namespace KitchenPC.WebApi.Common
     {
          public ShoppingListAdder CreateShoppingListAdder(int servings, List<Recipe> recipes)
         {
-            
-            /*
             if (servings > 1)
             {
                 foreach (var r in recipes)
                 {
-                    if (r.ServingSize != servings)
+                    if (r.ServingSize > servings)
                     {
+                        var newServingSize = servings / r.ServingSize;
+                        if (servings % r.ServingSize != 0)
+                            newServingSize += 1;
                         
                         foreach (var ingredient in r.Ingredients)
                         {
                          if (ingredient.Amount != null)   
-                            ingredient.Amount.SizeHigh = (ingredient.Amount.SizeHigh * servings) / r.ServingSize;
+                            ingredient.Amount.SizeHigh = ingredient.Amount.SizeHigh * newServingSize;
                         }
                     }
                 }
             }
-            */
 
             return new ShoppingListAdder
             {
                 Recipes = recipes
             };
         }
-        
+
          public ShoppingListUpdater CreateShoppingListItemUpdater(
-            IEnumerator<ShoppingListItem> query,
+             List<ShoppingListItem> query,
             ShoppingListUpdater shoppingListUpdater, 
             ShoppingListEntity res,
             List<Recipe> recipes)
         {
-            if (res.Data.Old.Servings == 0)
+            var grouped = query.GroupBy(x => x.Recipe.Id);
+            foreach (var r in grouped)
             {
-                res.Data.Old.Servings = 1;
-            }
-            
-            while (query.MoveNext())
-            {
-                ShoppingListItem item = query.Current;
-
-                foreach (var r in recipes)
+                var recipe = recipes.Find(x => x.Id == r.Key);
+                foreach (var list in r)
                 {
-                    if (
-                        item?.Amount != null && 
-                        item.Recipe != null && 
-                        item.Recipe.Id == r.Id 
-                        && res.Data.Old.Servings != res.Data.New.Servings)
+                    if (list?.Amount != null && recipe != null)
                     {
-                        var amount = item.Amount;
-                        amount.SizeHigh = (amount.SizeHigh * res.Data.New.Servings) / res.Data.Old.Servings;
-                    
-                        shoppingListUpdater.UpdateItem(item, x => x.NewAmount(amount));
+                        var oldServingSize = res.Data.Old.Servings / recipe.ServingSize;
+                        if (res.Data.Old.Servings % recipe.ServingSize != 0)
+                            oldServingSize += 1;
+                        var newServingSize = res.Data.New.Servings / recipe.ServingSize;
+                        if (res.Data.New.Servings % recipe.ServingSize != 0)
+                            newServingSize += 1;
+                        
+                        var amount = list.Amount;
+                        var count = amount.SizeHigh / oldServingSize;
+                        amount.SizeHigh = count * newServingSize;
+                        
+                        shoppingListUpdater.UpdateItem(list, x => x.NewAmount(amount));
                     }
                 }
             }
