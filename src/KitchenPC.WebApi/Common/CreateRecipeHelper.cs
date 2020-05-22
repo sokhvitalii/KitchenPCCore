@@ -265,7 +265,7 @@ namespace KitchenPC.WebApi.Common
  
         public PlanItemsResponseFromGq GetPlanItems(Guid mealId, JsonHelper conf)
         {
-            var date = new DateTime();
+            var date = DateTime.Now;
             PlanItemsResponseFromGq list; 
             using (var client = new HttpClient())
             {
@@ -277,7 +277,7 @@ namespace KitchenPC.WebApi.Common
                     .AppendReturn("servings")
                     .AppendReturn("date")
                     .AppendCondition(new ConditionType("meal_id", mealId, "_eq"))
-                    .AppendCondition(new ConditionType("date", date.Date, "_gte"))
+                    .AppendCondition(new ConditionType("date", date, "_gte"))
                     .BulkResult("_and");
                 
                 var request = Request(query, conf);
