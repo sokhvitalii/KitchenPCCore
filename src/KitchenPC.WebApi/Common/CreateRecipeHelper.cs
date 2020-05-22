@@ -277,7 +277,7 @@ namespace KitchenPC.WebApi.Common
                     .AppendReturn("servings")
                     .AppendReturn("date")
                     .AppendCondition(new ConditionType("meal_id", mealId, "_eq"))
-                    .AppendCondition(new ConditionType("date", date, "_gte"))
+                    //.AppendCondition(new ConditionType("date", date, "_gte"))
                     .BulkResult("_and");
                 
                 var request = Request(query, conf);
