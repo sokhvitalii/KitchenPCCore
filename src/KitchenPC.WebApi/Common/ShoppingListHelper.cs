@@ -17,7 +17,7 @@ namespace KitchenPC.WebApi.Common
             {
                 foreach (var r in recipes)
                 {
-                    if (r.ServingSize > servings)
+                    if (r.ServingSize < servings)
                     {
                         var newServingSize = servings / r.ServingSize;
                         if (servings % r.ServingSize != 0)
