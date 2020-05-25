@@ -144,7 +144,7 @@ namespace KitchenPC.WebApi.Controllers
                 Console.WriteLine(e);
                 return BadRequest("invalid request");
             }
-
+            Console.WriteLine("\n request finished  ========------------------------------------- \n ");
             return Ok();
         }
     }
