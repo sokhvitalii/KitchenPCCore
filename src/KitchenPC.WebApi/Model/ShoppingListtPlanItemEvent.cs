@@ -16,6 +16,11 @@ namespace KitchenPC.WebApi.Model
         {
             
         }
+
+        public override string ToString()
+        {
+            return "MealId: " + MealId + ", Planid: " + Planid + ", Servings: " + Servings;
+        }
     }
     
     public class PlanData

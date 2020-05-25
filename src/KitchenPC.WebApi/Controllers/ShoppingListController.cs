@@ -81,7 +81,8 @@ namespace KitchenPC.WebApi.Controllers
         [HttpPost]
         public IActionResult Post(ShoppingListtPlanItemEvent request)
         {
-            Console.WriteLine("ShoppingListtPlanItemEvent" + request);
+            Console.WriteLine("ShoppingListtPlanItemEvent New ======== " + request.Event.Data.New);
+            Console.WriteLine("ShoppingListtPlanItemEvent Old ======== " + request.Event.Data.Old);
             var jsonHelper = new JsonHelper();
             try
             {
