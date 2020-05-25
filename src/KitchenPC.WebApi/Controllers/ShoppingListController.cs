@@ -81,8 +81,8 @@ namespace KitchenPC.WebApi.Controllers
         [HttpPost]
         public IActionResult Post(ShoppingListtPlanItemEvent request)
         {
-            Console.WriteLine("ShoppingListtPlanItemEvent New ======== " + request.Event.Data.New);
-            Console.WriteLine("ShoppingListtPlanItemEvent Old ======== " + request.Event.Data.Old);
+            Console.WriteLine("\n ShoppingListtPlanItemEvent New ======== " + request.Event.Data.New);
+            Console.WriteLine("\n  ShoppingListtPlanItemEvent Old ======== " + request.Event.Data.Old);
             var jsonHelper = new JsonHelper();
             try
             {
@@ -104,7 +104,8 @@ namespace KitchenPC.WebApi.Controllers
                 
                 if (!sList.Any())
                 {
-                     context.ShoppingLists.Create
+                    Console.WriteLine("\n ShoppingLists Create ======== ");
+                    context.ShoppingLists.Create
                         .WithName(mealId.ToString() + planId)
                         .WithPlan(planId)
                         .AddItems(helper.CreateShoppingListAdder(servings, recipes)).Commit();
@@ -114,16 +115,19 @@ namespace KitchenPC.WebApi.Controllers
                     var shopping = sList.First();
                     if (request.Event.Op == "INSERT")
                     {
+                        Console.WriteLine("\n ShoppingLists INSERT ======== ");
                         context.ShoppingLists.Update(shopping)
                             .AddItems(helper.CreateShoppingListAdder(servings, recipes)).Commit();
                     }
                     else if (request.Event.Op == "UPDATE" && servings != 0 && request.Event.Data.New?.Servings != request.Event.Data.Old?.Servings)
                     {
+                        Console.WriteLine("\n ShoppingLists UPDATE Servings ======== ");
                         var shoppingListUpdater = context.ShoppingLists.Update(shopping);
                         helper.CreateShoppingListItemUpdater(shopping.ToList(), shoppingListUpdater, request.Event, recipes).Commit();
                     }
                     else if (request.Event.Op == "DELETE")
                     {
+                        Console.WriteLine("\n ShoppingLists DELETE ======== ");
                         var shoppingListUpdater = context.ShoppingLists.Update(shopping);
                         foreach (var r in recipeIds)
                         {

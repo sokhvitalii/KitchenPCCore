@@ -47,24 +47,33 @@ namespace KitchenPC.WebApi.Common
             var grouped = query.GroupBy(x => x.Recipe.Id);
             foreach (var r in grouped)
             {
+                Console.WriteLine("\n CreateShoppingListItemUpdater Servings grouped ======== " + r);
                 var recipe = recipes.Find(x => x.Id == r.Key);
+                Console.WriteLine("\n CreateShoppingListItemUpdater recipe recipe Servings ======== " + recipe);
                 foreach (var list in r)
                 {
+                    Console.WriteLine("\n CreateShoppingListItemUpdater list ======== " + list);
+                    Console.WriteLine("\n CreateShoppingListItemUpdater list.Amount ======== " + list?.Amount);
                     if (list?.Amount != null && recipe != null)
                     {
+                        Console.WriteLine("\n CreateShoppingListItemUpdater res.Data.Old.Servings ======== " + res.Data.Old.Servings);
+                        Console.WriteLine("\n CreateShoppingListItemUpdater recipe.ServingSize ======== " + recipe.ServingSize);
                         var oldServingSize = res.Data.Old.Servings / recipe.ServingSize;
                         if (res.Data.Old.Servings % recipe.ServingSize != 0)
                             oldServingSize += 1;
+                        Console.WriteLine("\n CreateShoppingListItemUpdater oldServingSize ======== " + oldServingSize);
                         var newServingSize = res.Data.New.Servings / recipe.ServingSize;
                         if (res.Data.New.Servings % recipe.ServingSize != 0)
                             newServingSize += 1;
+                        Console.WriteLine("\n CreateShoppingListItemUpdater newServingSize ======== " + newServingSize);
                         
                         var amount = list.Amount;
                         var count = amount.SizeHigh / oldServingSize;
                         amount.SizeHigh = count * newServingSize;
-                        
+                        Console.WriteLine("\n amount ======== " + amount);
                         shoppingListUpdater.UpdateItem(list, x => x.NewAmount(amount));
                     }
+                    Console.WriteLine("\n foreach finished ======== ");
                 }
             }
 
