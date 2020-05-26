@@ -64,48 +64,64 @@ namespace KitchenPC.WebApi.Common
         }
         
            
-        public int SendToInsertMainIngredient(Ingredient ingredient, Guid recipeId, JsonHelper conf)
+        public List<int> SendToInsertMainIngredient(List<string> ingredient, Guid recipeId, JsonHelper conf)
         {
+            var result = new List<int>();
            
             using (var client = new HttpClient())
             {
-                
                 var queryGet = GraphQlRequestBuilder
                     .CreateQuery()
                     .Table("tag")
                     .AppendReturn("id")
-                    .AppendReturn("name")
-                    .AppendCondition(new ConditionType("tag_type_id", 3, "_eq"))
-                    .AppendCondition(new ConditionType("name", ingredient.Name, "_eq"));
+                    .AppendReturn("name");
+                
+                foreach (var name in ingredient)
+                {
+                    queryGet.AppendCondition(new ConditionType("name", name, "_eq"));
+                }
                 
                 
-                var requestGet = Request(queryGet.BulkResult("_and"), conf);
+                var requestGet = Request(queryGet.BulkResult("_or"), conf);
                 var response = SendHttpRequest<TagResponseFromGq>(client, requestGet, conf);
 
-                if (response.Data?.Tag == null || response.Data?.Tag.Count == 0)
+                var tags = response.Data;
+
+                if (tags?.Tag == null || tags?.Tag.Count == 0 || tags?.Tag.Count != ingredient.Count)
                 {
-                    var query =  GraphQlRequestBuilder.CreateMutation()
-                        .Table("insert_tag")
-                        .AppendReturn("id")
-                        .AppendReturn("name")
-                        .AppendObject("name", ingredient.Name)
-                        .AppendObject("tag_type_id", 3);
-                
-                    var request = Request(query.Result(), conf);
-                    var obj = SendHttpRequest<TagGraphQlResponse>(client, request, conf);
-                    
-                    if (obj.Data!?.InsertTag!?.Returning != null || obj.Data.InsertTag.Returning.Length >= 0)
+                    var ing = ingredient.Where(x => tags != null && !tags.Tag.Exists(t => t.Name == x)).ToList();
+                    if (ing.Count > 0)
                     {
-                        return obj.Data.InsertTag.Returning.First().id;  
+                        var query = GraphQlRequestBuilder
+                            .CreateMutation()
+                            .Table("insert_tag")
+                            .AppendReturn("id")
+                            .AppendReturn("name");
+
+                        foreach (var name in ing)
+                        {
+                            var record = new MutationSingleObject();
+                            record.AppendObject("name", name);
+                            record.AppendObject("tag_type_id", 3);
+                            query.AppendObject(record);
+                        }
+
+                        var request = Request(query.BulkResult(), conf);
+                        var obj = SendHttpRequest<TagGraphQlResponse>(client, request, conf);
+
+                        if (obj.Data?.InsertTag?.Returning != null || obj.Data?.InsertTag?.Returning?.Length >= 0)
+                        { 
+                            obj.Data.InsertTag.Returning.ForEach(x => result.Add(x.id));
+                        }
                     }
                 }
                 else
                 {
-                    return response.Data.Tag.First().Id;
+                    response.Data.Tag.ForEach(x => result.Add(x.Id));
                 }
             }
 
-            return 0;
+            return result.Distinct().ToList();
         }
 
         

@@ -58,7 +58,7 @@ namespace KitchenPC.WebApi.Model
         public RecipeStepRequest[] RecipeStep { get; set; }        
         public IngredientsRequest[] Ingredients { get; set; }
         
-        public MainIngredientRequest MainIngredient { get; set; }
+        public MainIngredientRequest[] MainIngredient { get; set; }
         public int CookTime { get; set; }
         public string Steps { get; set; }
         public int PrepTime { get; set; }

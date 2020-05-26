@@ -72,11 +72,13 @@ namespace KitchenPC.WebApi.Controllers
                     
                     var ids = createRecipeHelper.GetTagIds(request.Tags, jsonHelper);
                     
-                    var mainIngredient = ingredients.Find(x => x.Ingredient.Name == request.MainIngredient.Name);
-                    if (mainIngredient?.Ingredient?.Name != null)
+                    var mainIngredient = 
+                        request.MainIngredient.Select(ing =>  ingredients.Find(x => x.Ingredient.Name == ing.Name)).ToList();
+                    if (mainIngredient.Count > 0)
                     {
-                        var mainId = createRecipeHelper.SendToInsertMainIngredient(mainIngredient.Ingredient, created.NewRecipeId.Value, jsonHelper);
-                        ids.Data.Tag.Add(new TagsGQ(mainId)); 
+                        var mainIds = createRecipeHelper
+                            .SendToInsertMainIngredient(mainIngredient.Select(x => x.Ingredient.Name).ToList(), created.NewRecipeId.Value, jsonHelper);
+                        mainIds.ForEach(x => ids.Data.Tag.Add(new TagsGQ(x)));
                     }
                     
                     createRecipeHelper.SendToInsertRecipeTag(ids, created.NewRecipeId.Value, jsonHelper);
