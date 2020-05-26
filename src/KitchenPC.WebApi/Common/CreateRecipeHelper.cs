@@ -86,7 +86,7 @@ namespace KitchenPC.WebApi.Common
                 var response = SendHttpRequest<TagResponseFromGq>(client, requestGet, conf);
 
                 var tags = response.Data;
-
+                response?.Data?.Tag?.ForEach(x => result.Add(x.Id));
                 if (tags?.Tag == null || tags?.Tag.Count == 0 || tags?.Tag.Count != ingredient.Count)
                 {
                     var ing = ingredient.Where(x => tags != null && !tags.Tag.Exists(t => t.Name == x)).ToList();
@@ -114,10 +114,6 @@ namespace KitchenPC.WebApi.Common
                             obj.Data.InsertTag.Returning.ForEach(x => result.Add(x.id));
                         }
                     }
-                }
-                else
-                {
-                    response.Data.Tag.ForEach(x => result.Add(x.Id));
                 }
             }
 
