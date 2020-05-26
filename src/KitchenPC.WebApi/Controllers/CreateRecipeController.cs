@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using KitchenPC.Recipes;
@@ -68,7 +69,11 @@ namespace KitchenPC.WebApi.Controllers
                 if (created.RecipeCreated)
                 {
                     if (request.Difficulty != null)
+                    {
+                        if (request.Tags == null)
+                            request.Tags = new List<string>();
                         request.Tags.Add(request.Difficulty);
+                    }
                     
                     var ids = createRecipeHelper.GetTagIds(request.Tags, jsonHelper);
                     
