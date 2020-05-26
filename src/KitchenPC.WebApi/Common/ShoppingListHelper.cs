@@ -69,7 +69,7 @@ namespace KitchenPC.WebApi.Common
                         var amount = list.Amount;
                         var count = amount.SizeHigh / oldServingSize;
                         amount.SizeHigh = count * newServingSize;
-                        Console.WriteLine("\n amount ======== " + amount);
+                        Console.WriteLine("\n amount ======== " + amount.SizeHigh);
                         shoppingListUpdater.UpdateItem(list, x => x.NewAmount(amount));
                     }
                     Console.WriteLine("\n foreach finished ======== ");
