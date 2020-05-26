@@ -48,12 +48,11 @@ namespace KitchenPC.WebApi.Common
             foreach (var r in grouped)
             {
                 Console.WriteLine("\n CreateShoppingListItemUpdater Servings grouped Count ======== " + r.Count());
-                Console.WriteLine("\n CreateShoppingListItemUpdater Servings grouped ======== " + r);
                 var recipe = recipes.Find(x => x.Id == r.Key);
-                Console.WriteLine("\n CreateShoppingListItemUpdater recipe recipe Servings ======== " + recipe.Ingredients.Length);
-                foreach (var list in r)
+                Console.WriteLine("\n CreateShoppingListItemUpdater recipe recipe  ======== " + recipe.Ingredients.Length);
+                foreach (var list in r.ToList())
                 {
-                    Console.WriteLine("\n CreateShoppingListItemUpdater list.Amount ======== " + list?.Amount);
+                    Console.WriteLine("\n CreateShoppingListItemUpdater list.Amount ======== " + list?.Amount.SizeHigh);
                     if (list?.Amount != null && recipe != null)
                     {
                         Console.WriteLine("\n CreateShoppingListItemUpdater res.Data.Old.Servings ======== " + res.Data.Old.Servings);
