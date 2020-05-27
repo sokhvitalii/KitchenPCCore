@@ -12,17 +12,27 @@ namespace KitchenPC.WebApi.Model
         public Guid PlanId { get; set; }
         public Guid Id { get; set; }
         public int Servings { get; set; }
-        public DateTime? date { get; set; }
+        public DateTime? Date { get; set; }
        
         public DataPlanItems()
         {
         }
     }
+    
+    public class DataMeal
+    {
+        [JsonPropertyName("plan_items")]
+        public List<DataPlanItems> PlanItems { get; set; }
+        public Guid Id { get; set; }
+        public DataMeal()
+        {
+        }
+    }
+
 
     public class PlanItemsFromGq
     {
-        [JsonPropertyName("plan_item")]
-        public List<DataPlanItems> PlanItems { get; set; }
+        public List<DataMeal> Meal { get; set; }
 
         public PlanItemsFromGq()
         {

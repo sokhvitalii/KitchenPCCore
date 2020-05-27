@@ -25,12 +25,14 @@ namespace KitchenPC.WebApi.Controllers
                 var mealId = request.Event.Data.New?.MealId ?? request.Event.Data.Old.MealId;
                 var recipesFromGq = createRecipeHelper.GetPlanItems(mealId, jsonHelper);
 
-                if (recipesFromGq.Data.PlanItems.Count > 0)
+                var planItems = recipesFromGq.Data.Meal.SelectMany(x => x.PlanItems).ToList();
+
+                if (planItems.Count > 0)
                 {
                     var helper = new ShoppingListHelper();
-                    var serving = recipesFromGq.Data.PlanItems.Aggregate(0, (acc, x) => acc + x.Servings);
-
-                    var sList = context.ShoppingLists.Load(new ShoppingList(null, recipesFromGq.Data.PlanItems.First().PlanId))
+                    var serving = planItems.Aggregate(0, (acc, x) => acc + x.Servings);
+                    var planId = planItems.First().PlanId;
+                    var sList = context.ShoppingLists.Load(new ShoppingList(null, planId))
                         .WithItems
                         .List();
                     var recipeId = request.Event.Data.New?.RecipeId ?? request.Event.Data.Old.RecipeId;
@@ -40,8 +42,8 @@ namespace KitchenPC.WebApi.Controllers
                         var recipes = 
                             context.Recipes.Load(Recipe.FromId(recipeId)).WithMethod.WithUserRating.List().ToList();
                         context.ShoppingLists.Create
-                            .WithName(mealId.ToString() + recipesFromGq.Data.PlanItems.First().PlanId)
-                            .WithPlan(recipesFromGq.Data.PlanItems.First().PlanId)
+                            .WithName(mealId.ToString() + planId)
+                            .WithPlan(planId)
                             .AddItems(helper.CreateShoppingListAdder(serving, recipes)).Commit();
                     }
                     else

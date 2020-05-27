@@ -277,10 +277,19 @@ namespace KitchenPC.WebApi.Common
  
         public PlanItemsResponseFromGq GetPlanItems(Guid mealId, JsonHelper conf)
         {
-            var date = DateTime.Now;
+            //var date = DateTime.Now;
             PlanItemsResponseFromGq list; 
             using (var client = new HttpClient())
             {
+                var query = GraphQlRequestBuilder
+                    .CreateQuery()
+                    .Table("meal")
+                    .AppendReturn("id")
+                    .AppendReturn("plan_items { id servings date plan_id }")
+                    .AppendCondition(new ConditionType("id", mealId, "_eq"))
+                    .BulkResult("_and");
+                
+                /*
                 var query = GraphQlRequestBuilder
                     .CreateQuery()
                     .Table("plan_item")
@@ -291,6 +300,7 @@ namespace KitchenPC.WebApi.Common
                     .AppendCondition(new ConditionType("meal_id", mealId, "_eq"))
                     //.AppendCondition(new ConditionType("date", date, "_gte"))
                     .BulkResult("_and");
+                    */
                 
                 var request = Request(query, conf);
                 list = SendHttpRequest<PlanItemsResponseFromGq>(client, request, conf);

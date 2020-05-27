@@ -49,31 +49,40 @@ namespace KitchenPC.WebApi.Common
             {
                 Console.WriteLine("\n CreateShoppingListItemUpdater Servings grouped Count ======== " + r.Count());
                 Console.WriteLine("\n CreateShoppingListItemUpdater Servings grouped r?.Key ======== " +  r?.Key);
-                var recipe = recipes.Find(x => x.Id == r?.Key);
-                Console.WriteLine("\n CreateShoppingListItemUpdater recipe recipe  ======== " + recipe.Ingredients.Length);
-                foreach (var list in r.ToList())
+                var recipe = recipes.SingleOrDefault(x => x.Id == r?.Key);
+                Console.WriteLine("\n CreateShoppingListItemUpdater recipe recipe  ======== " + recipe?.Ingredients.Length);
+                if (recipe != null)
                 {
-                    Console.WriteLine("\n CreateShoppingListItemUpdater list.Amount ======== " + list?.Amount.SizeHigh);
-                    if (list?.Amount != null && recipe != null)
+                    foreach (var list in r.ToList())
                     {
-                        Console.WriteLine("\n CreateShoppingListItemUpdater res.Data.Old.Servings ======== " + res.Data.Old.Servings);
-                        Console.WriteLine("\n CreateShoppingListItemUpdater recipe.ServingSize ======== " + recipe.ServingSize);
-                        var oldServingSize = res.Data.Old.Servings / recipe.ServingSize;
-                        if (res.Data.Old.Servings % recipe.ServingSize != 0)
-                            oldServingSize += 1;
-                        Console.WriteLine("\n CreateShoppingListItemUpdater oldServingSize ======== " + oldServingSize);
-                        var newServingSize = res.Data.New.Servings / recipe.ServingSize;
-                        if (res.Data.New.Servings % recipe.ServingSize != 0)
-                            newServingSize += 1;
-                        Console.WriteLine("\n CreateShoppingListItemUpdater newServingSize ======== " + newServingSize);
-                        
-                        var amount = list.Amount;
-                        var count = amount.SizeHigh / oldServingSize;
-                        amount.SizeHigh = count * newServingSize;
-                        Console.WriteLine("\n amount ======== " + amount.SizeHigh);
-                        shoppingListUpdater.UpdateItem(list, x => x.NewAmount(amount));
+                        Console.WriteLine("\n CreateShoppingListItemUpdater list.Amount ======== " +
+                                          list?.Amount.SizeHigh);
+                        if (list?.Amount != null)
+                        {
+                            Console.WriteLine("\n CreateShoppingListItemUpdater res.Data.Old.Servings ======== " +
+                                              res.Data.Old.Servings);
+                            Console.WriteLine("\n CreateShoppingListItemUpdater recipe.ServingSize ======== " +
+                                              recipe.ServingSize);
+                            var oldServingSize = res.Data.Old.Servings / recipe.ServingSize;
+                            if (res.Data.Old.Servings % recipe.ServingSize != 0)
+                                oldServingSize += 1;
+                            Console.WriteLine("\n CreateShoppingListItemUpdater oldServingSize ======== " +
+                                              oldServingSize);
+                            var newServingSize = res.Data.New.Servings / recipe.ServingSize;
+                            if (res.Data.New.Servings % recipe.ServingSize != 0)
+                                newServingSize += 1;
+                            Console.WriteLine("\n CreateShoppingListItemUpdater newServingSize ======== " +
+                                              newServingSize);
+
+                            var amount = list.Amount;
+                            var count = amount.SizeHigh / oldServingSize;
+                            amount.SizeHigh = count * newServingSize;
+                            Console.WriteLine("\n amount ======== " + amount.SizeHigh);
+                            shoppingListUpdater.UpdateItem(list, x => x.NewAmount(amount));
+                        }
+
+                        Console.WriteLine("\n foreach finished ======== ");
                     }
-                    Console.WriteLine("\n foreach finished ======== ");
                 }
             }
 
