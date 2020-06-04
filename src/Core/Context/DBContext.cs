@@ -438,6 +438,7 @@ namespace KitchenPC.Context
          using (InitLock.ReadLock())
          {
             var ings = new Dictionary<Guid, IngredientAggregation>(); //List of all ingredients and total usage
+            var ings2 = new List<IngredientAggregation>(); //List of all ingredients and total usage
 
             foreach (var recipe in recipes)
             {
@@ -454,7 +455,7 @@ namespace KitchenPC.Context
                   ing.ConversionType = usage.Ingredient.ConversionType;
                   
                   
-                  ings.Add(ingId, new IngredientAggregation(ing) {
+                  ings2.Add( new IngredientAggregation(ing) {
                         Amount = usage.Amount != null? new  Amount(usage.Amount.SizeHigh, usage.Amount.Unit): usage.Amount,
                         Recipe = new RecipeBrief(recipe)}
                   );
@@ -478,7 +479,7 @@ namespace KitchenPC.Context
                }
             }
 
-            return ings.Values.ToList();
+            return ings2;
          }
       }
 
