@@ -93,7 +93,7 @@ namespace KitchenPC.WebApi.Controllers
 
                 var sList = context.ShoppingLists.Load(new ShoppingList(null, planId)).WithItems.List();
                 var createRecipeHelper = new CreateRecipeHelper(context);
-                var recipesFromGq = createRecipeHelper.GetPlanById(mealId, jsonHelper);
+                var recipesFromGq = createRecipeHelper.GetPlanById(planId, jsonHelper);
 
                 var recipeIds = recipesFromGq.Data.Plan
                     .SelectMany(d => d.PlanItems.SelectMany(x => x.Meal.Dishes.Select(x => x.RecipeId)))
