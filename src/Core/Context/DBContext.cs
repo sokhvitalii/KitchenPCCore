@@ -452,16 +452,23 @@ namespace KitchenPC.Context
                   var ingName = ingParser.GetIngredientById(ingId);
                   var ing = new Ingredient(ingId, ingName);
                   ing.ConversionType = usage.Ingredient.ConversionType;
-
-                  IngredientAggregation agg;
-                  if (!ings.TryGetValue(ingId, out agg))
-                  {
-                     ings.Add(ingId, agg = new IngredientAggregation(ing)
-                     {
+                  
+                  
+                  ings.Add(ingId, new IngredientAggregation(ing) {
                         Amount = usage.Amount != null? new  Amount(usage.Amount.SizeHigh, usage.Amount.Unit): usage.Amount,
-                        Recipe = new RecipeBrief(recipe)
-                     });
-                  }
+                        Recipe = new RecipeBrief(recipe)}
+                  );
+                  
+
+                  // IngredientAggregation agg;
+                  // if (!ings.TryGetValue(ingId, out agg))
+                  // {
+                  //    ings.Add(ingId, agg = new IngredientAggregation(ing)
+                  //    {
+                  //       Amount = usage.Amount != null? new  Amount(usage.Amount.SizeHigh, usage.Amount.Unit): usage.Amount,
+                  //       Recipe = new RecipeBrief(recipe)
+                  //    });
+                  // }
 
                   /*//TODO: If usage.Unit is different than agg.Amount.Unit then we have a problem, throw an exception if that happens?
                   if (agg.Amount == null) //This aggregation contains an empty amount, so we can't aggregate
