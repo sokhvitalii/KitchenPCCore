@@ -11,7 +11,37 @@ namespace KitchenPC.WebApi.Common
 {
     public class ShoppingListHelper
     {
-         public ShoppingListAdder CreateShoppingListAdder(int servings, List<Recipe> recipes)
+        public ShoppingListAdder CalculateServing(List<DataPlanItem> planItems, List<Recipe> recipes)
+        {
+            var newRecipe = new List<Recipe>();
+            foreach (var r in recipes)
+            {
+                var dataPlanItem = 
+                    planItems.Find(p => p.Meal.Dishes.Exists(x => x.RecipeId == r.Id));
+
+                if (r.ServingSize < dataPlanItem.Servings)
+                {
+                    var newServingSize = dataPlanItem.Servings / r.ServingSize;
+                    if (dataPlanItem.Servings % r.ServingSize != 0)
+                        newServingSize += 1;
+
+                    foreach (var ingredient in r.Ingredients)
+                    {
+                        if (ingredient.Amount != null)
+                            ingredient.Amount.SizeHigh = ingredient.Amount.SizeHigh * newServingSize;
+                    }
+                }
+                newRecipe.Add(r);
+                
+            }
+
+            return new ShoppingListAdder
+            {
+                Recipes = newRecipe
+            };
+        }
+
+        public ShoppingListAdder CreateShoppingListAdder(int servings, List<Recipe> recipes)
         {
             if (servings > 1)
             {
@@ -22,11 +52,11 @@ namespace KitchenPC.WebApi.Common
                         var newServingSize = servings / r.ServingSize;
                         if (servings % r.ServingSize != 0)
                             newServingSize += 1;
-                        
+
                         foreach (var ingredient in r.Ingredients)
                         {
-                         if (ingredient.Amount != null)   
-                            ingredient.Amount.SizeHigh = ingredient.Amount.SizeHigh * newServingSize;
+                            if (ingredient.Amount != null)
+                                ingredient.Amount.SizeHigh = ingredient.Amount.SizeHigh * newServingSize;
                         }
                     }
                 }
@@ -38,9 +68,9 @@ namespace KitchenPC.WebApi.Common
             };
         }
 
-         public ShoppingListUpdater CreateShoppingListItemUpdater(
-             List<ShoppingListItem> query,
-            ShoppingListUpdater shoppingListUpdater, 
+        public ShoppingListUpdater CreateShoppingListItemUpdater(
+            List<ShoppingListItem> query,
+            ShoppingListUpdater shoppingListUpdater,
             ShoppingListEntity res,
             List<Recipe> recipes)
         {
@@ -48,9 +78,10 @@ namespace KitchenPC.WebApi.Common
             foreach (var r in grouped)
             {
                 Console.WriteLine("\n CreateShoppingListItemUpdater Servings grouped Count ======== " + r.Count());
-                Console.WriteLine("\n CreateShoppingListItemUpdater Servings grouped r?.Key ======== " +  r?.Key);
+                Console.WriteLine("\n CreateShoppingListItemUpdater Servings grouped r?.Key ======== " + r?.Key);
                 var recipe = recipes.SingleOrDefault(x => x.Id == r?.Key);
-                Console.WriteLine("\n CreateShoppingListItemUpdater recipe recipe  ======== " + recipe?.Ingredients.Length);
+                Console.WriteLine("\n CreateShoppingListItemUpdater recipe recipe  ======== " +
+                                  recipe?.Ingredients.Length);
                 if (recipe != null)
                 {
                     foreach (var list in r.ToList())
@@ -88,8 +119,8 @@ namespace KitchenPC.WebApi.Common
 
             return shoppingListUpdater;
         }
-        
-         public ShoppingListUpdater SetItemToRemove(IEnumerator<ShoppingListItem> query, Guid recipeId,
+
+        public ShoppingListUpdater SetItemToRemove(IEnumerator<ShoppingListItem> query, Guid recipeId,
             ShoppingListUpdater shoppingListUpdater)
         {
             while (query.MoveNext())
@@ -101,6 +132,5 @@ namespace KitchenPC.WebApi.Common
 
             return shoppingListUpdater;
         }
-
     }
 }

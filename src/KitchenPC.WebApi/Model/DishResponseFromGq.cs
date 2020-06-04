@@ -4,34 +4,62 @@ using System.Text.Json.Serialization;
 
 namespace KitchenPC.WebApi.Model
 {
-    public class DataDishes
+    public class PlanItems
     {
-        [JsonPropertyName("dish_type")]
-        public string DishType { get; set; }
         [JsonPropertyName("recipe_id")]
         public Guid RecipeId { get; set; }
         public Guid Id { get; set; }
-        public DataDishes()
+        public PlanItems()
         {
-        }
-    }
-
-
-    public class DishFromGq
-    {
-        public List<DataDishes> Dish { get; set; }
-
-        public DishFromGq()
-        {
-
         }
     }
     
-    public class DishResponseFromGq
+    public class Meal
     {
-        public DishFromGq Data { get; set; }
+        public Guid Id { get; set; }
+        public List<PlanItems> Dishes { get; set; }
+        public Meal()
+        {
+        }
+    }
+    
+    public class DataPlanItem
+    {
+        public Guid Id { get; set; }
+        public Meal Meal { get; set; }
+        public int Servings { get; set; }
+        [JsonPropertyName("meal_type")]
+        public string MealType { get; set; }
+        public DataPlanItem()
+        {
+        }
+    }
+    
+    public class PlanFromGq
+    {
+        [JsonPropertyName("plan_items")]
+        public List<DataPlanItem> PlanItems { get; set; }
+        public Guid Id { get; set; }
+        public PlanFromGq()
+        {
 
-        public DishResponseFromGq()
+        }
+    }
+    public class DataPlanFromGq
+    {
+        public List<PlanFromGq> Plan { get; set; }
+       
+        public DataPlanFromGq()
+        {
+
+        }
+    }
+
+    public class PlanResponseFromGq
+    {
+        public DataPlanFromGq Data { get; set; }
+
+        public PlanResponseFromGq()
         {
 
         }

@@ -256,24 +256,46 @@ namespace KitchenPC.WebApi.Common
             return allIngredient;
         }
         
-        public DishResponseFromGq GetDishe(Guid mealId, JsonHelper conf)
+           
+        public PlanResponseFromGq GetPlan(Guid planId, JsonHelper conf)
         {
-            DishResponseFromGq list; 
+            //var date = DateTime.Now;
+            PlanResponseFromGq list; 
             using (var client = new HttpClient())
-            { 
+            {
                 var query = GraphQlRequestBuilder
                     .CreateQuery()
-                    .Table("dish")
+                    .Table("plan")
                     .AppendReturn("id")
-                    .AppendReturn("recipe_id")
-                    .AppendCondition(new ConditionType("meal_id", mealId, "_eq"));
-
-                    var request = Request(query.SingleResult(), conf);
-                list = SendHttpRequest<DishResponseFromGq>(client, request, conf);
+                    .AppendReturn("plan_items{ servings id plan_id  meal { id dishes {id recipe_id } } }")
+                    .AppendConditionQuery(new ConditionType($"plan_items: {{ meal_id: {{_eq: \\\"{planId}\\\" }} }}"))
+                    .SingleResult();
+                
+                var request = Request(query, conf);
+                list = SendHttpRequest<PlanResponseFromGq>(client, request, conf);
             }
 
             return list;
         }
+        
+        // public DishResponseFromGq GetDishe(Guid mealId, JsonHelper conf)
+        // {
+        //     DishResponseFromGq list; 
+        //     using (var client = new HttpClient())
+        //     { 
+        //         var query = GraphQlRequestBuilder
+        //             .CreateQuery()
+        //             .Table("dish")
+        //             .AppendReturn("id")
+        //             .AppendReturn("recipe_id")
+        //             .AppendCondition(new ConditionType("meal_id", mealId, "_eq"));
+        //
+        //             var request = Request(query.SingleResult(), conf);
+        //         list = SendHttpRequest<DishResponseFromGq>(client, request, conf);
+        //     }
+        //
+        //     return list;
+        // }
  
         public PlanItemsResponseFromGq GetPlanItems(Guid mealId, JsonHelper conf)
         {

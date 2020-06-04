@@ -126,6 +126,7 @@ namespace KitchenPC.DB.Helper
         public string Key { get; set; }
         public string Label;
         public bool IsNested;
+        public string Query;
         
         public ConditionType(string key, object value, string label, bool isNested = false)
         {
@@ -134,18 +135,24 @@ namespace KitchenPC.DB.Helper
             Label = label;
             IsNested = isNested;
         }
+        public ConditionType(string query)
+        {
+            Query = query;
+        }
     }
 
     public class QueryBuilderContext
     {
         private string tableName;
         private List<ConditionType> objectsInput;
+        private ConditionType queryInput;
         private List<string> returning;
 
         private void CreateRoot()
         {
             returning = new List<string>();
             objectsInput = new List<ConditionType>();
+            queryInput = null;
         }
         
         public QueryBuilderContext()
@@ -166,6 +173,12 @@ namespace KitchenPC.DB.Helper
                 objectsInput.Add(value);
             } 
             
+            return this;
+        }
+        
+        public QueryBuilderContext AppendConditionQuery(ConditionType value)
+        { 
+            queryInput = value; 
             return this;
         }
 
@@ -200,6 +213,9 @@ namespace KitchenPC.DB.Helper
             if (objectsInput.Any())
             {
                 condition = "(where:" + InputProcess(objectsInput.First()) + ")";
+            }else if (queryInput != null)
+            {
+                condition = $"(where: {{ {queryInput.Query} }})";
             }
             return $"{{\"query\":\"query MyQuery {{ {tableName}{condition} {{  {ret} }}}}\", \"operationName\":\"MyQuery\"}}";
         }
@@ -212,6 +228,9 @@ namespace KitchenPC.DB.Helper
             if (objectsInput.Any())
             {
                 condition = $"(where: {{ {conditionType}: [" +  String.Join(", ", objectsInput.Select(InputProcess))  + "]})";
+            } else if (queryInput != null)
+            {
+                condition = $"(where: {{ {queryInput.Query} }})";
             }
             return $"{{\"query\":\"query MyQuery {{ {tableName}{condition} {{  {ret} }}}}\", \"operationName\":\"MyQuery\"}}";
         }
