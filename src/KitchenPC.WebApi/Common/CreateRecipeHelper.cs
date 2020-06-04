@@ -267,7 +267,7 @@ namespace KitchenPC.WebApi.Common
                     .Table("plan")
                     .AppendReturn("id")
                     .AppendReturn("plan_items{ servings id plan_id  meal { id dishes {id recipe_id } } }")
-                    .AppendConditionQuery(new ConditionType("id", planId, "_eq"))
+                    .AppendCondition(new ConditionType("id", planId, "_eq"))
                     .SingleResult();
                 
                 var request = Request(query, conf);
