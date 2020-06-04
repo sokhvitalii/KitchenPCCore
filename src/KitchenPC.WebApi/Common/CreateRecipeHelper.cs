@@ -256,7 +256,27 @@ namespace KitchenPC.WebApi.Common
             return allIngredient;
         }
         
-           
+        public PlanResponseFromGq GetPlanById(Guid planId, JsonHelper conf)
+        {
+            //var date = DateTime.Now;
+            PlanResponseFromGq list; 
+            using (var client = new HttpClient())
+            {
+                var query = GraphQlRequestBuilder
+                    .CreateQuery()
+                    .Table("plan")
+                    .AppendReturn("id")
+                    .AppendReturn("plan_items{ servings id plan_id  meal { id dishes {id recipe_id } } }")
+                    .AppendConditionQuery(new ConditionType("id", planId, "_eq"))
+                    .SingleResult();
+                
+                var request = Request(query, conf);
+                list = SendHttpRequest<PlanResponseFromGq>(client, request, conf);
+            }
+
+            return list;
+        }
+        
         public PlanResponseFromGq GetPlan(Guid planId, JsonHelper conf)
         {
             //var date = DateTime.Now;
