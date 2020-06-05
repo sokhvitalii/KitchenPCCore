@@ -14,32 +14,62 @@ namespace KitchenPC.WebApi.Common
         public ShoppingListAdder CalculateServing(List<DataPlanItem> planItems, List<Recipe> recipes)
         {
             var newRecipe = new List<Recipe>();
-            foreach (var r in recipes)
+            foreach (var p in planItems)
             {
-                var dataPlanItem = 
-                    planItems.Find(p => p.Meal.Dishes.Exists(x => x.RecipeId == r.Id));
-
-                if (r.ServingSize < dataPlanItem.Servings)
+                foreach (var d in p.Meal.Dishes)
                 {
-                    var newServingSize = dataPlanItem.Servings / r.ServingSize;
-                    if (dataPlanItem.Servings % r.ServingSize != 0)
-                        newServingSize += 1;
+                    var recipe = recipes.Find(p => p.Id == d.RecipeId);
 
-                    foreach (var ingredient in r.Ingredients)
+                    if (recipe.ServingSize < p.Servings)
                     {
-                        if (ingredient.Amount != null)
-                            ingredient.Amount.SizeHigh = ingredient.Amount.SizeHigh * newServingSize;
+                        var newServingSize = p.Servings / recipe.ServingSize;
+                        if (p.Servings % recipe.ServingSize != 0)
+                            newServingSize += 1;
+
+                        foreach (var ingredient in recipe.Ingredients)
+                        {
+                            if (ingredient.Amount != null)
+                                ingredient.Amount.SizeHigh = ingredient.Amount.SizeHigh * newServingSize;
+                        }
                     }
+                    newRecipe.Add(recipe);
+                
                 }
-                newRecipe.Add(r);
                 
             }
+
 
             return new ShoppingListAdder
             {
                 Recipes = newRecipe
             };
         }
+        
+        // foreach (var r in recipes)
+        // {
+        //     var dataPlanItem = 
+        //         planItems.Find(p => p.Meal.Dishes.Exists(x => x.RecipeId == r.Id));
+        //
+        //     if (r.ServingSize < dataPlanItem.Servings)
+        //     {
+        //         var newServingSize = dataPlanItem.Servings / r.ServingSize;
+        //         if (dataPlanItem.Servings % r.ServingSize != 0)
+        //             newServingSize += 1;
+        //
+        //         foreach (var ingredient in r.Ingredients)
+        //         {
+        //             if (ingredient.Amount != null)
+        //                 ingredient.Amount.SizeHigh = ingredient.Amount.SizeHigh * newServingSize;
+        //         }
+        //     }
+        //     newRecipe.Add(r);
+        //     
+        // }
+        //
+        
+        
+        
+        
         //
         // public ShoppingListAdder CreateShoppingListAdder(int servings, List<Recipe> recipes)
         // {
