@@ -32,7 +32,6 @@ namespace KitchenPC.WebApi.Controllers
                     var recipesFromGq = createRecipeHelper.GetPlan(mealId, jsonHelper);
                     var recipeIds = recipesFromGq.Data.Plan
                         .SelectMany(d => d.PlanItems.SelectMany(x => x.Meal.Dishes.Select(x => x.RecipeId)))
-                        .Distinct()
                         .ToList();
                     
                     var helper = new ShoppingListHelper();

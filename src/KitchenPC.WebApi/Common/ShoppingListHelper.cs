@@ -28,6 +28,7 @@ namespace KitchenPC.WebApi.Common
                 foreach (var d in p.Meal.Dishes)
                 {
                     var recipe = recipes.Find(p => p.Id == d.RecipeId);
+                    recipes.Remove(recipe);
                     Console.WriteLine("\n CalculateServing Dishes id ======== " + d.Id);
                     Console.WriteLine("\n CalculateServing recipe id ======== " + recipe.Id);
                     if (recipe.ServingSize < p.Servings)
