@@ -15,6 +15,10 @@ namespace KitchenPC.WebApi.Common
         {
             Console.WriteLine("\n CalculateServing planItems Count ======== " + planItems.Count());
             Console.WriteLine("\n CalculateServing recipes Count ======== " + recipes.Count());
+            foreach (var r in recipes)
+            {
+                Console.WriteLine("\n CalculateServing recipes ids ======== " + r.Id);
+            }
             var newRecipe = new List<Recipe>();
             foreach (var p in planItems)
             {
