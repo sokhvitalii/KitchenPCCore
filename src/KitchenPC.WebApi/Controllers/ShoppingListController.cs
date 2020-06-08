@@ -48,16 +48,16 @@ namespace KitchenPC.WebApi.Controllers
                         context.ShoppingLists.Create
                             .WithName(mealId.ToString() + planId)
                             .WithPlan(planId)
+                            .WithShoppingId(null)
                             .AddItems(helper.CalculateServing(listPlanItems, recipes)).Commit();
                     }
                     else
                     {
                         var shopping = sList.First();
-                        context.ShoppingLists.Delete(shopping).Commit();
-                        Console.WriteLine("\n ShoppingLists deleted ======== ");
                         context.ShoppingLists.Create
                             .WithName(mealId.ToString() + planId)
                             .WithPlan(planId)
+                            .WithShoppingId(shopping.Id)
                             .AddItems(helper.CalculateServing(listPlanItems, recipes)).Commit();
                         Console.WriteLine("\n ShoppingLists Created ======== ");
                     }
@@ -108,49 +108,24 @@ namespace KitchenPC.WebApi.Controllers
                 var helper = new ShoppingListHelper();
                 if (!sList.Any())
                 {
+                    Console.WriteLine("\n ShoppingLists not exist ");
                     Console.WriteLine("\n ShoppingLists Create ======== ");
                     context.ShoppingLists.Create
                         .WithName(mealId.ToString() + planId)
                         .WithPlan(planId)
+                        .WithShoppingId(null)
                         .AddItems(helper.CalculateServing(listPlanItems, recipes)).Commit();
                 }
                 else
                 {
+                    Console.WriteLine("\n ShoppingLists exist ");
                     var shopping = sList.First();
-                    context.ShoppingLists.Delete(shopping).Commit();
-                    Console.WriteLine("\n ShoppingLists deleted ======== ");
                     context.ShoppingLists.Create
                         .WithName(mealId.ToString() + planId)
                         .WithPlan(planId)
+                        .WithShoppingId(shopping.Id)
                         .AddItems(helper.CalculateServing(listPlanItems, recipes)).Commit();
                     Console.WriteLine("\n ShoppingLists Created ======== ");
-
-
-                    // if (request.Event.Op == "INSERT")
-                    // {
-                    //     Console.WriteLine("\n ShoppingLists INSERT ======== ");
-                    //     context.ShoppingLists.Update(shopping)
-                    //         .AddItems(helper.CreateShoppingListAdder(servings, recipes)).Commit();
-                    // }
-                    // else if (request.Event.Op == "UPDATE" && servings != 0 &&
-                    //          request.Event.Data.New?.Servings != request.Event.Data.Old?.Servings)
-                    // {
-                    //     Console.WriteLine("\n ShoppingLists UPDATE Servings ======== ");
-                    //     var shoppingListUpdater = context.ShoppingLists.Update(shopping);
-                    //     helper.CreateShoppingListItemUpdater(shopping.ToList(), shoppingListUpdater, request.Event,
-                    //         recipes).Commit();
-                    // }
-                    // else if (request.Event.Op == "DELETE")
-                    // {
-                    //     Console.WriteLine("\n ShoppingLists DELETE ======== ");
-                    //     var shoppingListUpdater = context.ShoppingLists.Update(shopping);
-                    //     foreach (var r in recipeIds)
-                    //     {
-                    //         helper.SetItemToRemove(shopping.GetEnumerator(), r, shoppingListUpdater);
-                    //     }
-                    //
-                    //     shoppingListUpdater.Commit();
-                    // }
                 }
             }
             catch (Exception e)

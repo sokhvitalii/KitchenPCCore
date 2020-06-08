@@ -131,6 +131,7 @@ namespace KitchenPC.Context.Fluent
       readonly IKPCContext context;
       string listName;
       Guid planId;
+      Guid? shoppingId;
       readonly IList<ShoppingListAdder> addQueue;
 
       public ShoppingListCreator(IKPCContext context)
@@ -145,6 +146,13 @@ namespace KitchenPC.Context.Fluent
          this.planId = planId;
          return this;
       }
+      
+      public ShoppingListCreator WithShoppingId(Guid? id)
+      {
+         this.shoppingId = id;
+         return this;
+      }
+
       
       public ShoppingListCreator WithName(string name)
       {
@@ -174,7 +182,7 @@ namespace KitchenPC.Context.Fluent
          var usages = addQueue.SelectMany(u => u.Usages).ToArray();
          var raw = addQueue.SelectMany(r => r.ToParse).ToArray();
 
-         return context.CreateShoppingList(planId, listName, recipes, ingredients, usages, raw);
+         return context.CreateShoppingList(planId, shoppingId, listName, recipes, ingredients, usages, raw);
       }
    }
 

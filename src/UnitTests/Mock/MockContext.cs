@@ -128,7 +128,7 @@ namespace KPCServer.UnitTests
          throw new NotImplementedException();
       }
 
-      public ShoppingListResult CreateShoppingList(Guid planId, string name, Recipe[] recipes, Ingredient[] ingredients, IngredientUsage[] usages, string[] items)
+      public ShoppingListResult CreateShoppingList(Guid planId, Guid? id,string name, Recipe[] recipes, Ingredient[] ingredients, IngredientUsage[] usages, string[] items)
       {
          throw new NotImplementedException();
       }

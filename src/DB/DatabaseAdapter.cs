@@ -911,9 +911,26 @@ namespace KitchenPC.DB
          using (var session = GetSession())
          {
             var ret = new ShoppingListResult();
-
             using (var transaction = session.BeginTransaction())
             {
+
+               if (list.Id.HasValue)
+               {
+                  using (var trans = session.BeginTransaction())
+                  {
+                     var lists = new List<ShoppingList>();
+                     lists.Add(list);
+                     var dbLists = session.QueryOver<Models.ShoppingLists>()
+                        .AndRestrictionOn(p => p.ShoppingListId)
+                        .IsInG(lists.Select(l => l.Id.Value))
+                        .Where(p => p.UserId == identity.UserId)
+                        .List();
+
+                     dbLists.ForEach(session.Delete);
+                     trans.Commit();
+                  }
+               }
+
                var dbList = new Models.ShoppingLists();
                dbList.Title = list.Title.Trim();
                dbList.UserId = identity.UserId;
