@@ -928,6 +928,7 @@ namespace KitchenPC.DB
 
                      dbLists.ForEach(session.Delete);
                      trans.Commit();
+                     Console.WriteLine("\n ShoppingLists Commit Delete ======== ");
                   }
                }
 
@@ -947,9 +948,9 @@ namespace KitchenPC.DB
                      session.Save(dbItem);
                   });
                }
-
+               Console.WriteLine("\n ShoppingLists before Commit Save ======== ");
                transaction.Commit();
-
+               Console.WriteLine("\n ShoppingLists Commit Save ======== ");
                ret.NewShoppingListId = dbList.ShoppingListId;
             }
 
