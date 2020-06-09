@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Transactions;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using FluentNHibernate.Conventions;
@@ -909,17 +908,18 @@ namespace KitchenPC.DB
 
       public ShoppingListResult CreateShoppingList(AuthIdentity identity, ShoppingList list)
       {
-         using (var tx = new TransactionScope())
+         
+         using (var session = GetSession())
          {
-            using (var session = GetSession())
+            var ret = new ShoppingListResult();
+            using (var transaction = session.BeginTransaction())
             {
-               var ret = new ShoppingListResult();
-               using (var transaction = session.BeginTransaction())
-               {
 
-                  if (list.Id.HasValue)
+               if (list.Id.HasValue)
+               {
+                  using (var session2 = GetSession())
                   {
-                     using (var trans = session.BeginTransaction())
+                     using (var trans = session2.BeginTransaction())
                      {
                         var lists = new List<ShoppingList>();
                         lists.Add(list);
@@ -929,38 +929,37 @@ namespace KitchenPC.DB
                            .Where(p => p.UserId == identity.UserId)
                            .List();
 
-                        dbLists.ForEach(session.Delete);
+                        dbLists.ForEach(session2.Delete);
                         trans.Commit();
                         Console.WriteLine("\n ShoppingLists Commit Delete ======== ");
                      }
                   }
-
-                  var dbList = new Models.ShoppingLists();
-                  dbList.Title = list.Title.Trim();
-                  dbList.UserId = identity.UserId;
-                  dbList.PlanId = list.PlanId;
-                  session.Save(dbList);
-
-                  if (list.Any()) // Create ShoppingListItems
-                  {
-                     list.ToList().ForEach(i =>
-                     {
-                        var dbItem = ShoppingListItems.FromShoppingListItem(i);
-                        dbItem.ShoppingList = dbList;
-                        dbItem.UserId = dbList.UserId;
-                        session.Save(dbItem);
-                     });
-                  }
-
-                  Console.WriteLine("\n ShoppingLists before Commit Save ======== ");
-                  transaction.Commit();
-                  Console.WriteLine("\n ShoppingLists Commit Save ======== ");
-                  ret.NewShoppingListId = dbList.ShoppingListId;
                }
-               tx.Complete();
-               ret.List = list;
-               return ret;
+
+               var dbList = new Models.ShoppingLists();
+               dbList.Title = list.Title.Trim();
+               dbList.UserId = identity.UserId;
+               dbList.PlanId = list.PlanId;
+               session.Save(dbList);
+
+               if (list.Any()) // Create ShoppingListItems
+               {
+                  list.ToList().ForEach(i =>
+                  {
+                     var dbItem = ShoppingListItems.FromShoppingListItem(i);
+                     dbItem.ShoppingList = dbList;
+                     dbItem.UserId = dbList.UserId;
+                     session.Save(dbItem);
+                  });
+               }
+               Console.WriteLine("\n ShoppingLists before Commit Save ======== ");
+               transaction.Commit();
+               Console.WriteLine("\n ShoppingLists Commit Save ======== ");
+               ret.NewShoppingListId = dbList.ShoppingListId;
             }
+
+            ret.List = list;
+            return ret;
          }
       }
 
