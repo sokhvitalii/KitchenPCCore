@@ -908,34 +908,32 @@ namespace KitchenPC.DB
 
       public ShoppingListResult CreateShoppingList(AuthIdentity identity, ShoppingList list)
       {
-         
+         if (list.Id.HasValue)
+         {
+            using (var session = GetSession())
+            {
+               using (var trans = session.BeginTransaction())
+               {
+                  var lists = new List<ShoppingList>();
+                  lists.Add(list);
+                  var dbLists = session.QueryOver<Models.ShoppingLists>()
+                     .AndRestrictionOn(p => p.ShoppingListId)
+                     .IsInG(lists.Select(l => l.Id.Value))
+                     .Where(p => p.UserId == identity.UserId)
+                     .List();
+
+                  dbLists.ForEach(session.Delete);
+                  trans.Commit();
+                  Console.WriteLine("\n ShoppingLists Commit Delete ======== ");
+               }
+            }
+         }
+
          using (var session = GetSession())
          {
             var ret = new ShoppingListResult();
             using (var transaction = session.BeginTransaction())
             {
-
-               if (list.Id.HasValue)
-               {
-                  using (var session2 = GetSession())
-                  {
-                     using (var trans = session2.BeginTransaction())
-                     {
-                        var lists = new List<ShoppingList>();
-                        lists.Add(list);
-                        var dbLists = session.QueryOver<Models.ShoppingLists>()
-                           .AndRestrictionOn(p => p.ShoppingListId)
-                           .IsInG(lists.Select(l => l.Id.Value))
-                           .Where(p => p.UserId == identity.UserId)
-                           .List();
-
-                        dbLists.ForEach(session2.Delete);
-                        trans.Commit();
-                        Console.WriteLine("\n ShoppingLists Commit Delete ======== ");
-                     }
-                  }
-               }
-
                var dbList = new Models.ShoppingLists();
                dbList.Title = list.Title.Trim();
                dbList.UserId = identity.UserId;
