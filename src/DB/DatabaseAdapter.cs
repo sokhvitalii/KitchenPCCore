@@ -395,6 +395,7 @@ namespace KitchenPC.DB
                   ImageUrl = recipe.ImageUrl,
                   UserChefId = recipe.UserChefId,
                   IsIncomplete = recipe.IsIncomplete,
+                  Status = recipe.Status,
                   UserUpdatedId = recipe.UserUpdatedId,
                   Rating = recipe.AvgRating,
                   ServingSize = recipe.ServingSize,

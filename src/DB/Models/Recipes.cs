@@ -24,6 +24,7 @@ namespace KitchenPC.DB.Models
       public virtual string UserChefId { get; set; }
       public virtual bool? IsIncomplete { get; set; }
       public virtual string UserUpdatedId { get; set; }
+      public virtual string Status { get; set; }
 
       public virtual IList<RecipeIngredients> Ingredients { get; set; }
       public virtual RecipeMetadata RecipeMetadata { get; set; }
@@ -73,6 +74,7 @@ namespace KitchenPC.DB.Models
          Map(x => x.ServingSize).Not.Nullable().Check("ServingSize > 0");
          Map(x => x.UserChefId).Nullable().Column("user_chef_id");
          Map(x => x.UserUpdatedId).Nullable().Column("user_updated_by");
+         Map(x => x.Status).Nullable().Column("status");
          Map(x => x.IsIncomplete).Nullable().Column("is_incomplete");
          Map(x => x.ImageUrl).Length(100);
 

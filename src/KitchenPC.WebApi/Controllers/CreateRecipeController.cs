@@ -60,6 +60,9 @@ namespace KitchenPC.WebApi.Controllers
                 
                 if (request.IsIncomplete != null)
                     create.WithIsComplete(request.IsIncomplete);
+                
+                if (request.Status != null)
+                    create.WithStatus(request.Status);
      
                 if (request.CreditUrl != null)
                     create.WithCreditUrl(new Uri(request.CreditUrl));

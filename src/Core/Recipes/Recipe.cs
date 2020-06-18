@@ -34,6 +34,7 @@ namespace KitchenPC.Recipes
       public int InMenus = 0;
       public string UserChefId;
       public string UserUpdatedId;
+      public string Status;
 
       public static Recipe FromId(Guid recipeId)
       {

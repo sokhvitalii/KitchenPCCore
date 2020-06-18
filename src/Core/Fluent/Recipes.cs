@@ -431,6 +431,12 @@ namespace KitchenPC.Context.Fluent
       {
          recipe.UserUpdatedId = id;
          return this;
+      }   
+      
+      public RecipeCreator WithStatus(string status)
+      {
+         recipe.Status = status;
+         return this;
       }
 
       public RecipeCreator WithCredit(string credit)
